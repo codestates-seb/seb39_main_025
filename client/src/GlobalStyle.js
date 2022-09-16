@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         list-style: none;
-        // font-family :
+        font-family: 'Noto Sans KR', sans-serif;
     }
 `;
 
@@ -16,6 +16,7 @@ export const Layout = styled.div`
   max-width: 1330px;
   margin: 0 auto;
   background-color: #e5e5e5;
+  border: 1px solid black;
 
   @media screen and (max-width: 479px) {
     padding: 0 30px;
@@ -38,7 +39,7 @@ export const Button = styled.button`
   background-color: ${({ yellow }) => (yellow ? '#EFAC59' : '#1D3561')};
   white-space: nowrap;
   padding: ${({ big }) => (big ? '15px 70px' : '10px 40px')};
-  font-weight: 600;
+  font-weight: 300;
   color: ${({ yellow }) => (yellow ? '#1D3561' : '#fff')};
   font-size: ${({ big }) => (big ? '20px' : '16px')};
   outline: none;
@@ -64,7 +65,7 @@ export const Button = styled.button`
   }
 
   &:hover {
-    box-shadow: 200px 0 0 0 rgba(0, 0, 0, 0.5) inset;
+    box-shadow: 200px 0 0 0 rgba(255, 255, 255, 0.2) inset;
     z-index: 1;
     color: black;
   }

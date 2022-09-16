@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import GlobalStyle, { Layout, Container } from './GlobalStyle';
+import GlobalStyle, { Layout } from './GlobalStyle';
 import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
@@ -12,13 +12,11 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Layout>
-        <Container>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/sign-up" element={<SignupPage />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-        </Container>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/sign-up" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
       </Layout>
     </div>
   );
