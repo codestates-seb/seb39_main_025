@@ -25,10 +25,11 @@ export const Layout = styled.div`
 
 export const Container = styled.div`
   color: white;
-  padding: 160px;
+  padding: 0 160px;
   background-color: #414141;
 
   @media screen and (max-width: 479px) {
+    padding: 0;
   }
 `;
 
