@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Container = styled.div`
+export const Layout = styled.div`
   width: 100%;
   height: 100vh;
   max-width: 1330px;
@@ -23,7 +23,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Section = styled.div`
+export const Container = styled.div`
   color: white;
   padding: 160px;
   background-color: #414141;
@@ -34,20 +34,19 @@ export const Section = styled.div`
 
 export const Button = styled.button`
   border-radius: 4px;
-  background: none;
+  background-color: ${({ yellow }) => (yellow ? '#EFAC59' : '#1D3561')};
   white-space: nowrap;
-  padding: ${({ big }) => (big ? '12px 64px' : '10px 20px')};
+  padding: ${({ big }) => (big ? '15px 70px' : '10px 40px')};
   font-weight: 600;
-  color: #fff;
-  font-size: ${({ fontBig }) => (fontBig ? '20px' : '16px')};
+  color: ${({ yellow }) => (yellow ? '#1D3561' : '#fff')};
+  font-size: ${({ big }) => (big ? '20px' : '16px')};
   outline: none;
-  border: 2px solid #d12d2d;
+  border: 0.5px solid #eee;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 
   &:before {
-    background: #d12d2d;
     content: '';
     position: absolute;
     top: 50%;
@@ -64,6 +63,7 @@ export const Button = styled.button`
   }
 
   &:hover {
+    box-shadow: 200px 0 0 0 rgba(0, 0, 0, 0.5) inset;
     z-index: 1;
     color: black;
   }
