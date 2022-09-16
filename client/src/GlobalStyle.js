@@ -65,9 +65,9 @@ export const Button = styled.button`
   }
 
   &:hover {
+    transition: 0.5s;
     box-shadow: 200px 0 0 0 rgba(255, 255, 255, 0.2) inset;
     z-index: 1;
-    color: black;
   }
 `;
 

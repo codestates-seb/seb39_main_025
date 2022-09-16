@@ -48,7 +48,8 @@ export const FormLogoImg = styled.img`
 `;
 
 export const FormTitle = styled.h1`
-  font-size: 20px;
+  margin-top: 5%;
+  font-size: 23px;
   display: flex;
   justify-content: center;
   align-items: center;

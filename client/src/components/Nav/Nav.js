@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLayout } from './NavStyle';
+import { NavLayout } from './NavTopStyle';
 import NavTop from './NavTop';
 import NavBottom from './NavBottom';
 
