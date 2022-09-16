@@ -62,9 +62,9 @@ export const NavSearchInput = styled.input`
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  border: #efac59 solid 1px;
+  border: #1d3561 solid 1px;
   outline: none;
-  box-shadow: inset 5px 10px 10px 50px rgba(239, 172, 89, 0.1);
+  box-shadow: inset 5px 10px 10px 50px rgba(239, 172, 89, 0.08);
   @media screen and (max-width: 479px) {
     height: 100%;
     width: 70%;
