@@ -3,8 +3,9 @@ import axios from 'axios';
 
 const initialState = {
   email: '',
-  username: '',
+  userId: '',
   password: '',
+  username: '',
   token: '',
   loading: false,
   error: '',
@@ -30,20 +31,20 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    addToken: (state, action) => {
+    addToken: (state) => {
       state.token = localStorage.getItem('token');
     },
-    addUser: (state, action) => {
+    addUser: (state) => {
       state.user = localStorage.getItem('user');
     },
-    logout: (state, action) => {
+    logout: (state) => {
       state.token = null;
       localStorage.clear();
     },
   },
   extraReducers: {
     // * 회원가입 요청에 따른 예외처리
-    [signUpUser.pending]: (state, action) => {
+    [signUpUser.pending]: (state) => {
       state.loading = true;
     },
     [signUpUser.fulfilled]: (state, { payload: { error, msg } }) => {
@@ -54,12 +55,12 @@ const userSlice = createSlice({
         state.msg = msg;
       }
     },
-    [signUpUser.rejected]: (state, action) => {
+    [signUpUser.rejected]: (state) => {
       state.loading = true;
     },
   },
   // * 로그인 요청의 응답에 따른 예외처리
-  [loginUser.pending]: (state, action) => {
+  [loginUser.pending]: (state) => {
     state.loading = true;
   },
   [loginUser.fulfilled]: (state, { payload: { error, msg, token, user } }) => {
@@ -76,11 +77,11 @@ const userSlice = createSlice({
       localStorage.setItem('token', token);
     }
   },
-  [loginUser.rejected]: (state, action) => {
+  [loginUser.rejected]: (state) => {
     state.loading = true;
   },
   // * 로그아웃 요청의 응답에 따른 예외처리
-  [logoutUser.pending]: (state, action) => {
+  [logoutUser.pending]: (state) => {
     state.loading = true;
   },
   [logoutUser.fulfilled]: (state, error) => {
@@ -89,7 +90,7 @@ const userSlice = createSlice({
       state.error = error;
     }
   },
-  [logoutUser.rejected]: (state, action) => {
+  [logoutUser.rejected]: (state) => {
     state.loading = true;
   },
 });

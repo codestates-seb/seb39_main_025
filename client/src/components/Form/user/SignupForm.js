@@ -23,8 +23,9 @@ function Form() {
 
   const [userInfo, setuserInfo] = useState({
     email: '',
-    username: '',
+    userId: '',
     password: '',
+    username: '',
   });
 
   const onChange = (e) => {
