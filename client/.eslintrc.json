@@ -39,6 +39,14 @@
         "quoteProps": "consistent"
       }
     ],
+    "no-unused-vars": "warn",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
+      }
+    ],
     "linebreak-style": ["error", "unix"],
     "quotes": [
       "error",
