@@ -23,8 +23,8 @@ function LoginForm() {
         <FormTitle>로그인</FormTitle>
         <FormWrapper>
           <FormRow>
-            <FormLabelText>메일주소</FormLabelText>
-            <FormInput type="email" id="email" name="email" />
+            <FormLabelText>아이디</FormLabelText>
+            <FormInput type="text" id="userId" name="userId" />
           </FormRow>
 
           <FormRow>

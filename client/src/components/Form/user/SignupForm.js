@@ -28,20 +28,16 @@ function Form() {
             <FormInput type="email" id="email" name="email" />
           </FormRow>
           <FormRow>
-            <FormLabelText>닉네임</FormLabelText>
-            <FormInput type="text" id="username" name="username" />
+            <FormLabelText>아이디</FormLabelText>
+            <FormInput type="text" id="id" name="userId" />
           </FormRow>
           <FormRow>
             <FormLabelText>비밀번호</FormLabelText>
             <FormInput type="password" id="password" name="password" />
           </FormRow>
           <FormRow>
-            <FormLabelText>비밀번호 확인</FormLabelText>
-            <FormInput
-              type="password"
-              id="confirm-password"
-              name="confirmPassword"
-            />
+            <FormLabelText>이름</FormLabelText>
+            <FormInput type="text" id="username" name="username" />
           </FormRow>
           <FormSubmitBtn type="submit" yellow big>
             회원 가입 하기
