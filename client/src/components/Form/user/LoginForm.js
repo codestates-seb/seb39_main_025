@@ -21,7 +21,7 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const [userInfo, setuserInfo] = useState({
-    email: '',
+    userId: '',
     password: '',
   });
 
