@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { signUpUser } from '../../../redux/userSlice';
 import Logo from '../../../assets/logo.png';
 
 import {
@@ -15,6 +18,30 @@ import {
 } from '../FormStyles';
 
 function Form() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [userInfo, setuserInfo] = useState({
+    email: '',
+    username: '',
+    password: '',
+  });
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setuserInfo((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const res = dispatch(signUpUser(userInfo)); // 리듀서 사용
+    console.log(res.data);
+    return navigate('/');
+  };
+
   return (
     <FormLayout>
       <FormContainer>
@@ -22,7 +49,7 @@ function Form() {
           <FormLogoImg src={Logo} alt="logo" />
         </FormLogoBox>
         <FormTitle>회원가입</FormTitle>
-        <FormWrapper>
+        <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
             <FormLabelText>메일주소</FormLabelText>
             <FormInput type="email" id="email" name="email" />
