@@ -1,6 +1,6 @@
 ---
 name: BE_TASK_ISSUE_TEMPLATE
-about: 프론트엔드 작업사항 이슈 발행시 사용하는 템플릿입니다.
+about: 백엔드 작업사항 이슈 발행시 사용하는 템플릿입니다.
 title: '[BE]'
 labels:
 assignees: ''
