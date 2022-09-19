@@ -1,14 +1,27 @@
 import styled from 'styled-components';
+import { Carousel, Card } from 'antd';
 
 export const SingleFeedImageLayout = styled.div`
-  width: 100%;
+  height: auto;
   height: 350px;
-  background-color: #ddd;
   position: relative;
+`;
+export const ImagCard = styled(Card)`
+  width: 100%;
+  height: 100%;
+`;
+export const CarouselWrapper = styled(Carousel)`
   & img {
     width: 100%;
-    height: 100%;
+    height: 350px;
     object-fit: cover;
+  }
+  .slick-dots li button {
+    background: #aaa;
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button {
+    background: #1d3561;
   }
 `;
 

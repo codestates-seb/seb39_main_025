@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '../../GlobalStyle';
 
-export const NavLayout = styled.nav`
+export const NavLayout = styled.div`
   width: 100%;
   height: ${({ navBig }) => (navBig ? '160px' : '100px')};
   background-color: #fff;
