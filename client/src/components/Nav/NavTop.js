@@ -41,10 +41,14 @@ function NavTop() {
         )}
       </NavIconBox>
       <NavButton>
-        <NavButtonLogin onClick={() => navigate('/login')}>
+        <NavButtonLogin onClick={() => navigate('/login')} type="button">
           login
         </NavButtonLogin>
-        <NavButtonRegister yellow onClick={() => navigate('/sign-up')}>
+        <NavButtonRegister
+          yellow
+          onClick={() => navigate('/sign-up')}
+          type="button"
+        >
           register
         </NavButtonRegister>
       </NavButton>

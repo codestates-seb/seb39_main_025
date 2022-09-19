@@ -19,7 +19,6 @@ export const Layout = styled.div`
   border: 1px solid black;
 
   @media screen and (max-width: 479px) {
-    padding: 0 30px;
     border: 3px solid yellow;
   }
 `;
