@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { loginUser } from '../../../redux/userSlice';
 import Logo from '../../../assets/logo.png';
 import {
@@ -21,7 +22,7 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const [userInfo, setuserInfo] = useState({
-    userId: '',
+    email: '',
     password: '',
   });
 
@@ -35,8 +36,20 @@ function LoginForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const res = await dispatch(loginUser(userInfo));
-    console.log(res);
+    axios
+      .post('https://85a2-49-169-198-207.jp.ngrok.io/login', userInfo)
+      .then((response) => {
+        const jwtToken = response.headers.authorization;
+        localStorage.setItem('authorization', jwtToken);
+
+        axios.defaults.headers.common['Authorization'] = `Bearer ${jwtToken}`;
+        console.log('ok');
+        navigate(`/`);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+
     return navigate('/');
   };
 
@@ -49,8 +62,8 @@ function LoginForm() {
         <FormTitle>로그인</FormTitle>
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
-            <FormLabelText>아이디</FormLabelText>
-            <FormInput type="text" id="userId" name="userId" />
+            <FormLabelText>이메일</FormLabelText>
+            <FormInput type="email" id="email" name="email" />
           </FormRow>
 
           <FormRow>
