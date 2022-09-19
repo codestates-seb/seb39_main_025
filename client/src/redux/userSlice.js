@@ -31,10 +31,10 @@ export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
     .catch((err) => console.log(`${err}`));
 });
 
-export const logoutUser = createAsyncThunk('logoutuser', async () => {
-  const res = await axios.get('/api/users/logout');
-  return res.data;
-});
+// export const logoutUser = createAsyncThunk('logoutuser', async () => {
+//   const res = await axios.get('/api/users/logout');
+//   return res.data;
+// });
 
 const userSlice = createSlice({
   name: 'user',
@@ -45,10 +45,6 @@ const userSlice = createSlice({
     },
     addUser: (state) => {
       state.user = localStorage.getItem('user');
-    },
-    logout: (state) => {
-      state.token = null;
-      localStorage.clear();
     },
   },
   extraReducers: {
@@ -89,21 +85,8 @@ const userSlice = createSlice({
   [loginUser.rejected]: (state) => {
     state.loading = true;
   },
-  // * 로그아웃 요청의 응답에 따른 예외처리
-  [logoutUser.pending]: (state) => {
-    state.loading = true;
-  },
-  [logoutUser.fulfilled]: (state, error) => {
-    state.loading = false;
-    if (error) {
-      state.error = error;
-    }
-  },
-  [logoutUser.rejected]: (state) => {
-    state.loading = true;
-  },
 });
 
-export const { addToken, addUser, logout } = userSlice.actions;
+export const { addToken, addUser } = userSlice.actions;
 
 export default userSlice.reducer;
