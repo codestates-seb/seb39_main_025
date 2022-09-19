@@ -62,6 +62,7 @@
     "react/jsx-props-no-spreading": ["warn"],
     "comma-dangle": ["error"],
     "no-console": ["off"],
-    "react-hooks/exhaustive-deps": ["warn"]
+    "react-hooks/exhaustive-deps": ["warn"],
+    "dot-notation": ["off"]
   }
 }

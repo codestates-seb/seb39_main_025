@@ -11,15 +11,24 @@ const initialState = {
   error: '',
   msg: '',
 };
+axios.defaults.withCredentials = true;
 
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
-  const res = await axios.post('/api/users/signup', userInfo);
+  const res = await axios.post(
+    'https://85a2-49-169-198-207.jp.ngrok.io/api/users/signup',
+    userInfo,
+  );
   return res.data;
 });
 
-export const loginUser = createAsyncThunk('loginuser', async (userInfo) => {
-  const res = await axios.post('/api/users/signin', userInfo);
-  return res.data;
+export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
+  axios
+    .post('https://85a2-49-169-198-207.jp.ngrok.io/login', userInfo)
+    .then((response) => {
+      const accessToken = response.headers.authorization;
+      localStorage.setItem('authorization', accessToken);
+    })
+    .catch((err) => console.log(`${err}`));
 });
 
 export const logoutUser = createAsyncThunk('logoutuser', async () => {
