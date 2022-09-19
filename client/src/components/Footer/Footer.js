@@ -16,33 +16,32 @@ function Footer() {
       </FooterLogoBox>
       <FooterTextContainer>
         <FooterLeftText>
-          <ul>
-            <li>STAY,BUDDY Co., Ltd.</li>
-            <li>Tel.1544-7979ㅣEmail : contact@staybuddy.com</li>
-            <li>Business License No : 123-45-678910 [사업자정보확인]</li>
-            <li>E-Commerce Registration : 2022-Seoul Gangnam-1234</li>
-            <li>
-              Address : 200th floor, 17, Teheran-ro 44-gil, Gangnam-gu, Seoul,
-              Republic of Korea
-            </li>
-          </ul>
+          <p>STAY,BUDDY Co., Ltd.</p>
+          <p>Tel.1544-7979ㅣEmail : contact@staybuddy.com</p>
+          <p>Business License No : 123-45-678910 [사업자정보확인]</p>
+          <p>E-Commerce Registration : 2022-Seoul Gangnam-1234</p>
+          <p>
+            Address : 200th floor, 17, Teheran-ro 44-gil, Gangnam-gu, Seoul,
+            Republic of Korea
+          </p>
         </FooterLeftText>
         <FooterRightText>
-          <ul>
-            <li>POLICY</li>
-            <li>이용약관</li>
-            <li>개인정보처리방침</li>
-            <li>이용안내</li>
-            <li>반품,환불규정</li>
-            <li>제휴입점문의 </li>
-          </ul>
-          <ul>
-            <li>C/S CENTER</li>
-            <li>MON-FRIㅣ09:30 - 17:00</li>
-            <li>LUNCH ㅣ 12:30 - 13:30</li>
-            <li>SAT, SUN, HOLIDAY OFF</li>
-            <li>카카오톡 플러스친구 @스테이 버디</li>
-          </ul>
+          <div>
+            <p>POLICY</p>
+            <p>이용약관</p>
+            <p>개인정보처리방침</p>
+            <p>이용안내</p>
+            <p>반품,환불규정</p>
+            <p>제휴입점문의 </p>
+          </div>
+
+          <div>
+            <p>C/S CENTER</p>
+            <p>MON-FRIㅣ09:30 - 17:00</p>
+            <p>LUNCH ㅣ 12:30 - 13:30</p>
+            <p>SAT, SUN, HOLIDAY OFF</p>
+            <p>카카오톡 플러스친구 @스테이 버디</p>
+          </div>
         </FooterRightText>
       </FooterTextContainer>
     </FooterLayout>
