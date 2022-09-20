@@ -14,7 +14,7 @@ import ChatIcon from '../../../assets/comment.png';
 import SingleFeedReplies from './SingleFeedReply/SingleFeedReplies';
 import SingleFeedReply from './SingleFeedReply/SingleFeedReply';
 
-function SigleFeedContent() {
+function SigleFeedContent({ item }) {
   const [more, setMore] = useState(false);
   const [rpShow, setrpShow] = useState(false);
   const [like, setLike] = useState(false);
@@ -46,11 +46,8 @@ function SigleFeedContent() {
         <Likes> 100 likes</Likes>
       </ContentIcons>
       <UserContent>
-        <UserId>userName</UserId>
-        <UserComment className={more ? 'more' : ''}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt
-        </UserComment>
+        <UserId>{item.username}</UserId>
+        <UserComment className={more ? 'more' : ''}>{item.memo}</UserComment>
         <button type="button" onClick={moreButton}>
           more
         </button>

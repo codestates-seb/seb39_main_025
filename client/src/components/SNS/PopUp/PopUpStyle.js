@@ -13,22 +13,24 @@ export const AlarmLayOut = styled.div`
     margin: 5px;
     height: 40px;
   }
-  & span {
-    margin-left: 5px;
-    font-size: 14px;
-  }
 
   & .ballon {
-    /* display: none; */
+    & span {
+      font-size: 11px;
+      margin-left: 5px;
+    }
     position: absolute;
     width: 100px;
     box-sizing: border-box;
     padding: 5px;
-    left: -40px;
+    left: -30px;
     bottom: -40px;
     background: #efac59;
     color: white;
     border-radius: 5px;
+    @media screen and (max-width: 479px) {
+      width: 90px;
+    }
   }
   & .ballon:after {
     border-top: 0px solid transparent;
@@ -42,7 +44,9 @@ export const AlarmLayOut = styled.div`
   }
 `;
 
-export const AlarmPopupLayout = styled.div``;
+export const AlarmPopupLayout = styled.div`
+  font-size: 11px;
+`;
 
 // 모바일 디테일 팝업 창
 export const MobileDetailLayOut = styled(Dropdown)`

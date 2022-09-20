@@ -3,19 +3,28 @@ import { Carousel, Card } from 'antd';
 
 export const SingleFeedImageLayout = styled.div`
   height: auto;
-  height: 350px;
   position: relative;
 `;
 export const ImagCard = styled(Card)`
-  width: 100%;
-  height: 100%;
+  & .ant-card-body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  & .dnobrT .slick-slide {
+    /* z-index: -1; */
+  }
 `;
 export const CarouselWrapper = styled(Carousel)`
   & img {
     width: 100%;
-    height: 350px;
+    height: 400px;
     object-fit: cover;
   }
+  .slick-dots {
+    z-index: 0;
+  }
+
   .slick-dots li button {
     background: #aaa;
     opacity: 1;
