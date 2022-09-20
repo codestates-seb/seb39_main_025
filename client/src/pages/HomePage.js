@@ -1,12 +1,12 @@
 import React from 'react';
 import SingleFeed from '../components/SNS/SingleFeed/SingleFeed';
-import Aside from '../components/Aside/Aside';
+import AButtons from '../components/Aside/AButtons';
 
 function HomePage() {
   return (
     <div>
       <SingleFeed />
-      <Aside />
+      <AButtons />
     </div>
   );
 }

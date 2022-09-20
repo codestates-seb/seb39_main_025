@@ -8,7 +8,7 @@ import UploadIcon from '../../../assets/upload-file.png';
 import LeftArrow from '../../../assets/left-arrow.png';
 import TempProfilePic from '../../../assets/paw-active.png';
 
-function SnsUploadForm() {
+function SnsUploadForm({ isOpen, setIsOpen }) {
   const navigate = useNavigate();
 
   const defaultFileName = 'Drag Photos and Videos Here';
@@ -67,7 +67,6 @@ function SnsUploadForm() {
         setPreviews(null);
       }, 3000);
       console.log(res);
-
       navigate('/');
     } catch (err) {
       toast.error(err.message);
@@ -88,10 +87,10 @@ function SnsUploadForm() {
   ));
 
   return (
-    <S.FormLayout>
+    <S.ModalBackDrop isOpen={isOpen}>
       <S.FormContainer>
         <S.FormHeader>
-          <S.HeaderReturnBtnBox>
+          <S.HeaderReturnBtnBox onClick={() => setIsOpen(!isOpen)}>
             <img src={LeftArrow} alt="cancel upload and show previous page" />
           </S.HeaderReturnBtnBox>
           <h1>Create New Post</h1>
@@ -124,7 +123,7 @@ function SnsUploadForm() {
                 accept="image/*"
                 onChange={imgSelectHandler}
               />
-              <S.FormSubmitBtn type="submit">업로드</S.FormSubmitBtn>
+              <S.UploadAreaBtn type="button">업로드</S.UploadAreaBtn>
             </S.FormDropperBox>
           </S.FormLeftBox>
           <S.FormRightBox>
@@ -147,7 +146,7 @@ function SnsUploadForm() {
           </S.FormRightBox>
         </S.FormWrapper>
       </S.FormContainer>
-    </S.FormLayout>
+    </S.ModalBackDrop>
   );
 }
 
