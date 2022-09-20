@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -7,27 +8,54 @@ import UploadIcon from '../../../assets/upload-file.png';
 import LeftArrow from '../../../assets/left-arrow.png';
 import TempProfilePic from '../../../assets/paw-active.png';
 
-function SnsUploadForm() {
+function SnsUploadForm({ isOpen, setIsOpen }) {
   const navigate = useNavigate();
 
   const defaultFileName = 'Drag Photos and Videos Here';
-  const [file, setFile] = useState(null);
-  const [imgSrc, setImgSrc] = useState(null);
+  const [files, setFiles] = useState(null);
+  const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
+  const [textMsg, setTextMsg] = useState('');
 
-  const imgSelectHandler = (e) => {
-    const imageFile = e.target.files[0];
-    setFile(imageFile);
-    setFileName(imageFile.name);
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(imageFile);
-    fileReader.onload = (event) => setImgSrc(event.target.result);
+  const imgSelectHandler = async (e) => {
+    const imageFiles = e.target.files;
+    setFiles(imageFiles);
+    // * Refactor
+
+    const imagePreviews = await Promise.all(
+      [...imageFiles].map(async (imageFile) => {
+        return new Promise((resolve, reject) => {
+          try {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(imageFile);
+            fileReader.onload = (event) =>
+              resolve({
+                imgSrc: event.target.result,
+                fileName: imageFile.name,
+              });
+          } catch (err) {
+            reject(err);
+          }
+        });
+      }),
+    );
+    setPreviews(imagePreviews);
   };
+
+  // * 게시글 텍스트 인풋값 onChange 핸들러
+  const handleTextInput = (e) => {
+    setTextMsg(e.target.value);
+  };
+
+  // * 게시글 업로드버튼 onSubmit 핸들러
   const onSubmit = async (e) => {
     e.preventDefault();
     // 요청 본문에서 파일 형식을 form-data로 하므로 append only. -> .append(key, value)
     const formData = new FormData();
-    formData.append('image', file);
+    // loop 돌면서 formData에 이미지 여러장을 한장씩 append
+    for (const file of files) formData.append('image', file);
+    formData.append('text', textMsg);
+    console.log(formData);
 
     try {
       const res = await axios.post('/api/posts', formData, {
@@ -36,36 +64,52 @@ function SnsUploadForm() {
       toast.success('업로드 완료');
       setTimeout(() => {
         setFileName(defaultFileName);
-        setImgSrc(null);
+        setPreviews(null);
       }, 3000);
       console.log(res);
       navigate('/');
     } catch (err) {
       toast.error(err.message);
       setFileName(defaultFileName);
-      setImgSrc(null);
+      setPreviews(null);
     }
   };
 
+  const previewImages = previews.map((preview) => (
+    <div>
+      <img
+        src={preview.imgSrc}
+        alt=""
+        className={preview.imgSrc && 'show'}
+        key={preview.imgSrc}
+      />
+    </div>
+  ));
+
   return (
-    <S.FormLayout>
+    <S.ModalBackDrop isOpen={isOpen}>
       <S.FormContainer>
         <S.FormHeader>
-          <S.HeaderReturnBtnBox>
+          <S.HeaderReturnBtnBox onClick={() => setIsOpen(!isOpen)}>
             <img src={LeftArrow} alt="cancel upload and show previous page" />
           </S.HeaderReturnBtnBox>
           <h1>Create New Post</h1>
-          <S.HeaderShareBtn type="button">SHARE</S.HeaderShareBtn>
+          <S.HeaderShareBtn type="button" onClick={onSubmit}>
+            SHARE
+          </S.HeaderShareBtn>
         </S.FormHeader>
-        <S.FormWrapper action="" onSubmit={onSubmit}>
+        <S.FormWrapper
+          action=""
+          onSubmit={onSubmit}
+          enctype="multipart/form-data"
+        >
           <S.FormLeftBox>
-            <S.FormPrevImgBox>
-              <img
-                src={imgSrc}
-                alt="upload-preview"
-                className={imgSrc && 'show'}
-              />
-            </S.FormPrevImgBox>
+            <S.ImagCard
+              className={previewImages.length !== 0 ? 'show' : null}
+              cover={
+                <S.CarouselWrapper autoplay>{previewImages}</S.CarouselWrapper>
+              }
+            />
 
             <S.FormDropperBox>
               <S.FileDropIconBox>
@@ -75,11 +119,12 @@ function SnsUploadForm() {
               <input
                 id="image"
                 type="file"
+                multiple
                 accept="image/*"
                 onChange={imgSelectHandler}
               />
+              <S.UploadAreaBtn type="button">업로드</S.UploadAreaBtn>
             </S.FormDropperBox>
-            <S.FormSubmitBtn type="submit">업로드</S.FormSubmitBtn>
           </S.FormLeftBox>
           <S.FormRightBox>
             <S.FormRightUserInfo>
@@ -87,7 +132,10 @@ function SnsUploadForm() {
               <S.UserName>username</S.UserName>
             </S.FormRightUserInfo>
             <S.FormTextInputBox>
-              <textarea placeholder="내용을 적어 주세요..." />
+              <textarea
+                onChange={handleTextInput}
+                placeholder="내용을 적어 주세요..."
+              />
             </S.FormTextInputBox>
             <S.FormRightMidBox>
               <span>위치</span>
@@ -98,7 +146,7 @@ function SnsUploadForm() {
           </S.FormRightBox>
         </S.FormWrapper>
       </S.FormContainer>
-    </S.FormLayout>
+    </S.ModalBackDrop>
   );
 }
 
