@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Carousel, Card } from 'antd';
 import { Button } from '../../../GlobalStyle';
 
 export const FormLayout = styled.div`
@@ -23,12 +24,15 @@ export const FormContainer = styled.div`
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   @media screen and (max-width: 479px) {
     width: 100%;
     margin-top: 120px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    position: fixed;
+    bottom: 0;
   }
 `;
 
@@ -69,28 +73,105 @@ export const HeaderShareBtn = styled.button`
   font-weight: 500;
 `;
 
-export const FormPrevImgBox = styled.div`
+// 미리보기 이미지 영역 박스
+// export const FormPrevImgBox = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 10px;
+//   position: absolute;
+
+//   > img {
+//     border-radius: 10px;
+//     opacity: 0;
+
+//     &.show {
+//       opacity: 1;
+//       width: 50%;
+//       transition: 0.5s;
+//     }
+//   }
+//   @media screen and (max-width: 479px) {
+//   }
+// `;
+
+export const SingleFeedImageLayout = styled.div`
+  width: auto;
+  height: 350px;
+  position: relative;
+`;
+export const ImagCard = styled(Card)`
   width: 100%;
-  height: max-content;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    z-index: 2;
+  }
+`;
+export const CarouselWrapper = styled(Carousel)`
+  & img {
+    width: 100%;
+    height: 568px;
+    object-fit: cover;
+
+    @media screen and (max-width: 479px) {
+      height: 355px;
+    }
+  }
+  .slick-dots li button {
+    background: #aaa;
+    opacity: 1;
+  }
+  .slick-dots li.slick-active button {
+    background: #1d3561;
+  }
+`;
+
+export const SingleFeedImageCounter = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 45px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  position: absolute;
-
-  img {
-    border-radius: 10px;
-    width: 0%;
-    opacity: 0;
-    &.show {
-      opacity: 1;
-      width: 50%;
-      transition: 0.5s;
-    }
-  }
-  @media screen and (max-width: 479px) {
-  }
 `;
+
+// export const PrevCarousel = styled(Carousel)`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: absolute;
+//   z-index: 1;
+
+//   & img {
+//     width: 100%;
+//     height: 350px;
+//     object-fit: cover;
+//     opacity: 0;
+
+//     &.show {
+//       opacity: 1;
+//       transition: 0.5s;
+//     }
+//   }
+//   .slick-dots li button {
+//     background: #aaa;
+//     opacity: 1;
+//   }
+//   .slick-dots li.slick-active button {
+//     background: #1d3561;
+//   }
+// `;
 
 export const FormLogoImg = styled.img`
   width: 100px;
@@ -121,6 +202,8 @@ export const FormWrapper = styled.form`
 `;
 
 export const FormLeftBox = styled.div`
+  position: relative;
+
   border-top: 1px solid #efac59;
   border-left: 1px solid #efac59;
   border-right: 1px solid #efac59;
@@ -222,6 +305,8 @@ export const FormDropperBox = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
+
   :hover {
     background-color: #bebebe;
     transition: 0.5s;

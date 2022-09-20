@@ -5,7 +5,6 @@ import Aside from '../components/Aside/Aside';
 function HomePage() {
   return (
     <div>
-      HomePage
       <SingleFeed />
       <Aside />
     </div>
