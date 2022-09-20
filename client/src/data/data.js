@@ -1,0 +1,87 @@
+export const aboutdata = {
+  data: [
+    {
+      id: '1',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1592924728350-f7d4fd5d1655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      username: '쿵이',
+      followers: '100 M',
+      post: '50',
+      dogbedge: 'assets/pet-bedge.png',
+      shelterbedge: 'assets/shelter-bedge.png',
+      memo: '저는 산책과 치킨을 사랑하는 유기견 멍스타 "쿵이" 입니당 :) 팔로우 해 주세멍 ❤️',
+    },
+    {
+      id: '2',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+      username: '춘식이',
+    },
+    {
+      id: '3',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+      username: '현호',
+    },
+    {
+      id: '4',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+      username: '용빈',
+    },
+    {
+      id: '5',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+      username: '지환',
+    },
+    {
+      id: '6',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHB1cHB5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+      username: '슬기',
+    },
+    {
+      id: '7',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
+      username: '줄리아',
+    },
+    {
+      id: '8',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
+      username: '제니',
+    },
+    {
+      id: '9',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
+      username: '한소희',
+    },
+    {
+      id: '10',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+      username: '체다',
+    },
+    {
+      id: '11',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+      username: '블루',
+    },
+    {
+      id: '12',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      username: '식빵',
+    },
+    {
+      id: '13',
+      class: 'item item--medium',
+      src: 'https://images.unsplash.com/photo-1593134257782-e89567b7718a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      username: '손석구',
+    },
+  ],
+};

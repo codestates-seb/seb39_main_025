@@ -16,6 +16,18 @@ export const SingleFeedReplyInput = styled.input`
   padding: 5px;
 `;
 
+export const SingleFeedReplyTimeAndButton = styled.div`
+  display: flex;
+  justify-content: space-between;
+  & button {
+    border: none;
+    background-color: transparent;
+    font-size: 11px;
+    color: #efac59;
+    cursor: pointer;
+  }
+`;
+
 export const SingleFeedReplyCreated = styled.div`
   margin-top: 10px;
   font-size: 9px;

@@ -8,12 +8,21 @@ export const SingleFeedTopBarLayout = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  & button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 5px;
+    height: 40px;
+  }
 `;
 
 export const SingleFeedUser = styled.div`
   display: flex;
   align-items: center;
   color: #000;
+  cursor: pointer;
 `;
 export const SigleFeedUserProfile = styled.img`
   border-radius: 100%;
@@ -21,9 +30,4 @@ export const SigleFeedUserProfile = styled.img`
   height: 40px;
   background-color: #aaa;
   margin-right: 10px;
-`;
-
-export const More = styled.img`
-  width: 14px;
-  height: 3px;
 `;
