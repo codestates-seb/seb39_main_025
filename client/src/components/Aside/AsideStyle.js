@@ -1,79 +1,31 @@
 import styled from 'styled-components';
 
-export const AsideLayout = styled.div`
-  position: fixed;
-  right: 0;
-  background-color: #fff;
-  width: 300px;
-  height: 100vh;
-
-  @media screen and (max-width: 479px) {
-    display: none;
-  }
-`;
+/*
+Aside 컴포넌트 전체에서 스타일이 엄청 복잡하게 많이 들어갈 것 같지 않을것 같아,
+우선 AsideStyles.js에서 Aside 안의 여러 컴포넌트들의 스타일들을 정의하도록
+짜는 방식으로 생각하고 버튼에 대한 스타일만 정의해 두었습니다.
+추후 슬기님께서 편한 방식으로 바꾸시고 싶다면 내용 공유 해주세요:)
+*/
 
 export const AsideTopBtnBox = styled.div`
-  width: 100%;
+  width: max-content;
   height: 50px;
-
-  button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-`;
-
-export const ModalContainer = styled.div`
-  // TODO : Modal을 구현하는데 전체적으로 필요한 CSS를 구현합니다.
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-`;
-
-export const ModalBackdrop = styled.div`
-  // TODO : Modal이 떴을 때의 배경을 깔아주는 CSS를 구현합니다.
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
-export const ModalBtn = styled.button`
-  background-color: #4000c7;
-  text-decoration: none;
+export const AsideTopButton = styled.button`
   border: none;
-  padding: 20px;
-  color: white;
-  border-radius: 30px;
-  cursor: grab;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px;
 `;
-
-export const ModalView = styled.div.attrs((props) => ({
-  // attrs 메소드를 이용해서 아래와 같이 div 엘리먼트에 속성을 추가할 수 있습니다.
-  // * 모달창에서 attrs 메서드 사용하는 이유: 스크린 리더 상에서 태그 설명 등 웹 접근성
-  role: 'dialog', // dialog -> 모달창임을 나타내는 role
-}))`
-  // TODO : Modal창 CSS를 구현합니다.
-  position: relative; // 추가
-  width: 130px; // 추가
-  height: 100px; // 추가
-  background-color: #fff; // 추가
-  text-align: center; // 추가
-  border-radius: 7px; // 추가
-  font-size: 14px; // 추가
-
-  > .closingBtn {
-    position: absolute; // 추가
-    top: 1px; // 추가
-    right: 1px; // 추가
-    border: none; // 추가
-    background-color: transparent; // 추가
-    cursor: pointer; // 추가
-  }
+export const UserProfile = styled.img`
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  background-color: #aaa;
+  margin-right: 10px;
 `;
