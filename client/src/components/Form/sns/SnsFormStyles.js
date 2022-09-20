@@ -8,7 +8,6 @@ import { Button } from '../../../GlobalStyle';
 export const ModalBackDrop = styled(ReactModal)`
   /* sns 업로드 폼 모달 컴포넌트의 최상위 요소로, 모달창이 
 화면 정 가운데 오도록 flex 부모가 되며 뒷배경 블러 처리하는 레이아웃입니다. */
-
   position: absolute;
   width: 100%;
   height: 100%;
@@ -25,7 +24,6 @@ export const ModalBackDrop = styled(ReactModal)`
 // * 모달창의 컨테이너
 export const FormContainer = styled.div`
   /* 입력폼 컨텐츠를 감싸는 컨테이너입니다. */
-
   color: black;
   border-radius: 20px;
   border: 1px solid #1d3561;

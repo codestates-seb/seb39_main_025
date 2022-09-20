@@ -9,11 +9,13 @@ function UserFeed() {
   const items = aboutdata.data[0];
 
   return (
-    <UserFeedLayout>
+    <>
       <MobileUserFeedTopBar items={items} />
-      <UserFeedProfile items={items} />
-      <UserFeedGallery />
-    </UserFeedLayout>
+      <UserFeedLayout>
+        <UserFeedProfile items={items} />
+        <UserFeedGallery />
+      </UserFeedLayout>
+    </>
   );
 }
 

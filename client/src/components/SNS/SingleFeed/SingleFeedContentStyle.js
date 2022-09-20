@@ -14,7 +14,7 @@ export const ContentIcons = styled.div`
 export const IconButton = styled.div`
   display: flex;
   & button {
-    z-index: 1;
+    /* z-index: 1; */
     cursor: pointer;
     margin-right: 5px;
     border: none;
@@ -41,8 +41,9 @@ export const UserContent = styled.div`
 `;
 
 export const UserId = styled.span`
-  font-weight: 500;
+  font-weight: 700;
   margin-right: 10px;
+  width: 50px;
 `;
 
 export const UserComment = styled.p`

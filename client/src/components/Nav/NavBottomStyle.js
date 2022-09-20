@@ -11,7 +11,10 @@ export const NavBottomLayout = styled.nav`
 export const NavBottomUl = styled.ul`
   height: 100%;
   display: flex;
+  box-sizing: border-box;
+  overflow: hidden;
   align-items: center;
+  justify-content: center;
   font-size: 20px;
 
   @media screen and (max-width: 479px) {
@@ -29,12 +32,13 @@ export const NavBottomUl = styled.ul`
   }
 `;
 export const NavBottomLi = styled.li`
-  width: 100%;
+  width: 200px;
   height: 100%;
   box-sizing: border-box;
-  padding: 50px 60px;
-
+  text-align: center;
+  padding: 50px 0px;
   @media screen and (max-width: 479px) {
-    padding: 30px 35px;
+    width: 110px;
+    padding: 30px 0px;
   }
 `;

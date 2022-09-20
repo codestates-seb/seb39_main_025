@@ -5,14 +5,14 @@ import { Container, Button } from '../../../GlobalStyle';
 // 개별 소셜 페이지 글로벌 container
 export const UserFeedLayout = styled(Container)`
   color: #000;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 30px 40px;
   width: 100%;
   height: 100%;
   margin: auto;
   overflow: hidden;
   @media screen and (max-width: 479px) {
-    padding: 15px 15px;
+    padding: 10px 10px;
   }
 `;
 
@@ -20,11 +20,12 @@ export const UserFeedLayout = styled(Container)`
 export const UserFeedTopBarLayout = styled.div`
   display: none;
   width: 100%;
-  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 0 10px;
   @media screen and (max-width: 479px) {
     display: block;
     width: 100%;
-    background-color: #fff;
+
     height: 45px;
     display: flex;
     justify-content: space-between;
@@ -157,6 +158,7 @@ export const GalleryCard = styled(Card)`
   & .card-grid {
     box-sizing: border-box;
     width: 30%;
+    height: 30vw;
     text-align: center;
     overflow: hidden;
     margin: 1.6%;
@@ -167,10 +169,11 @@ export const GalleryCard = styled(Card)`
   }
   & .ant-card-grid {
     padding: 0;
-    height: 30vw;
     @media screen and (max-width: 479px) {
       height: 33.333vw;
+      height: 30vw;
       margin: 0;
+      border: 1.5px solid #fff;
     }
     & img {
       width: 100%;
