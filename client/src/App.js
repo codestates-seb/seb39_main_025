@@ -11,6 +11,7 @@ import AlertPage from './pages/AlertPage';
 import StrayPetPage from './pages/StrayPetPage';
 import MyPage from './pages/MyPage';
 import SnsUploadPage from './pages/SnsUploadPage';
+import UserFeedPage from './pages/UserFeedPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
+          <Route path="/sns-user" element={<UserFeedPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />
           <Route path="/alert" element={<AlertPage />} />
           <Route path="/stray-pet" element={<StrayPetPage />} />

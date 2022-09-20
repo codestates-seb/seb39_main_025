@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
 export const Layout = styled.div`
   width: 100%;
   height: 100vh;
+  overflow: scroll;
   max-width: 1330px;
   margin: 0 auto;
   background-color: #e5e5e5;
@@ -24,9 +25,9 @@ export const Layout = styled.div`
 `;
 
 export const Container = styled.div`
-  color: white;
+  color: black;
   padding: 0 160px;
-  background-color: #414141;
+  background-color: #fff;
 
   @media screen and (max-width: 479px) {
     padding: 0;
