@@ -15,7 +15,7 @@ axios.defaults.withCredentials = true;
 
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
   const res = await axios.post(
-    'http://ec2-3-37-180-28.ap-northeast-2.compute.amazonaws.com:8080/api/users/signup',
+    'https://dec4-49-169-198-207.jp.ngrok.io/api/users/signup',
     userInfo,
   );
   return res.data;
@@ -23,10 +23,7 @@ export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
 
 export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
   axios
-    .post(
-      'http://ec2-3-37-180-28.ap-northeast-2.compute.amazonaws.com:8080/login',
-      userInfo,
-    )
+    .post('https://dec4-49-169-198-207.jp.ngrok.io/login', userInfo)
     .then((response) => {
       const accessToken = response.headers.authorization;
       localStorage.setItem('authorization', accessToken);

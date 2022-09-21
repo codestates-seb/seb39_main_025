@@ -22,12 +22,13 @@ export const ModalContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
   /* background-color: #0005;
   background-blend-mode: darken; */
 
   img {
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -90,7 +91,7 @@ export const ModalCloseBtn = styled.button`
   right: 70px;
   width: 50px;
   height: 50px;
-  margin-left: 540px;
+  margin-left: 470px;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -119,7 +120,7 @@ export const DmInputForm = styled.form`
 `;
 
 export const Input = styled.input`
-  width: 600px;
+  width: 540px;
   height: 60px;
   background-color: transparent;
   border: 2px solid #e5e5e5;

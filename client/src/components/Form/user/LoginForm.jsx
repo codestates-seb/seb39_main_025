@@ -39,10 +39,7 @@ function LoginForm() {
     //
     axios.defaults.withCredentials = true;
     axios
-      .post(
-        `http://ec2-3-37-180-28.ap-northeast-2.compute.amazonaws.com:8080/login`,
-        userInfo,
-      )
+      .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
       .then((response) => {
         console.log(response);
         console.log(response.headers.authorization);
