@@ -14,6 +14,9 @@ export const Layout = styled.div`
   width: 100%;
   height: 100vh;
   overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   max-width: 1330px;
   margin: 0 auto;
   background-color: #e5e5e5;

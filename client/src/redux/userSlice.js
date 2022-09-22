@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
   email: '',
-  userId: '',
+  memberId: '',
   password: '',
   username: '',
   token: '',
@@ -76,6 +76,18 @@ const userSlice = createSlice({
       state.msg = msg;
       state.token = token;
       state.user = user;
+      // axios
+      // .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
+      // .then((response) => {
+      //   console.log(response);
+      //   console.log(response.headers.authorization);
+      //   const accessToken = response.headers.authorization;
+      //   console.log(accessToken);
+      //   localStorage.setItem('accessToken', accessToken);
+      //   console.log(localStorage.accessToken);
+      //   const loginStatus = true;
+      //   localStorage.setItem('loginStatus', loginStatus);
+      //   axios.defaults.headers.common['Authorization'] = `${accessToken}`;
 
       localStorage.setItem('msg', msg);
       localStorage.setItem('user', JSON.stringify(user));

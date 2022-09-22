@@ -36,8 +36,7 @@ function LoginForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    //
-    axios.defaults.withCredentials = true;
+    // TODO: 일반 axios 요청 대신 리덕스 썽크 사용 방식으로 개선
     axios
       .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
       .then((response) => {
