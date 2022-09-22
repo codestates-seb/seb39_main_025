@@ -16,7 +16,7 @@ export const SingleFeedReplyInput = styled.input`
   padding: 5px;
 `;
 
-export const SingleFeedReplyTimeAndButton = styled.div`
+export const SingleFeedReplyTimeAndButton = styled.span`
   display: flex;
   justify-content: space-between;
   & button {
@@ -41,8 +41,7 @@ export const SingleFeedReplyLayout = styled.div`
 `;
 export const ReplyBox = styled.div`
   widows: 90%;
-  display: flex;
-  align-items: center;
+
   font-size: 13px;
   & span {
     font-weight: 600;
@@ -59,7 +58,7 @@ export const ReplyUserProfile = styled.img`
 
 export const ReplyContent = styled.div`
   display: flex;
-  flex-direction: column;
+
   & button {
     width: 50px;
     margin-bottom: 10px;

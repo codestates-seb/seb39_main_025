@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+// import { useParams } from 'react-router-dom';
 import {
   SingleFeedReplyLayout,
   ReplyBox,
@@ -7,59 +10,87 @@ import {
 } from './SingleReedReplyStyle';
 
 function SingleFeedReplies() {
+  // const param = useParams();
   const [input, setInput] = useState(false);
-
+  const [commentList, setCommentList] = useState([]);
+  const [reple, setReple] = useState('');
   const showInput = () => {
     setInput(!input);
   };
+  useEffect(() => {
+    const getComment = async () => {
+      const res = await axios.get(`http://localhost:3004/comments/${postId}`);
+      const data = await res.data;
+      setCommentList(data);
+    };
+    getComment();
+  }, []);
+
+  console.log(commentList);
+
+  const repleSubmitHandler = (e) => {
+    e.preventDefault();
+    const body = {
+      reply: reple,
+    };
+    axios.post(`http://localhost:3004/comments`, body);
+  };
+
   return (
     <SingleFeedReplyLayout>
       <ReplyBox>
-        <ReplyUserProfile
-          src="https://media.bunjang.co.kr/product/166788639_1_1634025108_w360.jpg"
-          alt="user profile"
-        />
-        <ReplyContent>
-          <p>
-            <span>userId</span>
-            Authorization헤더는 일반적으로 사용자 에이전트가 자격 증명 없이
-            보호된 리소스를 처음 요청한 후에 전송되지만 항상 그런 것은 아닙니다
-            . 서버 는 적어도 하나의 헤더를 포함하는 메시지로 응답합니다.{' '}
-          </p>
+        {commentList.map(({ comment, id }) => {
+          return (
+            <ReplyContent>
+              <ReplyUserProfile />
+              <div>
+                <img src=" " alt="" />
+              </div>
+              <div key={id}>
+                <span>userId</span>
+                {comment}
+              </div>
+              {!input ? (
+                <button
+                  type="button"
+                  className="reply-button"
+                  onClick={showInput}
+                >
+                  답글
+                </button>
+              ) : (
+                <div style={{ display: 'flex' }}>
+                  <button
+                    type="submit"
+                    className="reply-button"
+                    onClick={(showInput, (e) => repleSubmitHandler(e))}
+                  >
+                    전송
+                  </button>
+                  <button
+                    type="button"
+                    className="reply-cancel"
+                    onClick={showInput}
+                  >
+                    취소
+                  </button>
+                </div>
+              )}
 
-          {!input ? (
-            <button type="button" className="reply-button" onClick={showInput}>
-              답글
-            </button>
-          ) : (
-            <div style={{ display: 'flex' }}>
-              <button
-                type="button"
-                className="reply-button"
-                onClick={showInput}
-              >
-                전송
-              </button>
-              <button
-                type="button"
-                className="reply-cancel"
-                onClick={showInput}
-              >
-                취소
-              </button>
-            </div>
-          )}
-
-          {input ? (
-            <input
-              type="text"
-              className="reply-input"
-              placeholder="add reply"
-            />
-          ) : (
-            ''
-          )}
-        </ReplyContent>
+              {input ? (
+                <input
+                  type="text"
+                  className="reply-input"
+                  placeholder="add reply"
+                  value={reple}
+                  onChange={(e) => setReple(e.target.value)}
+                />
+              ) : (
+                ''
+              )}
+            </ReplyContent>
+          );
+        })}
       </ReplyBox>
     </SingleFeedReplyLayout>
   );

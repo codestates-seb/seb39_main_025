@@ -6,11 +6,49 @@
       "author": "typicode"
     }
   ],
+  "reply": [
+    {
+      "id": 1,
+      "comment": " "
+    }
+  ],
   "comments": [
     {
       "id": 1,
       "body": "some comment",
       "postId": 1
+    },
+    {
+      "body": "테스트 전송",
+      "id": 2
+    },
+    {
+      "body": "테스트 전송",
+      "id": 3
+    },
+    {
+      "comment": "왜 안되지?",
+      "id": 4
+    },
+    {
+      "comment": "",
+      "id": 5
+    },
+    {
+      "comment": "ㅁㄴㅇㄹㅁㄴㅇㄹ",
+      "id": 6
+    },
+    {
+      "comment": "헬로우",
+      "id": 7
+    },
+    {
+      "comment": "ㅁㄴㅇㄹㅁㄴㅇㄹ",
+      "id": 8
+    },
+    {
+      "comment": "ㅁㄴㄹㅁㄴㅇㄹ",
+      "id": 9
     }
   ],
   "sns": [
