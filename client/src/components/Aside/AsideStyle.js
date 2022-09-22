@@ -10,7 +10,6 @@ Aside 컴포넌트 전체에서 스타일이 엄청 복잡하게 많이 들어�
 export const AsideTopBtnBox = styled.div`
   width: max-content;
   height: 50px;
-  border: 1px solid black;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -21,6 +20,10 @@ export const AsideTopButton = styled.button`
   background-color: transparent;
   cursor: pointer;
   padding: 10px;
+  &.weekly-button img {
+    width: 40px;
+    height: 40px;
+  }
 `;
 export const UserProfile = styled.img`
   border-radius: 100%;
@@ -29,3 +32,5 @@ export const UserProfile = styled.img`
   background-color: #aaa;
   margin-right: 10px;
 `;
+
+export const SnsAsideLayout = styled.div``;

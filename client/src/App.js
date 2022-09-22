@@ -12,6 +12,7 @@ import StrayPetPage from './pages/StrayPetPage';
 import MyPage from './pages/MyPage';
 import SnsUploadPage from './pages/SnsUploadPage';
 import UserFeedPage from './pages/UserFeedPage';
+import WeeklyRankPage from './pages/WeeklyRankPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
           <Route path="/sns-user" element={<UserFeedPage />} />
+          <Route path="/sns-weekly" element={<WeeklyRankPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />
           <Route path="/alert" element={<AlertPage />} />
           <Route path="/stray-pet" element={<StrayPetPage />} />
