@@ -4,6 +4,7 @@ import SnsUploadForm from '../Form/sns/SnsUploadForm';
 import { AsideTopBtnBox, AsideTopButton, UserProfile } from './AsideStyle';
 import UpLoadBtnImage from '../../assets/upload.png';
 import HomeIconImage from '../../assets/main.png';
+import WeeklyIcon from '../../assets/weekly.png';
 
 function AButtons() {
   const navigate = useNavigate();
@@ -27,6 +28,15 @@ function AButtons() {
       <AsideTopButton type="button" onClick={() => navigate('/')}>
         <img src={HomeIconImage} alt="upload-button" />
       </AsideTopButton>
+
+      <AsideTopButton
+        className="weekly-button"
+        type="button"
+        onClick={() => navigate('/sns-weekly')}
+      >
+        <img src={WeeklyIcon} alt="upload-button" />
+      </AsideTopButton>
+
       <SnsUploadForm
         isOpen={isOpen}
         setIsOpen={setIsOpen}
