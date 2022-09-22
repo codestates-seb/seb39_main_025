@@ -4,34 +4,7 @@ import { FaRegPaperPlane } from 'react-icons/fa';
 import ProgressBar from '../../ProgressBar/ProgressBar';
 import * as S from './ModalStyle';
 
-function Modal({ isOpen, src, username, handleOpenModal }) {
-  const [persent, setPersent] = useState('0%');
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPersent('0%');
-    }, 1000);
-    setTimeout(() => {
-      setPersent('20%');
-    }, 2000);
-    setTimeout(() => {
-      setPersent('40%');
-    }, 3000);
-    setTimeout(() => {
-      setPersent('60%');
-    }, 4000);
-    setTimeout(() => {
-      setPersent('80%');
-    }, 5000);
-    setTimeout(() => {
-      setPersent('100%');
-    }, 6000);
-    // setTimeout(() => {
-    //   const tempCloser = window.location.reload();
-    //   return tempCloser;
-    // }, 6500);
-  }, []);
-
+function Modal({ persent, isOpen, setIsOpen, src, username, handleOpenModal }) {
   return (
     <S.ModalLayout isOpen={isOpen}>
       <S.ModalContainer src={src}>
