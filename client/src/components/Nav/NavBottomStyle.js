@@ -24,11 +24,13 @@ export const NavBottomUl = styled.ul`
   & .navlink {
     text-decoration: none;
     color: #fff;
-  }
-  .active {
-    transition: 0.5s;
-    background-color: #efac59;
-    color: #1d3561;
+
+    &.navlink.active {
+      transition: 0.5s;
+      background-color: #efac59;
+      color: #1d3561;
+      transition: 0.5s;
+    }
   }
 `;
 export const NavBottomLi = styled.li`

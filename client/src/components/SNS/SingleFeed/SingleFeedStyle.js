@@ -1,17 +1,26 @@
 import styled from 'styled-components';
 import { Container } from '../../../GlobalStyle';
 
-export const SingleFeedLayout = styled.div`
-  border-top: 1px solid #ddd;
-  max-width: 500px;
+export const SingleFeedContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  position: relative;
   margin: auto;
 `;
 
-export const SingleFeedContainer = styled(Container)`
-  margin: auto;
-  width: 100%;
-  position: relative;
+export const SingleFeedLayout = styled.div`
   @media screen and (max-width: 479px) {
     width: 100%;
   }
+`;
+
+export const SingleFeedInfinite = styled.div`
+  margin: auto;
+  border-top: 1px solid #ddd;
+  width: 100%;
+  max-width: 400px;
+  width: fit-content;
+  overflow: auto;
 `;

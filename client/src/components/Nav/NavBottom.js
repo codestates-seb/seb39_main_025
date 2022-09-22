@@ -5,10 +5,10 @@ import { NavBottomLayout, NavBottomUl, NavBottomLi } from './NavBottomStyle';
 function NavBottom() {
   const [asideMenuTap, setAsideMenuTap] = useState(0);
   const asideMenuList = [
-    { id: 1, name: 'SNS', element: '/sns' },
-    { id: 2, name: 'MYPAGE', element: '/mypage' },
-    { id: 3, name: 'ALERT', element: '/alert' },
-    { id: 4, name: 'STRAY PET', element: '/stray-pet' },
+    { id: 0, name: 'SNS', element: '/sns' },
+    { id: 1, name: 'MYPAGE', element: '/mypage' },
+    { id: 2, name: 'ALERT', element: '/alert' },
+    { id: 3, name: 'STRAY PET', element: '/stray-pet' },
   ];
   const asidemenuClickHandler = (id) => {
     setAsideMenuTap(id);
@@ -21,7 +21,7 @@ function NavBottom() {
             <NavLink to={element} className="navlink">
               <NavBottomLi
                 index={id}
-                className={asideMenuTap === id ? 'submenu active' : 'submenu'}
+                className={asideMenuTap === id ? 'active' : ' '}
                 onClick={() => asidemenuClickHandler(id)}
               >
                 {name}
