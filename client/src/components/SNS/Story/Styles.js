@@ -3,26 +3,36 @@ import styled from 'styled-components';
 // * 1. Stories 전체의 레이아웃
 export const StoriesLayout = styled.div`
   /* 1.1 Stories 컴포넌트 전체의 레이아웃 영역 */
+  width: max-content;
+  margin: auto;
   background-color: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  & .right {
+    margin-left: auto;
+  }
+  @media screen and (max-width: 479px) {
+    width: 100%;
+    max-width: 400px;
+  }
 `;
 
 export const StoryContainer = styled.section`
   /* 1.2 Stories 컨테이너 */
-  width: 700px;
   display: flex;
   column-gap: 10px;
   @media screen and (max-width: 479px) {
+    width: 100%;
   }
 `;
 
 export const StoryContents = styled.article`
   margin: 0 20px;
-  width: 600px;
-  height: 200px;
+  width: 580px;
+  height: 150px;
   display: flex;
-  justify-content: center;
   align-items: center;
 
   /* story가 5개 이상의 넘치는 부분 y축으로 스크롤처리 + 스크롤바 숨기기 */
@@ -31,6 +41,11 @@ export const StoryContents = styled.article`
     display: none;
   }
   column-gap: 20px;
+
+  @media screen and (max-width: 479px) {
+    width: 300px;
+    height: 100px;
+  }
 `;
 
 export const ArrowIconBtn = styled.button`
