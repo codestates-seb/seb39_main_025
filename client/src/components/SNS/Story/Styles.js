@@ -3,7 +3,6 @@ import styled from 'styled-components';
 // * 1. Stories 전체의 레이아웃
 export const StoriesLayout = styled.div`
   /* 1.1 Stories 컴포넌트 전체의 레이아웃 영역 */
-  width: 100vw;
   background-color: #fff;
   display: flex;
   justify-content: center;

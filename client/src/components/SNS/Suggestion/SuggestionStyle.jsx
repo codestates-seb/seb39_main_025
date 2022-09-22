@@ -4,6 +4,9 @@ export const InfiniteScrollLayout = styled.div`
   margin: 120px 0px;
   height: 300px;
   overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   border: 1px solid #ddd;
   background-color: #fff;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);

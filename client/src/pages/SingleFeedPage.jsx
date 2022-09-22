@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import SingleFeed from '../components/SNS/SingleFeed/SingleFeed';
+import Stories from '../components/SNS/Story/Stories';
 
 function SingleFeedPage() {
   return (
     <SingleFeedPageLayout>
+      <Stories />
       <div>
         <SingleFeed />
       </div>
