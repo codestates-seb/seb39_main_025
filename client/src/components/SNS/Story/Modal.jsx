@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MdClose } from 'react-icons/md';
 import { FaRegPaperPlane } from 'react-icons/fa';
 import ProgressBar from '../../ProgressBar/ProgressBar';
 import * as S from './ModalStyle';
 
-function Modal({ persent, isOpen, setIsOpen, src, username, handleOpenModal }) {
+function Modal({ persent, isOpen, src, username, handleOpenModal }) {
   return (
     <S.ModalLayout isOpen={isOpen}>
       <S.ModalContainer src={src}>

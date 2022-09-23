@@ -11,7 +11,6 @@ import SingleFeedImage from './SingleFeedImage';
 import SigleFeedContent from './SigleFeedContent';
 import Loader from '../../Loader/Loader';
 import EndMessage from '../../Loader/EndMessage';
-import AButton from '../../Aside/AButtons';
 import SuggestInfinite from '../Suggestion/SuggestInfinite';
 
 function SingleFeed() {
@@ -48,12 +47,9 @@ function SingleFeed() {
     setPage(page + 1);
   };
 
-  console.log(feed);
-
   return (
     <SingleFeedContainer>
       <SingleFeedLayout>
-        <AButton />
         <SuggestInfinite />
         <InfiniteScroll
           dataLength={feed.length}

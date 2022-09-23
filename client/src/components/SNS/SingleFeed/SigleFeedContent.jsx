@@ -11,7 +11,7 @@ import {
 import LikesIcon from '../../../assets/paw-active.png';
 import DisLikeIcon from '../../../assets/paw.png';
 import ChatIcon from '../../../assets/comment.png';
-import SingleFeedReplies from './SingleFeedReply/SingleFeedReplies';
+import RepleList from './SingleFeedReply/RepleList';
 import SingleFeedReply from './SingleFeedReply/SingleFeedReply';
 
 function SigleFeedContent({ item }) {
@@ -53,7 +53,8 @@ function SigleFeedContent({ item }) {
         </button>
       </UserContent>
       <SingleFeedReply />
-      {rpShow ? <SingleFeedReplies /> : ''}
+
+      {rpShow ? <RepleList /> : ''}
     </SigleFeedContentLayout>
   );
 }
