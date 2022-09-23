@@ -58,7 +58,7 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
     console.log(formData);
 
     try {
-      const res = await axios.post('/api/posts', formData, {
+      const res = await axios.post('http://localhost:3004/sns', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       toast.success('업로드 완료');
