@@ -36,7 +36,7 @@ function Story({ id, src, index, username }) {
     timer();
   };
   return (
-    <>
+    <S.StoryDivBox>
       <S.StoryCircle
         id={id}
         className={String(index) === id ? 'selected' : null}
@@ -44,15 +44,15 @@ function Story({ id, src, index, username }) {
       >
         <img src={src} alt="" />
       </S.StoryCircle>
+      <S.StoryUsername>{username}</S.StoryUsername>
       <Modal
         src={src}
         isOpen={isOpen}
-        setIsOpen={setIsOpen}
         handleOpenModal={handleOpenModal}
         username={username}
         persent={persent}
       />
-    </>
+    </S.StoryDivBox>
   );
 }
 
