@@ -10,6 +10,7 @@ import {
 function SingleFeedReply() {
   const [comment, setComment] = useState('');
 
+  // eslint-disable-next-line consistent-return
   const repleUplodeHandler = (e) => {
     e.preventDefault();
     if (!comment) {
@@ -18,8 +19,9 @@ function SingleFeedReply() {
     const body = {
       comment,
     };
-    axios.post('http://localhost:3004/comments', body).then(setComment(''));
+    axios.post('http://localhost:3004/comments', body);
     alert('댓글 작성이 성공 하였습니다');
+    window.location.reload();
   };
 
   return (

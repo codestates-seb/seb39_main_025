@@ -26,10 +26,11 @@ function Modal({ isOpen, src, username, handleOpenModal }) {
     setTimeout(() => {
       setPersent('100%');
     }, 6000);
-    setTimeout(() => {
-      const tempCloser = window.location.reload();
-      return tempCloser;
-    }, 6500);
+
+    // setTimeout(() => {
+    //   const tempCloser = window.location.reload();
+    //   return tempCloser;
+    // }, 6500);
   }, []);
 
   return (
