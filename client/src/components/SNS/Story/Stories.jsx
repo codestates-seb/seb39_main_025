@@ -28,7 +28,7 @@ function Stories() {
         <AButton />
       </div>
       <S.StoryContainer>
-        <S.ArrowIconBtn type="button" onClick={selectLeft}>
+        <S.ArrowIconBtn className="arrow" type="button" onClick={selectLeft}>
           <img
             src={Left}
             alt="select left side story from current user story"
@@ -47,7 +47,7 @@ function Stories() {
             );
           })}
         </S.StoryContents>
-        <S.ArrowIconBtn type="button" onClick={selectRight}>
+        <S.ArrowIconBtn className="arrow" type="button" onClick={selectRight}>
           <img
             src={Right}
             alt="select right side story from current user story"
