@@ -39,7 +39,7 @@ function Form() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = dispatch(signUpUser(userInfo)); // 리듀서 사용
-    console.log(res.data);
+    console.log(res);
     return navigate('/');
   };
 

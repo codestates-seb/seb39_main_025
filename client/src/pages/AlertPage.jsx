@@ -1,37 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import LeftAside from '../components/Aside/Left/LeftAside';
-import ReportDogs from '../components/Map/alert/ReportDogs';
+import * as S from '../components/Aside/Left/Styles';
+// import LeftAside from '../components/Aside/Left/LeftAside';
 import NearCenter from '../components/Map/alert/NearCenter';
+import { scrollToSection } from '../utils/scrollToSection';
 
 function AlertPage() {
-  const [asideMenuTap, setAsideMenuTap] = useState(0);
-  const menuTitles = [
-    { id: 0, name: '유기견 신고' },
-    { id: 1, name: '유기견 동물 센터' },
-  ];
+  const submenu1 = useRef(null);
+  const submenu2 = useRef(null);
+  const nearCenter = useRef(null);
 
-  const handleAsideIdx = (e) => {
-    setAsideMenuTap(Number(e.target.id));
-  };
   return (
     <AlertPageLayout>
       <AsideSection>
-        {menuTitles.map(({ id, name }) => {
-          return (
-            <LeftAside
-              key={id}
-              id={id}
-              name={name}
-              handleAsideIdx={handleAsideIdx}
-            />
-          );
-        })}
+        <div>유기견 신고하기</div>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(submenu1)}>
+            메뉴1 바로가기
+          </button>
+        </S.LeftAsideBtnRow>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(submenu2)}>
+            메뉴2 바로가기
+          </button>
+        </S.LeftAsideBtnRow>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(nearCenter)}>
+            근처 센터
+          </button>
+        </S.LeftAsideBtnRow>
       </AsideSection>
 
       <ContentSection>
-        {asideMenuTap === 0 && <ReportDogs />}
-        {asideMenuTap === 1 && <NearCenter />}
+        <div ref={submenu1}>
+          <div>메뉴1</div>
+        </div>
+        <div ref={submenu2}>
+          <div>메뉴2</div>
+        </div>
+        <div ref={nearCenter}>
+          <NearCenter />
+        </div>
       </ContentSection>
     </AlertPageLayout>
   );

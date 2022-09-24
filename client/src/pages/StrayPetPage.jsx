@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
-import LeftAside from '../components/Aside/Left/LeftAside';
-import ReportDogs from '../components/Map/alert/ReportDogs';
-import NearCenter from '../components/Map/alert/NearCenter';
+import * as S from '../components/Aside/Left/Styles';
+import { scrollToSection } from '../utils/scrollToSection';
 
 function StrayPetPage() {
-  const [asideMenuTap, setAsideMenuTap] = useState(0);
-  const menuTitles = [
-    { id: 0, name: '유기견 입양' },
-    { id: 1, name: '근처 보호소 찾기' },
-  ];
+  const submenu1 = useRef(null);
+  const submenu2 = useRef(null);
+  const submenu3 = useRef(null);
 
-  const handleAsideIdx = (e) => {
-    setAsideMenuTap(Number(e.target.id));
-  };
   return (
     <StrayPetPageLayout>
       <AsideSection>
-        {menuTitles.map(({ id, name }) => {
-          return (
-            <LeftAside
-              key={id}
-              id={id}
-              name={name}
-              handleAsideIdx={handleAsideIdx}
-            />
-          );
-        })}
+        <div>유기견 신고하기</div>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(submenu1)}>
+            메뉴1 위치로
+          </button>
+        </S.LeftAsideBtnRow>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(submenu2)}>
+            메뉴2 위치로
+          </button>
+        </S.LeftAsideBtnRow>
+        <S.LeftAsideBtnRow>
+          <button type="button" onClick={() => scrollToSection(submenu3)}>
+            메뉴3 위치로
+          </button>
+        </S.LeftAsideBtnRow>
       </AsideSection>
 
       <ContentSection>
-        유기견 입양 관련 내용
-        {/* {asideMenuTap === 0 && <ReportDogs />}
-        {asideMenuTap === 1 && <NearCenter />} */}
+        <div ref={submenu1}>
+          <div>메뉴1</div>
+        </div>
+        <div ref={submenu2}>
+          <div>메뉴2</div>
+        </div>
+        <div ref={submenu3}>
+          <div>메뉴3</div>
+        </div>
       </ContentSection>
     </StrayPetPageLayout>
   );
