@@ -3,9 +3,7 @@
 
 ## BE
 ### Java ###
-# yml
-*.yml
-.yml
+
 .idea
 
 # Compiled class file

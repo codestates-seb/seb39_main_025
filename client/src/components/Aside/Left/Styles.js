@@ -8,9 +8,6 @@ export const LeftAsideLayout = styled.div`
 
 export const LeftAsideBtnRow = styled.div`
   border: 1px solid black;
-  .selected {
-    background-color: blue;
-  }
 `;
 
 export const LeftAsideBtn = styled.button``;
