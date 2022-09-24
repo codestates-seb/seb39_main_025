@@ -22,7 +22,7 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const [userInfo, setuserInfo] = useState({
-    email: '',
+    username: '',
     password: '',
   });
 
@@ -65,8 +65,8 @@ function LoginForm() {
         <FormTitle>로그인</FormTitle>
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
-            <FormLabelText>이메일</FormLabelText>
-            <FormInput type="email" id="email" name="email" />
+            <FormLabelText>아이디</FormLabelText>
+            <FormInput type="text" id="username" name="username" />
           </FormRow>
 
           <FormRow>
