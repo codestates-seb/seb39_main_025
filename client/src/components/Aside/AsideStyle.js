@@ -7,6 +7,9 @@ Aside 컴포넌트 전체에서 스타일이 엄청 복잡하게 많이 들어�
 추후 슬기님께서 편한 방식으로 바꾸시고 싶다면 내용 공유 해주세요:)
 */
 
+// * 마이페이지, 유기견 지도api 관련 페이지 Aside 전체 컨테이너
+
+// * SNS 피드 Aside 내부 최상단 4가지 버튼영역 div 박스
 export const AsideTopBtnBox = styled.div`
   width: max-content;
   height: 50px;
