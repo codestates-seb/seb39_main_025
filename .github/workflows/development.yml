@@ -2,8 +2,7 @@ name: development deployment
 
 on:
   pull_request:
-    branches:
-      - dev-fe
+    branches: [dev-fe]
     types: [closed]
 
 jobs:
