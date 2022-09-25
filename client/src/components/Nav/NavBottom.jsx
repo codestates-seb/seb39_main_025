@@ -8,7 +8,7 @@ function NavBottom() {
     { id: 0, name: 'SNS', element: '/sns' },
     { id: 1, name: '마이페이지', element: '/mypage' },
     { id: 2, name: '유기견 신고하기', element: '/alert' },
-    { id: 3, name: '유기견 입양하기', element: '/stray-pet' },
+    { id: 3, name: '유기견 입양하기', element: '/adopt-pet' },
   ];
   const asidemenuClickHandler = (id) => {
     setAsideMenuTap(id);

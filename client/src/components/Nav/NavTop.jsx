@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   NavTopLayout,
@@ -28,6 +28,30 @@ function NavTop() {
     return window.location.reload();
   };
 
+  const checkIsLogin = () => {
+    if (localStorage.loginStatus === 'true')
+      return (
+        <button type="button" onClick={handleLogout}>
+          로그아웃
+        </button>
+      );
+
+    return (
+      <>
+        <NavButtonLogin onClick={() => navigate('/login')} type="button">
+          로그인
+        </NavButtonLogin>
+        <NavButtonRegister
+          yellow
+          onClick={() => navigate('/sign-up')}
+          type="button"
+        >
+          회원가입
+        </NavButtonRegister>
+      </>
+    );
+  };
+
   return (
     <NavTopLayout>
       <MainLogo onClick={() => navigate('/')}>
@@ -45,26 +69,7 @@ function NavTop() {
           </NavIputBox>
         )}
       </NavIconBox>
-      <NavButton>
-        {localStorage.loginStatus === 'true' ? (
-          <button type="button" onClick={handleLogout}>
-            로그아웃
-          </button>
-        ) : (
-          <>
-            <NavButtonLogin onClick={() => navigate('/login')} type="button">
-              로그인
-            </NavButtonLogin>
-            <NavButtonRegister
-              yellow
-              onClick={() => navigate('/sign-up')}
-              type="button"
-            >
-              회원가입
-            </NavButtonRegister>
-          </>
-        )}
-      </NavButton>
+      <NavButton>{checkIsLogin()}</NavButton>
     </NavTopLayout>
   );
 }
