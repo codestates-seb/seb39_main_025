@@ -55,7 +55,6 @@ function LoginForm() {
     //   .catch((err) => console.log(`${err}`));
     const res = dispatch(loginUser(userInfo));
     console.log(res);
-    navigate('/');
 
     return navigate('/');
   };
