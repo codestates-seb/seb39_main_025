@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+// import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import {
   FormUserInfo,
   FormContainer,
@@ -14,17 +15,19 @@ import {
 } from './MyPageFormStyles';
 
 function MyPageForm() {
+  // const user = useSelector((state) => state.user);
   const token = window.localStorage.getItem('accessToken');
   const userId = window.localStorage.getItem('userId');
+
   const params = useParams();
 
   const [userInfo, setuserInfo] = useState({
-    memberId: userId,
     email: '',
     password: '',
     username: '',
+    userId,
   });
-
+  console.log(params.userId);
   console.log(userId);
   console.log(token);
 
@@ -36,15 +39,23 @@ function MyPageForm() {
     }));
   };
 
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const res = await axios.get(
+        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${params.userId}`,
+        { headers: { userId: params.userId, Authorization: token } },
+      );
+      setuserInfo(res.data);
+      console.log(res.data);
+    };
+    getUserInfo();
+  }, []);
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    const body = {
-      userInfo,
-    };
-    console.log(body);
     const res = await axios.patch(
-      `https://57a5-49-169-198-207.jp.ngrok.io/api/users/${params.userId}`,
-      body,
+      `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${params.userId}`,
+      userInfo,
       { headers: { Authorization: token } },
     );
     console.log(res.data);
@@ -59,12 +70,23 @@ function MyPageForm() {
             <FormRow>
               <FormFile>
                 프로필
-                <FormInput type="file" id="profile" name="profile" />
+                <FormInput
+                  type="file"
+                  id="profile"
+                  name="profile"
+                  onChange={onChange}
+                />
               </FormFile>
             </FormRow>
             <FormRow>
               <FormLabelText>이메일</FormLabelText>
-              <FormInput type="email" id="email" name="email" />
+              <FormInput
+                type="email"
+                id="email"
+                name="email"
+                value={userInfo.email}
+                onChange={onChange}
+              />
             </FormRow>
             <FormRow>
               <FormLabelText>비밀번호</FormLabelText>
@@ -72,7 +94,13 @@ function MyPageForm() {
             </FormRow>
             <FormRow>
               <FormLabelText>이름</FormLabelText>
-              <FormInput type="text" id="username" name="username" />
+              <FormInput
+                type="text"
+                id="username"
+                name="username"
+                value={userInfo.username}
+                onChange={onChange}
+              />
             </FormRow>
           </div>
           <FormSubmitBtn type="submit" yellow big>
