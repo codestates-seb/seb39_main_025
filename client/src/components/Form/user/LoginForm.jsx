@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-=======
 // import axios from 'axios';
->>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
+
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../redux/userSlice';
 import Logo from '../../../assets/logo.png';

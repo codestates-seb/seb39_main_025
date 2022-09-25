@@ -16,10 +16,6 @@ axios.defaults.withCredentials = true;
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
   const res = await axios.post(
     'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/signup',
-<<<<<<< HEAD
-
-=======
->>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
     userInfo,
   );
   return res.data;
@@ -40,20 +36,13 @@ export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
       localStorage.setItem('memberid', memberid);
       // 2. 로그인 시 토큰값 로컬스토리지에 저장
       const accessToken = response.headers.authorization;
-<<<<<<< HEAD
       const memberId = response.headers.memberid;
       console.log(accessToken);
-=======
->>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
       localStorage.setItem('accessToken', accessToken);
       // 3. 클라이언트단에서 조건부 렌더링을 위한 로그인 상태인지 확인하는 로컬스토리지 값
       const loginStatus = true;
       localStorage.setItem('loginStatus', loginStatus);
-<<<<<<< HEAD
       localStorage.setItem('userId', memberId);
-=======
-      // 4. 토큰값 요청 헤더에 삽입
->>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
       axios.defaults.headers.common['Authorization'] = `${accessToken}`;
     })
     .catch((err) => console.log(`${err}`));

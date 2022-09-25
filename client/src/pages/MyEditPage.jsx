@@ -1,8 +1,8 @@
 import React from 'react';
-import UserInfoForm from '../components/Form/mypage/UserInfoForm';
+import MyPageForm from '../components/Form/mypage/MyPageForm';
 
 function MyEditPage() {
-  return <UserInfoForm />;
+  return <MyPageForm />;
 }
 
 export default MyEditPage;

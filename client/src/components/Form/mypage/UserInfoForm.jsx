@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import MyPageForm from './MyPageForm';
-
-function UserInfoForm() {
-  return (
-    <div>
-      <MyPageForm />{' '}
-=======
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -52,7 +43,6 @@ function UserInfoForm() {
           <input type="submit" value="제출" />
         </div>
       </form>
->>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
     </div>
   );
 }
