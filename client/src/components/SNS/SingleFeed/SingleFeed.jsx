@@ -62,7 +62,7 @@ function SingleFeed() {
             return (
               <SingleFeedInfinite key={item.id}>
                 <SingleFeedTopBar item={item} />
-                <SingleFeedImage />
+                <SingleFeedImage item={item} />
                 <SigleFeedContent item={item} />
               </SingleFeedInfinite>
             );

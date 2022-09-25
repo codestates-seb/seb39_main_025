@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   SingleFeedImageLayout,
-  SingleFeedImageCounter,
   CarouselWrapper,
   ImagCard,
 } from './SingleFeedImageStyle';
+
 import 'antd/dist/antd.min.css';
 
-function SingleFeedImage() {
+function SingleFeedImage({ item }) {
   return (
     <SingleFeedImageLayout>
       <ImagCard
@@ -34,8 +34,6 @@ function SingleFeedImage() {
           </CarouselWrapper>
         }
       />
-
-      <SingleFeedImageCounter>1/4</SingleFeedImageCounter>
     </SingleFeedImageLayout>
   );
 }

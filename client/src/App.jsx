@@ -13,6 +13,7 @@ import MyPage from './pages/MyPage';
 import SnsUploadPage from './pages/SnsUploadPage';
 import UserFeedPage from './pages/UserFeedPage';
 import WeeklyRankPage from './pages/WeeklyRankPage';
+import MyEditPage from './pages/MyEditPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/sign-up" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/mypage" element={<MyPage />} />
+          <Route path="/mypage/:userId" element={<MyEditPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
           <Route path="/sns-user" element={<UserFeedPage />} />
           <Route path="/sns-weekly" element={<WeeklyRankPage />} />

@@ -14,16 +14,16 @@
   ],
   "comments": [
     {
-      "id": 1,
+      "comment": 1,
       "body": "some comment",
       "postId": 1
     },
     {
-      "body": "테스트 전송",
+      "comment": "테스트 전송",
       "id": 2
     },
     {
-      "body": "테스트 전송",
+      "comment": "테스트 전송",
       "id": 3
     },
     {
@@ -55,32 +55,8 @@
       "id": 10
     },
     {
-      "reply": "",
+      "comment": "asdf",
       "id": 11
-    },
-    {
-      "reply": "",
-      "id": 12
-    },
-    {
-      "reply": "",
-      "id": 13
-    },
-    {
-      "reply": "",
-      "id": 14
-    },
-    {
-      "reply": "",
-      "id": 15
-    },
-    {
-      "comment": "댓글 자동 ",
-      "id": 16
-    },
-    {
-      "comment": "댓글 등록",
-      "id": 17
     }
   ],
   "sns": [
