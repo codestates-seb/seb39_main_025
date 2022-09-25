@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../../../redux/userSlice';
 import Logo from '../../../assets/logo.png';
@@ -38,8 +39,14 @@ function Form() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const res = dispatch(signUpUser(userInfo)); // 리듀서 사용
+    const res = dispatch(signUpUser(userInfo));
     console.log(res);
+    // const res = await axios.post(
+    //   'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com/api/users/signup',
+    //   userInfo,
+    // );
+    // console.log(res);
+    // console.log(res.data);
     return navigate('/');
   };
 
