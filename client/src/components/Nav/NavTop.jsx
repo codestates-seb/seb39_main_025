@@ -23,6 +23,11 @@ function NavTop() {
     return setIsOpen(!isOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.clear(); // 로컬스토리지 초기화
+    return window.location.reload();
+  };
+
   return (
     <NavTopLayout>
       <MainLogo onClick={() => navigate('/')}>
@@ -41,16 +46,24 @@ function NavTop() {
         )}
       </NavIconBox>
       <NavButton>
-        <NavButtonLogin onClick={() => navigate('/login')} type="button">
-          login
-        </NavButtonLogin>
-        <NavButtonRegister
-          yellow
-          onClick={() => navigate('/sign-up')}
-          type="button"
-        >
-          register
-        </NavButtonRegister>
+        {localStorage.loginStatus === 'true' ? (
+          <button type="button" onClick={handleLogout}>
+            로그아웃
+          </button>
+        ) : (
+          <>
+            <NavButtonLogin onClick={() => navigate('/login')} type="button">
+              로그인
+            </NavButtonLogin>
+            <NavButtonRegister
+              yellow
+              onClick={() => navigate('/sign-up')}
+              type="button"
+            >
+              회원가입
+            </NavButtonRegister>
+          </>
+        )}
       </NavButton>
     </NavTopLayout>
   );

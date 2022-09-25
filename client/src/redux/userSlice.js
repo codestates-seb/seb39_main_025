@@ -16,7 +16,10 @@ axios.defaults.withCredentials = true;
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
   const res = await axios.post(
     'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/signup',
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
     userInfo,
   );
   return res.data;
@@ -31,26 +34,33 @@ export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
     )
 
     .then((response) => {
-      console.log(response);
-      console.log(response.headers.authorization);
+      // 1. 추후 마이페이지-회원정보 수정 요청 시
+      // 유저 특정을 위하여 로그인 시 memberid값 로컬스토리지
+      const { memberid } = response.headers;
+      localStorage.setItem('memberid', memberid);
+      // 2. 로그인 시 토큰값 로컬스토리지에 저장
       const accessToken = response.headers.authorization;
+<<<<<<< HEAD
       const memberId = response.headers.memberid;
       console.log(accessToken);
+=======
+>>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
       localStorage.setItem('accessToken', accessToken);
-      console.log(localStorage.accessToken);
+      // 3. 클라이언트단에서 조건부 렌더링을 위한 로그인 상태인지 확인하는 로컬스토리지 값
       const loginStatus = true;
       localStorage.setItem('loginStatus', loginStatus);
+<<<<<<< HEAD
       localStorage.setItem('userId', memberId);
+=======
+      // 4. 토큰값 요청 헤더에 삽입
+>>>>>>> e9f85f73065c8f62632e208caa287da2686e9b64
       axios.defaults.headers.common['Authorization'] = `${accessToken}`;
     })
     .catch((err) => console.log(`${err}`));
 });
 
-// export const logoutUser = createAsyncThunk('logoutuser', async () => {
-//   const res = await axios.get('/api/users/logout');
-//   return res.data;
-// });
-
+// * 현재 아래 작성한 reducer들을 실제 코드에서 전혀 사용하고 있지 않기 때문에 리팩토링 필요
+// TODO: 리덕스 로거로 백엔드와 테스트해보면서 reducers, extraReducers 수정
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -91,19 +101,6 @@ const userSlice = createSlice({
       state.msg = msg;
       state.token = token;
       state.user = user;
-      // axios
-      // .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
-      // .then((response) => {
-      //   console.log(response);
-      //   console.log(response.headers.authorization);
-      //   const accessToken = response.headers.authorization;
-      //   console.log(accessToken);
-      //   localStorage.setItem('accessToken', accessToken);
-      //   console.log(localStorage.accessToken);
-      //   const loginStatus = true;
-      //   localStorage.setItem('loginStatus', loginStatus);
-      //   axios.defaults.headers.common['Authorization'] = `${accessToken}`;
-
       localStorage.setItem('msg', msg);
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('token', token);
