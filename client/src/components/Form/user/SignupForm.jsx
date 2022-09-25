@@ -22,9 +22,9 @@ function Form() {
   const navigate = useNavigate();
 
   const [userInfo, setuserInfo] = useState({
-    email: '',
     userId: '',
     password: '',
+    email: '',
     username: '',
   });
 
@@ -39,7 +39,7 @@ function Form() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = dispatch(signUpUser(userInfo)); // 리듀서 사용
-    console.log(res.data);
+    console.log(res);
     return navigate('/');
   };
 
@@ -52,16 +52,16 @@ function Form() {
         <FormTitle>회원가입</FormTitle>
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
-            <FormLabelText>메일주소</FormLabelText>
-            <FormInput type="email" id="email" name="email" />
-          </FormRow>
-          <FormRow>
             <FormLabelText>아이디</FormLabelText>
-            <FormInput type="text" id="id" name="userId" />
+            <FormInput type="text" id="userId" name="userId" />
           </FormRow>
           <FormRow>
             <FormLabelText>비밀번호</FormLabelText>
             <FormInput type="password" id="password" name="password" />
+          </FormRow>
+          <FormRow>
+            <FormLabelText>이메일</FormLabelText>
+            <FormInput type="email" id="email" name="email" />
           </FormRow>
           <FormRow>
             <FormLabelText>이름</FormLabelText>

@@ -22,9 +22,9 @@ function RepleList() {
   return (
     <SingleFeedReplyLayout>
       <ReplyBox>
-        {commentList.map(({ comment, id }) => {
+        {commentList.map((el, idx) => {
           // eslint-disable-next-line react/no-array-index-key
-          return <RepleContent key={id} comment={comment} id={id} />;
+          return <RepleContent key={idx} comment={el} />;
         })}
       </ReplyBox>
     </SingleFeedReplyLayout>

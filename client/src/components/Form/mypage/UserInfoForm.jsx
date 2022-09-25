@@ -1,7 +1,12 @@
 import React from 'react';
+import MyPageForm from './MyPageForm';
 
 function UserInfoForm() {
-  return <div>UserInfoForm</div>;
+  return (
+    <div>
+      <MyPageForm />{' '}
+    </div>
+  );
 }
 
 export default UserInfoForm;

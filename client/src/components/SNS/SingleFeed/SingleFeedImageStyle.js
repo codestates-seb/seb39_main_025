@@ -33,17 +33,3 @@ export const CarouselWrapper = styled(Carousel)`
     background: #1d3561;
   }
 `;
-
-export const SingleFeedImageCounter = styled.div`
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 45px;
-  height: 30px;
-  border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;

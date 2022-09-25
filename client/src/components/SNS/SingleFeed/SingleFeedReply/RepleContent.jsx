@@ -6,10 +6,10 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import { RepleContentDiv, RepleUploadDiv } from './SingleReedReplyStyle';
 
-function RepleContent({ comment, id }) {
+function RepleContent({ comment }) {
   const [modalFlag, setModalFlag] = useState(false);
   const [editFlag, setEditFLag] = useState(false);
-  const [eidtReple, setEditReple] = useState(comment);
+  const [eidtReple, setEditReple] = useState(comment.comment);
 
   // const user = useSelector((state) => state.token);
   const ref = useRef();
@@ -44,7 +44,8 @@ function RepleContent({ comment, id }) {
   const SubmitHandler = (e) => {
     e.preventDefault();
     const body = {
-      comment: eidtReple,
+      comment: comment.comment,
+      id: comment.id,
     };
     axios.put('http://localhost:3004/edit', body);
     alert('수정 되었습니다');
@@ -54,7 +55,8 @@ function RepleContent({ comment, id }) {
     e.preventDefault();
     if (window.confirm('정말로 삭제 하시겠습니까?')) {
       const body = {
-        comment,
+        comment: comment.comment,
+        id: comment.id,
       };
       axios.delete('http://localhost:3004/delete', body);
     }
@@ -65,7 +67,7 @@ function RepleContent({ comment, id }) {
       <div className="author">
         <div className="userInfo">
           <Avatar size="30" round style={{ border: '1px solid #c6c6c6' }} />
-          <p> {id}</p>
+          <p> {comment.id}</p>
         </div>
         {/* {props.reple.uid === user.token && (유저 확인하고 조건부 팝업 버튼) } */}
         <div className="modal-Control">
@@ -97,7 +99,7 @@ function RepleContent({ comment, id }) {
             </div>
           )}
         </div>
-        <p className="time">{SetTime(comment, comment)}</p>
+        <p className="time">{SetTime(comment.id, comment.id)}</p>
         {editFlag ? (
           <RepleUploadDiv>
             <form>
@@ -130,7 +132,7 @@ function RepleContent({ comment, id }) {
             </div>
           </RepleUploadDiv>
         ) : (
-          <p className="comment">{comment}</p>
+          <p className="comment">{comment.comment}</p>
         )}
       </div>
     </RepleContentDiv>

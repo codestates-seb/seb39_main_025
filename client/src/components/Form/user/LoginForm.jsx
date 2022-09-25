@@ -38,16 +38,20 @@ function LoginForm() {
     e.preventDefault();
     // TODO: 일반 axios 요청 대신 리덕스 썽크 사용 방식으로 개선
     axios
-      .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
+      .post(`https://57a5-49-169-198-207.jp.ngrok.io/login`, userInfo)
       .then((response) => {
         console.log(response);
         console.log(response.headers.authorization);
         const accessToken = response.headers.authorization;
+        const userId = response.headers.memberid;
+        localStorage.setItem('userId', userId);
+        console.log('userId', userId);
         console.log(accessToken);
         localStorage.setItem('accessToken', accessToken);
         console.log(localStorage.accessToken);
         const loginStatus = true;
         localStorage.setItem('loginStatus', loginStatus);
+
         axios.defaults.headers.common['Authorization'] = `${accessToken}`;
         navigate('/');
       })
@@ -65,8 +69,8 @@ function LoginForm() {
         <FormTitle>로그인</FormTitle>
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
-            <FormLabelText>이메일</FormLabelText>
-            <FormInput type="email" id="email" name="email" />
+            <FormLabelText>아이디</FormLabelText>
+            <FormInput type="text" id="email" name="email" />
           </FormRow>
 
           <FormRow>

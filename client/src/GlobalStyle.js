@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
 export const Layout = styled.div`
   width: 100%;
   height: 100vh;
-
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
