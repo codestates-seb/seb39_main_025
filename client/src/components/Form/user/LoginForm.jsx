@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 // import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../redux/userSlice';
 import Logo from '../../../assets/logo.png';
 import {
@@ -36,9 +36,11 @@ function LoginForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // TODO: 일반 axios 요청 대신 리덕스 썽크 사용 방식으로 개선
     // axios
-    //   .post(`https://dec4-49-169-198-207.jp.ngrok.io/login`, userInfo)
+    //   .post(
+    //     `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com/login`,
+    //     userInfo,
+    //   )
     //   .then((response) => {
     //     console.log(response);
     //     console.log(response.headers.authorization);
@@ -49,6 +51,8 @@ function LoginForm() {
     //     const loginStatus = true;
     //     localStorage.setItem('loginStatus', loginStatus);
     //     axios.defaults.headers.common['Authorization'] = `${accessToken}`;
+    //   })
+    //   .catch((err) => console.log(`${err}`));
     const res = dispatch(loginUser(userInfo));
     console.log(res);
     navigate('/');
