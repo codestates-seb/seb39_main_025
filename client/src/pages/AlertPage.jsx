@@ -25,7 +25,7 @@ function AlertPage() {
               type="button"
               onClick={() => scrollToSection(submenu1)}
             >
-              <h3>가까운 보호소 찾기</h3>
+              <h3>유기견 발견 신고하기</h3>
             </S.ListItemBtn>
           </S.ListItem>
           <S.ListItem>
@@ -33,7 +33,7 @@ function AlertPage() {
               type="button"
               onClick={() => scrollToSection(submenu2)}
             >
-              <h3>메뉴2 바로가기</h3>
+              <h3>근처 보호소 찾기</h3>
             </S.ListItemBtn>
           </S.ListItem>
           <S.ListItem>

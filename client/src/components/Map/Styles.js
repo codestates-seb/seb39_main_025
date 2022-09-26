@@ -75,6 +75,7 @@ export const SearchBtn = styled(Button)`
 // * 지도 영역
 
 export const MapContainer = styled.div`
+  margin: 20px 0;
   width: 100%;
   height: 400px;
   border: 1px solid black;

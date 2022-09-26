@@ -124,6 +124,7 @@ function Map({ searchKeyword }) {
 
     // 검색결과 항목을 Element로 반환하는 함수
     function getListItem(index, places) {
+      console.log(places);
       const el = document.createElement('li');
       let itemStr = `
               <div class="info">
