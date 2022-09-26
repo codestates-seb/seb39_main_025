@@ -34,7 +34,13 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
           <span>발견 위치</span>
         </S.InputDescBox>
         <S.SearchForm>
-          <S.SearchInput type="text" onChange={onChange} name="place" />
+          <S.SearchInput
+            type="text"
+            onChange={onChange}
+            name="place"
+            placeholder="OO시 OO구"
+            required
+          />
           <S.SearchBtn type="button" onClick={handleSearchInput} value="검색">
             {method === 'alert' && <span>가까운 보호소 찾기</span>}
             {method === 'adopt' && <span>입양 가능한 센터 찾기</span>}

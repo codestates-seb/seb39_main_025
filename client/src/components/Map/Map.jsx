@@ -243,7 +243,21 @@ function Map({ searchKeyword }) {
     }
   }, [searchKeyword]);
 
-  return <S.MapContainer id="map" />;
+  return (
+    <>
+      <S.MapContainer id="map" />
+      <div id="search-result">
+        <p className="result-text">
+          <span className="result-keyword">{searchKeyword}</span>
+          검색 결과
+        </p>
+        <div className="scroll-wrapper">
+          <ul id="places-list" />
+        </div>
+        <div id="pagination" />
+      </div>
+    </>
+  );
 }
 
 export default Map;
