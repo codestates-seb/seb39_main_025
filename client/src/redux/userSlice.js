@@ -31,18 +31,16 @@ export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
 
     .then((response) => {
       // 1. 추후 마이페이지-회원정보 수정 요청 시
-      // 유저 특정을 위하여 로그인 시 memberid값 로컬스토리지
-      const { memberid } = response.headers;
-      localStorage.setItem('memberid', memberid);
+      // 유저 특정을 위하여 로그인 시 memberid값 로컬스토리지에 저장
+      const memberId = response.headers.memberid;
+      localStorage.setItem('userId', memberId);
       // 2. 로그인 시 토큰값 로컬스토리지에 저장
       const accessToken = response.headers.authorization;
-      const memberId = response.headers.memberid;
       console.log(accessToken);
       localStorage.setItem('accessToken', accessToken);
       // 3. 클라이언트단에서 조건부 렌더링을 위한 로그인 상태인지 확인하는 로컬스토리지 값
       const loginStatus = true;
       localStorage.setItem('loginStatus', loginStatus);
-      localStorage.setItem('userId', memberId);
       axios.defaults.headers.common['Authorization'] = `${accessToken}`;
     })
     .catch((err) => console.log(`${err}`));
