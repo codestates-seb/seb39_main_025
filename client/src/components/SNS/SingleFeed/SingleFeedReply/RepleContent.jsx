@@ -47,8 +47,9 @@ function RepleContent({ comment }) {
       comment: comment.comment,
       id: comment.id,
     };
-    axios.put('http://localhost:3004/edit', body);
+    axios.put('http://localhost:3004/comments', body);
     alert('수정 되었습니다');
+    setEditFLag(false);
   };
 
   const DeleteHandler = (e) => {
@@ -58,7 +59,8 @@ function RepleContent({ comment }) {
         comment: comment.comment,
         id: comment.id,
       };
-      axios.delete('http://localhost:3004/delete', body);
+      axios.delete('http://localhost:3004/comments', body);
+      window.location.reload();
     }
   };
 
@@ -104,6 +106,7 @@ function RepleContent({ comment }) {
           <RepleUploadDiv>
             <form>
               <input
+                className="reple-edit-input"
                 type="text"
                 value={eidtReple}
                 onChange={(e) => {

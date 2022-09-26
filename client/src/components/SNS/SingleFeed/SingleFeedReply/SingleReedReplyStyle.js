@@ -145,17 +145,20 @@ export const RepleContentDiv = styled.div`
 
 export const RepleUploadDiv = styled.div`
   width: 100%;
-
+  display: flex;
+  gap: 15px;
   form {
     width: 100%;
     display: grid;
+
     grid-template-columns: 7fr 1fr;
-    grid-template-rows: 50px;
+    /* grid-template-rows: 50px; */
+
     @media (max-width: 756px) {
       grid-template-columns: 4fr 1fr;
       grid-template-rows: 40px;
     }
-    input {
+    .reple-edit-input {
       padding: 10px;
       height: 100%;
       border-radius: 10px 0px 0px 10px;
