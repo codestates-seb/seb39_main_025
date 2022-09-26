@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import * as S from './Styles';

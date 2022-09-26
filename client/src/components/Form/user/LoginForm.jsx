@@ -70,7 +70,7 @@ function LoginForm() {
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
           <FormRow>
             <FormLabelText>이메일</FormLabelText>
-            <FormInput type="text" id="email" name="email" />
+            <FormInput type="email" id="email" name="email" />
           </FormRow>
 
           <FormRow>
