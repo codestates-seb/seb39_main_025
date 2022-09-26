@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../../GlobalStyle';
+import { Button } from '../../GlobalStyle';
 
 export const NearCenterLayout = styled.section`
   display: flex;

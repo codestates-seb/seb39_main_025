@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 import { scrollToSection } from '../utils/scrollToSection';
 import Arrow from '../assets/right-arrow.png';
-import NearCenter from '../components/Map/alert/NearCenter';
+import KakaoMap from '../components/Map/KakaoMap';
 
 function AdoptPetPage() {
   const submenu1 = useRef(null);
@@ -46,7 +46,7 @@ function AdoptPetPage() {
       </AsideSection>
       <ContentSection>
         <S.SectionSubTitle>유기견 입양</S.SectionSubTitle>
-        <NearCenter
+        <KakaoMap
           method="adopt"
           submenu1={submenu1}
           submenu2={submenu2}

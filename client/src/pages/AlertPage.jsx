@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 // import LeftAside from '../components/Aside/Left/LeftAside';
-import NearCenter from '../components/Map/alert/NearCenter';
+import KakaoMap from '../components/Map/KakaoMap';
 import { scrollToSection } from '../utils/scrollToSection';
 import Arrow from '../assets/right-arrow.png';
 
@@ -49,7 +49,8 @@ function AlertPage() {
 
       <ContentSection>
         <S.SectionSubTitle>유기견 신고</S.SectionSubTitle>
-        <NearCenter
+        <KakaoMap
+          id="map"
           method="alert"
           submenu1={submenu1}
           submenu2={submenu2}
