@@ -26,7 +26,8 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
     let temp = value;
     temp += ' 동물';
     console.log(temp);
-    return setKeyword(temp);
+    setKeyword(temp);
+    return setValue('');
     // 재사용하는 컴포넌트임으로 함수가 조건에 따라 다르게 동작해야 함.
     // method === 'alert'일 경우 가까운 보호소 찾기 오청 실행
     // method === 'adopt'일 경우 입양 가능한 센터 찾기 요청 실행
@@ -34,8 +35,6 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
 
   return (
     <S.NearCenterLayout>
-      {/* {method === 'alert' && <S.SectionTitle>유기견 신고</S.SectionTitle>}
-      {method === 'adopt' && <S.SectionTitle>입양 가능한 센터</S.SectionTitle>} */}
       <S.SearchInputWrapper ref={submenu1}>
         <S.InputDescBox>
           <FaMapMarkerAlt />
@@ -65,7 +64,7 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
             type="text"
             onChange={onChange}
             name="place"
-            placeholder="OO시 OO구"
+            placeholder="OO시 OO구 OO동"
             required
           />
           <S.SearchBtn type="button" onClick={handleSearchInput} value="검색">

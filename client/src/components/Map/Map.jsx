@@ -92,7 +92,7 @@ function Map({ searchKeyword }) {
         // 해당 장소에 인포윈도우에 장소명을 표시
         // mouseout 했을 때는 인포윈도우를 닫기
         (function (marker, title) {
-          kakao.maps.event.addListener(marker, 'mouseover', function () {
+          kakao.maps.event.addListener(marker, 'click', function () {
             displayInfowindow(marker, title);
           });
 

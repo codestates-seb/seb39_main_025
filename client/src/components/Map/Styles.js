@@ -56,9 +56,14 @@ export const SearchForm = styled.form`
 export const SearchInput = styled.input`
   margin-right: 30px;
   width: 50%;
+  height: 30px;
   border: none;
   background-color: #d9d9d9;
   border-radius: 70px;
+
+  ::placeholder {
+    padding-left: 10px;
+  }
 
   @media screen and (max-width: 479px) {
     margin: 0;
