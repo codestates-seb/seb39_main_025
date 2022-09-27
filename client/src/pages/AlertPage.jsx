@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 // import LeftAside from '../components/Aside/Left/LeftAside';
-import NearCenter from '../components/Map/alert/NearCenter';
+import KakaoMap from '../components/Map/KakaoMap';
 import { scrollToSection } from '../utils/scrollToSection';
 import Arrow from '../assets/right-arrow.png';
 
@@ -21,35 +21,42 @@ function AlertPage() {
         </S.SectionTitleBox>
         <S.LeftAsideListContainer>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu1)}
-            >
-              <h3>가까운 보호소 찾기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu1)}
+              >
+                유기견 발견 신고하기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu2)}
-            >
-              <h3>메뉴2 바로가기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu2)}
+              >
+                근처 보호소 찾기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu3)}
-            >
-              <h3>메뉴 3 바로가기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu3)}
+              >
+                메뉴 3 바로가기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
         </S.LeftAsideListContainer>
       </AsideSection>
 
       <ContentSection>
         <S.SectionSubTitle>유기견 신고</S.SectionSubTitle>
-        <NearCenter
+        <KakaoMap
+          id="map"
           method="alert"
           submenu1={submenu1}
           submenu2={submenu2}

@@ -73,6 +73,8 @@ build/Release
 
 
 ## FE
+# build
+build/
 # Dependency directories
 node_modules/
 jspm_packages/

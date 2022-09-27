@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Layout = styled.div`
+export const Layout = styled.main`
   width: 100%;
   height: 100vh;
   overflow: scroll;

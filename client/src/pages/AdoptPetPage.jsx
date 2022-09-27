@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 import { scrollToSection } from '../utils/scrollToSection';
 import Arrow from '../assets/right-arrow.png';
-import NearCenter from '../components/Map/alert/NearCenter';
+import KakaoMap from '../components/Map/KakaoMap';
 
 function AdoptPetPage() {
   const submenu1 = useRef(null);
@@ -19,34 +19,40 @@ function AdoptPetPage() {
         </S.SectionTitleBox>
         <S.LeftAsideListContainer>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu1)}
-            >
-              <h3>입양 상담 센터</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu1)}
+              >
+                입양 상담 센터
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu2)}
-            >
-              <h3>메뉴 2 바로가기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu2)}
+              >
+                메뉴 2 바로가기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu3)}
-            >
-              <h3>메뉴 3 바로가기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu3)}
+              >
+                메뉴 3 바로가기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
         </S.LeftAsideListContainer>
       </AsideSection>
       <ContentSection>
         <S.SectionSubTitle>유기견 입양</S.SectionSubTitle>
-        <NearCenter
+        <KakaoMap
           method="adopt"
           submenu1={submenu1}
           submenu2={submenu2}
