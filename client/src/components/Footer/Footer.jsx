@@ -16,14 +16,14 @@ function Footer() {
       </FooterLogoBox>
       <FooterTextContainer>
         <FooterLeftText>
-          <p>STAY,BUDDY Co., Ltd.</p>
-          <p>Tel.1544-7979ㅣEmail : contact@staybuddy.com</p>
-          <p>Business License No : 123-45-678910 [사업자정보확인]</p>
-          <p>E-Commerce Registration : 2022-Seoul Gangnam-1234</p>
-          <p>
+          <address>
+            STAY,BUDDY Co., Ltd. <br />
+            Tel.1544-7979ㅣEmail : contact@staybuddy.com <br />
+            Business License No : 123-45-678910 [사업자정보확인] <br />
+            E-Commerce Registration : 2022-Seoul Gangnam-1234 <br />
             Address : 200th floor, 17, Teheran-ro 44-gil, Gangnam-gu, Seoul,
             Republic of Korea
-          </p>
+          </address>
         </FooterLeftText>
         <FooterRightText>
           <div>
@@ -34,7 +34,6 @@ function Footer() {
             <p>반품,환불규정</p>
             <p>제휴입점문의 </p>
           </div>
-
           <div>
             <p>C/S CENTER</p>
             <p>MON-FRIㅣ09:30 - 17:00</p>
