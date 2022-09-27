@@ -15,21 +15,22 @@ function NavBottom() {
   };
   return (
     <NavBottomLayout>
-      {asideMenuList.map(({ id, name, element }) => {
-        return (
-          <NavBottomUl key={id}>
-            <NavLink to={element} className="navlink">
-              <NavBottomLi
-                index={id}
-                className={asideMenuTap === id ? 'active' : ' '}
-                onClick={() => asidemenuClickHandler(id)}
-              >
+      <NavBottomUl>
+        {asideMenuList.map(({ id, name, element }) => {
+          return (
+            <NavBottomLi
+              key={id}
+              index={id}
+              className={asideMenuTap === id ? 'active' : ' '}
+              onClick={() => asidemenuClickHandler(id)}
+            >
+              <NavLink to={element} className="navlink">
                 {name}
-              </NavBottomLi>
-            </NavLink>
-          </NavBottomUl>
-        );
-      })}
+              </NavLink>
+            </NavBottomLi>
+          );
+        })}
+      </NavBottomUl>
     </NavBottomLayout>
   );
 }

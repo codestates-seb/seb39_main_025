@@ -16,14 +16,13 @@ function DaumAddress({ company, setcompany }) {
       }
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
-    console.log(data);
-    console.log(fullAddress);
-    console.log(data.zonecode);
-
+    // console.log(data);
+    // console.log(fullAddress);
+    // console.log(data.zonecode);
     setcompany({
-      ...company,
       address: fullAddress,
     });
+    console.log(company);
   };
 
   return (
