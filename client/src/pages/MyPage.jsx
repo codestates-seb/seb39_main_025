@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Layout, Container } from '../GlobalStyle';
-import UserInfoForm from '../components/Form/mypage/UserInfoForm';
 
 function MyPage() {
   let { userId } = useParams();

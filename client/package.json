@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-avatar": "^5.0.3",
     "react-bootstrap": "^2.5.0",
+    "react-daum-postcode": "^3.1.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-infinite-scroll-component": "^6.1.0",
@@ -58,8 +59,6 @@
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1"
-
   },
   "proxy": "http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080"
-
 }

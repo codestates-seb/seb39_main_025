@@ -13,6 +13,7 @@ import {
   FormLabelText,
   FormFile,
 } from './MyPageFormStyles';
+import DaumAddress from './DaumAddress';
 
 function MyPageForm() {
   // const user = useSelector((state) => state.user);
@@ -26,11 +27,18 @@ function MyPageForm() {
     password: '',
     username: '',
     userId,
+    dogname: '',
+    address: '',
   });
   console.log(params.userId);
   console.log(userId);
   console.log(token);
 
+  const [popup, setPopup] = useState(false);
+  const handleComplete = (e) => {
+    e.preventDefault();
+    setPopup(!popup);
+  };
   const onChange = (e) => {
     const { name, value } = e.target;
     setuserInfo((prev) => ({
@@ -64,12 +72,12 @@ function MyPageForm() {
   return (
     <FormUserInfo>
       <FormContainer>
-        <FormTitle>회원정보</FormTitle>
         <FormWrapper onChange={onChange} onSubmit={onSubmit}>
+          <FormTitle>회원정보</FormTitle>
           <div className="form-div">
             <FormRow>
               <FormFile>
-                프로필
+                <FormLabelText className="profile"> 프로필</FormLabelText>
                 <FormInput
                   type="file"
                   id="profile"
@@ -93,7 +101,7 @@ function MyPageForm() {
               <FormInput type="password" id="password" name="password" />
             </FormRow>
             <FormRow>
-              <FormLabelText>이름</FormLabelText>
+              <FormLabelText>닉네임</FormLabelText>
               <FormInput
                 type="text"
                 id="username"
@@ -103,6 +111,55 @@ function MyPageForm() {
               />
             </FormRow>
           </div>
+          <FormTitle>반려동물 정보</FormTitle>
+          <div className="form-div">
+            <FormRow>
+              {' '}
+              <FormLabelText>반려동물 이름 </FormLabelText>
+              <FormInput
+                type="text"
+                id="dogname"
+                name="dogname"
+                value={userInfo.dogname}
+                onChange={onChange}
+              />
+            </FormRow>
+            <FormRow>
+              <FormLabelText> 구분 </FormLabelText>
+              <label htmlFor="radio">
+                유기견
+                <input type="radio" id="radio" />{' '}
+              </label>
+              유기묘 <input type="radio" />
+              그외 <input type="radio" />
+            </FormRow>
+          </div>
+          <FormTitle>유기동물 봉사자 정보</FormTitle>
+          <div className="form-div">
+            <FormRow>
+              <FormLabelText>센터 주소</FormLabelText>
+              <FormLabelText placeholder="주소">
+                {userInfo.address}
+              </FormLabelText>
+              <FormInput
+                type="text"
+                id="shelter"
+                name="shelter"
+                value={userInfo.address}
+                onChange={onChange}
+              />
+              <button type="button" onClick={handleComplete}>
+                주소찾기
+              </button>
+              {popup && (
+                <DaumAddress
+                  company={userInfo.address}
+                  setCompany={setuserInfo.address}
+                />
+              )}
+            </FormRow>
+          </div>
+
           <FormSubmitBtn type="submit" yellow big>
             회원 정보 수정 하기
           </FormSubmitBtn>
