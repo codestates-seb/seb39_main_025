@@ -21,28 +21,34 @@ function AlertPage() {
         </S.SectionTitleBox>
         <S.LeftAsideListContainer>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu1)}
-            >
-              <h3>유기견 발견 신고하기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu1)}
+              >
+                유기견 발견 신고하기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu2)}
-            >
-              <h3>근처 보호소 찾기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu2)}
+              >
+                근처 보호소 찾기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
           <S.ListItem>
-            <S.ListItemBtn
-              type="button"
-              onClick={() => scrollToSection(submenu3)}
-            >
-              <h3>메뉴 3 바로가기</h3>
-            </S.ListItemBtn>
+            <h3>
+              <S.ListItemBtn
+                type="button"
+                onClick={() => scrollToSection(submenu3)}
+              >
+                메뉴 3 바로가기
+              </S.ListItemBtn>
+            </h3>
           </S.ListItem>
         </S.LeftAsideListContainer>
       </AsideSection>
