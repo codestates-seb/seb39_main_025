@@ -16,7 +16,7 @@ function SingleFeedPage() {
 
 export default SingleFeedPage;
 
-const SingleFeedPageLayout = styled.body`
+const SingleFeedPageLayout = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 1200px) {

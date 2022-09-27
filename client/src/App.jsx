@@ -8,7 +8,7 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import SingleFeedPage from './pages/SingleFeedPage';
 import AlertPage from './pages/AlertPage';
-import StrayPetPage from './pages/StrayPetPage';
+import AdoptPetPage from './pages/AdoptPetPage';
 import MyPage from './pages/MyPage';
 import SnsUploadPage from './pages/SnsUploadPage';
 import UserFeedPage from './pages/UserFeedPage';
@@ -32,7 +32,7 @@ function App() {
           <Route path="/sns-weekly" element={<WeeklyRankPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />
           <Route path="/alert" element={<AlertPage />} />
-          <Route path="/stray-pet" element={<StrayPetPage />} />
+          <Route path="/adopt-pet" element={<AdoptPetPage />} />
         </Routes>
       </Layout>
       <Footer />

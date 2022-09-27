@@ -21,24 +21,23 @@ export const NavBottomUl = styled.ul`
     width: 100%;
     font-size: 10px;
   }
-  & .navlink {
-    text-decoration: none;
-    color: #fff;
-
-    &.navlink.active {
-      transition: 0.5s;
-      background-color: #efac59;
-      color: #1d3561;
-      transition: 0.5s;
-    }
-  }
 `;
 export const NavBottomLi = styled.li`
   width: 200px;
-  height: 100%;
-  box-sizing: border-box;
   text-align: center;
-  padding: 50px 0px;
+  & .navlink {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    &.navlink.active {
+      transition: 0.5s;
+      padding: 50px 0px;
+      background-color: #efac59;
+      color: #1d3561;
+
+      transition: 0.5s;
+    }
+  }
   @media screen and (max-width: 479px) {
     width: 110px;
     padding: 30px 0px;

@@ -52,6 +52,23 @@ export const FormWrapper = styled.form`
 
   .form-div {
     width: 100%;
+
+    .address-box {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 9fr 1fr;
+      grid-template-rows: 35px;
+    }
+    .address-button {
+      cursor: pointer;
+      background-color: #1d3561;
+      color: #efac59;
+      padding: 0px 10px;
+      height: 30px;
+      border-radius: 5px;
+      border: none;
+    }
   }
 `;
 
@@ -60,14 +77,15 @@ export const FormRow = styled.div`
 `;
 
 export const FormFile = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 100px;
   overflow: hidden;
   color: #1d3561;
   background-color: #eee;
   position: relative;
   z-index: 2;
+  margin-bottom: 2rem;
   :hover {
     transition: 1s;
     background-color: rgba(0, 0, 0, 0.5);
@@ -75,7 +93,7 @@ export const FormFile = styled.div`
   .profile {
     margin: auto;
     text-align: center;
-    line-height: 90px;
+    line-height: 150px;
   }
 
   #profile {
@@ -101,8 +119,8 @@ export const FormLabelText = styled.div`
 export const FormInput = styled.input`
   margin-top: 3px;
   width: 100%;
-  height: 23px;
-  border: 1px solid #1d3561;
+  height: 30px;
+  border: none;
 `;
 
 export const FormSubmitBtn = styled(Button)`

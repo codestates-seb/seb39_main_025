@@ -1,46 +1,60 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 // import LeftAside from '../components/Aside/Left/LeftAside';
 import NearCenter from '../components/Map/alert/NearCenter';
 import { scrollToSection } from '../utils/scrollToSection';
+import Arrow from '../assets/right-arrow.png';
 
 function AlertPage() {
+  // 스크롤 위치 이동을 위해 useRef 사용
   const submenu1 = useRef(null);
   const submenu2 = useRef(null);
-  const nearCenter = useRef(null);
+  const submenu3 = useRef(null);
 
   return (
     <AlertPageLayout>
       <AsideSection>
-        <div>유기견 신고하기</div>
-        <S.LeftAsideBtnRow>
-          <button type="button" onClick={() => scrollToSection(submenu1)}>
-            메뉴1 바로가기
-          </button>
-        </S.LeftAsideBtnRow>
-        <S.LeftAsideBtnRow>
-          <button type="button" onClick={() => scrollToSection(submenu2)}>
-            메뉴2 바로가기
-          </button>
-        </S.LeftAsideBtnRow>
-        <S.LeftAsideBtnRow>
-          <button type="button" onClick={() => scrollToSection(nearCenter)}>
-            근처 센터
-          </button>
-        </S.LeftAsideBtnRow>
+        <S.SectionTitleBox>
+          <S.SectionTitle>유기견 신고</S.SectionTitle>
+          <img src={Arrow} alt="" />
+        </S.SectionTitleBox>
+        <S.LeftAsideListContainer>
+          <S.ListItem>
+            <S.ListItemBtn
+              type="button"
+              onClick={() => scrollToSection(submenu1)}
+            >
+              <h3>가까운 보호소 찾기</h3>
+            </S.ListItemBtn>
+          </S.ListItem>
+          <S.ListItem>
+            <S.ListItemBtn
+              type="button"
+              onClick={() => scrollToSection(submenu2)}
+            >
+              <h3>메뉴2 바로가기</h3>
+            </S.ListItemBtn>
+          </S.ListItem>
+          <S.ListItem>
+            <S.ListItemBtn
+              type="button"
+              onClick={() => scrollToSection(submenu3)}
+            >
+              <h3>메뉴 3 바로가기</h3>
+            </S.ListItemBtn>
+          </S.ListItem>
+        </S.LeftAsideListContainer>
       </AsideSection>
 
       <ContentSection>
-        <div ref={submenu1}>
-          <div>메뉴1</div>
-        </div>
-        <div ref={submenu2}>
-          <div>메뉴2</div>
-        </div>
-        <div ref={nearCenter}>
-          <NearCenter />
-        </div>
+        <S.SectionSubTitle>유기견 신고</S.SectionSubTitle>
+        <NearCenter
+          method="alert"
+          submenu1={submenu1}
+          submenu2={submenu2}
+          submenu3={submenu3}
+        />
       </ContentSection>
     </AlertPageLayout>
   );
@@ -49,7 +63,7 @@ function AlertPage() {
 export default AlertPage;
 
 const AlertPageLayout = styled.div`
-  border: 3px solid gray;
+  padding: 100px 0 0 100px;
   display: flex;
   width: 100%;
   height: 100%;
@@ -57,11 +71,11 @@ const AlertPageLayout = styled.div`
   align-items: center;
 
   @media screen and (max-width: 479px) {
+    padding: 0;
   }
 `;
 
 const AsideSection = styled.div`
-  border: 1px solid red;
   width: 20%;
   height: 100%;
 
@@ -71,7 +85,13 @@ const AsideSection = styled.div`
 `;
 
 const ContentSection = styled.div`
-  border: 1px solid blue;
   width: 80%;
   height: 100%;
+  padding-left: 20px;
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+    padding: 0 30px;
+    padding-left: none;
+  }
 `;
