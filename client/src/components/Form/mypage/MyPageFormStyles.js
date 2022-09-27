@@ -5,7 +5,7 @@ import { Button } from '../../../GlobalStyle';
 export const FormUserInfo = styled.div`
   background-color: #f9c790;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-  width: 95%;
+  width: 90%;
   margin: auto;
   min-width: 400px;
   box-sizing: border-box;
