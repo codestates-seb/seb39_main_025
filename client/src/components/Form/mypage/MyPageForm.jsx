@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 import axios from 'axios';
 import {
@@ -15,6 +16,7 @@ import {
 import DaumAddress from './DaumAddress';
 
 function MyPageForm() {
+  const navigate = useNavigate();
   // const user = useSelector((state) => state.user);
   const token = window.localStorage.getItem('accessToken');
   const userId = window.localStorage.getItem('userId');
@@ -123,7 +125,7 @@ function MyPageForm() {
                 onChange={onChange}
               />
             </FormRow>
-            <FormRow>
+            <FormRow className="radio-box">
               <FormLabelText> 구분 </FormLabelText>
               <label htmlFor="radio">
                 유기견
@@ -165,7 +167,7 @@ function MyPageForm() {
             </FormRow>
           </div>
 
-          <FormSubmitBtn type="submit" yellow big>
+          <FormSubmitBtn type="submit" big onClick={() => navigate('/login')}>
             회원 정보 수정 하기
           </FormSubmitBtn>
         </FormWrapper>

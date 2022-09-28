@@ -1,26 +1,22 @@
 import styled from 'styled-components';
 
 export const InfiniteScrollLayout = styled.div`
-  margin: 120px 0px;
-  height: 300px;
+  width: 600px;
   overflow: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
   border: 1px solid #ddd;
   background-color: #fff;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   padding: 10px;
   box-sizing: border-box;
   height: 300px;
   max-width: 400px;
   min-width: 200px;
-  position: absolute;
-  right: 0;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 1000px) {
-    position: static;
     min-width: 300px;
-    margin: 20px 0px;
+    margin: 20px auto;
   }
 `;
 
