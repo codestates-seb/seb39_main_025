@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {
   SigleFeedContentLayout,
   ContentIcons,
@@ -17,23 +18,36 @@ import SingleFeedReply from './SingleFeedReply/SingleFeedReply';
 function SigleFeedContent({ item }) {
   const [more, setMore] = useState(false);
   const [rpShow, setrpShow] = useState(false);
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(true);
   const moreButton = () => {
     setMore(!more);
   };
-
+  const handleLikeClick = () => {
+    setLike(!like);
+    let result = item.likes;
+    if (like === false) {
+      if (item.likes > 0) {
+        result = item.likes - 1;
+      }
+      result = item.likes;
+    } else {
+      result = item.likes + 1;
+    }
+    const body = {
+      likes: result,
+    };
+    axios.patch(`http://localhost:3004/sns/${item.id}`, body);
+  };
   const ShowReplyHandler = () => {
     setrpShow(!rpShow);
   };
-  const likeHandler = () => {
-    setLike(!like);
-  };
+
   return (
     <SigleFeedContentLayout>
       <ContentIcons>
         <IconButton>
-          <button type="button" onClick={() => likeHandler()}>
-            {like ? (
+          <button type="button" onClick={() => handleLikeClick()}>
+            {!like ? (
               <img src={LikesIcon} alt={LikesIcon} />
             ) : (
               <img src={DisLikeIcon} alt={DisLikeIcon} />
@@ -43,7 +57,7 @@ function SigleFeedContent({ item }) {
             <img src={ChatIcon} alt={ChatIcon} />
           </button>
         </IconButton>
-        <Likes> 100 likes</Likes>
+        <Likes> {item.likes} Likes</Likes>
       </ContentIcons>
       <UserContent>
         <UserId>{item.username}</UserId>

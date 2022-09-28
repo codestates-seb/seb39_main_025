@@ -10,7 +10,7 @@ import {
 function Suggestion({ items }) {
   return (
     <SuggestionLayout>
-      <h2> Suggestions Your Pet Friends</h2>{' '}
+      <h2>추천 버디</h2>
       {items.map((item) => {
         return (
           <SuggestUserBox key={item.id}>

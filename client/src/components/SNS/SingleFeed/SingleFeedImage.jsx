@@ -4,7 +4,6 @@ import {
   CarouselWrapper,
   ImagCard,
 } from './SingleFeedImageStyle';
-
 import 'antd/dist/antd.min.css';
 
 function SingleFeedImage({ item }) {

@@ -9,26 +9,26 @@ export const FormUserInfo = styled.div`
   margin: auto;
   min-width: 400px;
   box-sizing: border-box;
-  padding: 20px 50px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media screen and (max-width: 479px) {
-    width: 100px;
+    width: 100%;
     height: 100%;
+    padding: 20px 20px;
   }
 `;
 
 export const FormContainer = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
-
+  height: 100%;
+  margin-bottom: 100px;
   @media screen and (max-width: 479px) {
-    width: 300px;
-    height: 600px;
+    width: 100%;
   }
 `;
 
@@ -68,27 +68,33 @@ export const FormWrapper = styled.form`
       height: 30px;
       border-radius: 5px;
       border: none;
+      font-size: 1rem;
+      @media screen and (max-width: 479px) {
+        width: 100px;
+      }
     }
+  }
+  .radio-box input {
+    margin-right: 10px;
   }
 `;
 
 export const FormRow = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 export const FormFile = styled.div`
   width: 150px;
-  height: 150px;
   border-radius: 100px;
   overflow: hidden;
   color: #1d3561;
-  background-color: #eee;
+  background-color: #fff;
   position: relative;
   z-index: 2;
   margin-bottom: 2rem;
   :hover {
     transition: 1s;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
   .profile {
     margin: auto;
@@ -128,14 +134,12 @@ export const FormSubmitBtn = styled(Button)`
   역할: 회원가입 폼 제출버튼 
   스타일링: GlobalStyle의 Button 확장으로 받아와 스타일을 덮어씌웁니다.
   */
-
   margin-top: 20px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
   height: 40px;
-  font-size: 13px;
+  font-size: 1rem;
   color: #fff;
 `;

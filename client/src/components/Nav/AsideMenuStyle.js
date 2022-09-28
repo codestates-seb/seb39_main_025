@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import Arrow from '../../assets/right-arrow.png';
 
 export const AsideSection = styled.div`
-  position: absolute;
   overflow: hidden;
+  left: 0;
   width: 250px;
   height: 100px;
   @media screen and (max-width: 479px) {

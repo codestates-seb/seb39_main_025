@@ -18,7 +18,7 @@ function SingleFeedTopBar({ item }) {
         <SigleFeedUserProfile src={item.src} alt="user profile image" />
         {item.username}
       </SingleFeedUser>
-      <MobileButtonDetail />
+      <MobileButtonDetail item={item} />
     </SingleFeedTopBarLayout>
   );
 }
