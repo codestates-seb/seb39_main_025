@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import GlobalStyle, { Layout } from './GlobalStyle';
 import HomePage from './pages/HomePage';
@@ -16,15 +16,35 @@ import WeeklyRankPage from './pages/WeeklyRankPage';
 import MyEditPage from './pages/MyEditPage';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const checkLoginStatus = (e) => {
+    e.preventDefault();
+    return setIsLogin(!isLogin);
+  };
+
   return (
     <div>
       <GlobalStyle />
-      <Nav />
+      <Nav
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        checkLoginStatus={checkLoginStatus}
+      />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/sign-up" element={<SignupPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/login"
+            element={
+              <LoginPage
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+                checkLoginStatus={checkLoginStatus}
+              />
+            }
+          />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mypage/:userId" element={<MyEditPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />

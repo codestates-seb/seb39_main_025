@@ -1,5 +1,6 @@
 /* eslint-disable */
-import React, { useEffect } from 'react';
+import { Button } from 'antd';
+import React, { useEffect, useState } from 'react';
 import * as S from './Styles';
 
 const placeType = {
@@ -13,6 +14,8 @@ const placeType = {
 const { kakao } = window;
 
 function Map({ searchKeyword }) {
+  const [placeUrl, setPlaceUrl] = useState('');
+
   let markers = [];
 
   useEffect(() => {
@@ -124,34 +127,34 @@ function Map({ searchKeyword }) {
 
     // 검색결과 항목을 Element로 반환하는 함수
     function getListItem(index, places) {
-      console.log(places);
       const el = document.createElement('li');
-      let itemStr = `
-              <div class="info">
-                <span class="marker marker_${index + 1}">
-                  ${index + 1}
-                </span>
-                <a href="${places.place_url}">
-                  <h5 class="info-item place-name">${places.place_name}</h5>
-                  ${
-                    places.road_address_name
-                      ? `<span class="info-item road-address-name">
-                        ${places.road_address_name}
-                       </span>
-                       <span class="info-item address-name">
-                          ${places.address_name}
-                          </span>`
-                      : `<span class="info-item address-name">
-                          ${places.address_name}
-                      </span>`
-                  }
-                  <span class="info-item tel">
-                    ${places.phone}
-                  </span>
-                </a>
-              </div>
-              `;
 
+      let itemStr = `
+      <div class="info">
+      <a href="${places.place_url}" target="_blanck">
+      <span class="marker marker_${index + 1}">
+      ${index + 1}
+      </span>
+      <h5 class="info-item place-name">${places.place_name}</h5>
+      ${
+        places.road_address_name
+          ? `<span class="info-item road-address-name">
+        ${places.road_address_name}
+        </span>
+        <span class="info-item address-name">
+        ${places.address_name}
+        </span>`
+          : `<span class="info-item address-name">
+        ${places.address_name}
+        </span>`
+      }
+      <span class="info-item tel">
+      ${places.phone}
+      </span>
+      </a>
+        
+      </div>
+      `;
       el.innerHTML = itemStr;
       el.className = 'item';
 
@@ -253,10 +256,11 @@ function Map({ searchKeyword }) {
           검색 결과
         </p>
         <div className="scroll-wrapper">
-          <ul id="places-list" />
+          <S.SearchResults id="places-list" />
         </div>
         <div id="pagination" />
       </div>
+      <iframe src={placeUrl} frameborder="0"></iframe>
     </>
   );
 }

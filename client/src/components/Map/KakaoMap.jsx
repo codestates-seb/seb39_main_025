@@ -24,9 +24,16 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
     e.preventDefault();
     if (value === '') alert('검색할 장소를 입력하세요');
     let temp = value;
-    temp += ' 동물';
-    console.log(temp);
-    setKeyword(temp);
+    if (method === 'alert') {
+      temp += ' 동물';
+      console.log(temp);
+      setKeyword(temp);
+    }
+    if (method === 'adopt') {
+      temp += ' 유기견 입양';
+      console.log(temp);
+      setKeyword(temp);
+    }
     return setValue('');
     // 재사용하는 컴포넌트임으로 함수가 조건에 따라 다르게 동작해야 함.
     // method === 'alert'일 경우 가까운 보호소 찾기 오청 실행
@@ -35,24 +42,32 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
 
   return (
     <S.NearCenterLayout>
-      <S.SearchInputWrapper ref={submenu1}>
-        <S.InputDescBox>
-          <FaMapMarkerAlt />
-          <span>발견 위치</span>
-        </S.InputDescBox>
-        <S.SearchForm>
-          <S.SearchInput
-            type="text"
-            onChange={onChange}
-            name="place"
-            required
-          />
-          <S.SearchBtn type="button" onClick={submitAlertLocation} value="검색">
-            <span>유기견 발견 신고하기</span>
-          </S.SearchBtn>
-        </S.SearchForm>
-      </S.SearchInputWrapper>
-      <S.SectionTitle ref={submenu2}>근처 보호소 찾기</S.SectionTitle>
+      {method === 'alert' && (
+        <S.SearchInputWrapper ref={submenu1}>
+          <S.InputDescBox>
+            <FaMapMarkerAlt />
+            <span>발견 위치</span>
+          </S.InputDescBox>
+          <S.SearchForm>
+            <S.SearchInput
+              type="text"
+              onChange={onChange}
+              name="place"
+              required
+            />
+            <S.SearchBtn
+              type="button"
+              onClick={submitAlertLocation}
+              value="검색"
+            >
+              <span>유기견 발견 신고하기</span>
+            </S.SearchBtn>
+          </S.SearchForm>
+        </S.SearchInputWrapper>
+      )}
+      <S.SectionTitle ref={method === 'alert' ? submenu2 : submenu1}>
+        근처 보호소 찾기
+      </S.SectionTitle>
       <S.SearchInputWrapper>
         <S.InputDescBox>
           <FaMapMarkerAlt />
@@ -64,7 +79,7 @@ function KakaoMap({ method, submenu1, submenu2, submenu3 }) {
             type="text"
             onChange={onChange}
             name="place"
-            placeholder="OO시 OO구 OO동"
+            placeholder="OO시"
             required
           />
           <S.SearchBtn type="button" onClick={handleSearchInput} value="검색">

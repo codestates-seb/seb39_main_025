@@ -35,10 +35,6 @@ const initialState = {
   password: '',
   email: '',
   name: '',
-  token: '',
-  loading: false,
-  error: '',
-  msg: '',
 };
 axios.defaults.withCredentials = true;
 
@@ -50,14 +46,12 @@ export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
   return res.data;
 });
 
-export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
+export const loginUser = createAsyncThunk('loginuser', async (userInfo) => {
   axios
-
     .post(
       'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/login',
       userInfo,
     )
-
     .then((response) => {
       /* 멘토미팅: 이 안에서 dispatch 해주면 되지 않을까 */
       // 1. 추후 마이페이지-회원정보 수정 요청 시
@@ -84,53 +78,9 @@ export const loginUser = createAsyncThunk('loginuser', (userInfo) => {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {
-    addToken: (state) => {
-      state.token = localStorage.getItem('token');
-    },
-    addUser: (state) => {
-      state.user = localStorage.getItem('user');
-    },
-  },
-  extraReducers: {
-    // * 회원가입 요청에 따른 예외처리
-    [signUpUser.pending]: (state) => {
-      state.loading = true;
-    },
-    [signUpUser.fulfilled]: (state, { payload: { error, msg } }) => {
-      state.loading = false;
-      if (error) {
-        state.error = error;
-      } else {
-        state.msg = msg;
-      }
-    },
-    [signUpUser.rejected]: (state) => {
-      state.loading = true;
-    },
-  },
-  // * 로그인 요청의 응답에 따른 예외처리
-  [loginUser.pending]: (state) => {
-    state.loading = true;
-  },
-  [loginUser.fulfilled]: (state, { payload: { error, msg, token, user } }) => {
-    state.loading = false;
-    if (error) {
-      state.error = error;
-    } else {
-      state.msg = msg;
-      state.token = token;
-      state.user = user;
-      localStorage.setItem('msg', msg);
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('token', token);
-    }
-  },
-  [loginUser.rejected]: (state) => {
-    state.loading = true;
-  },
+  reducers: {},
 });
 
-export const { addToken, addUser } = userSlice.actions;
+// export const { addToken, addUser } = userSlice.actions;
 
 export default userSlice.reducer;
