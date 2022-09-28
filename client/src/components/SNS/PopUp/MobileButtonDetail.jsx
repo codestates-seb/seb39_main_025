@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
 import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
 import SnsUploadForm from '../../Form/sns/SnsUploadForm';
 
-function MobileButtonDetail() {
-  const navigate = useNavigate();
+function MobileButtonDetail({ item }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
     return setIsOpen(!isOpen);
+  };
+
+  const DeleteHandler = () => {
+    axios
+      .delete(`http://localhost:3004/sns/${item.id}`)
+      .then(alert('진짜로 게시물을 삭제 하실 건가요?'))
+      .then(window.location.reload());
   };
 
   const menu = (
@@ -39,7 +45,7 @@ function MobileButtonDetail() {
           label: (
             <button
               type="button"
-              onClick={() => navigate('/alert')}
+              onClick={() => DeleteHandler()}
               style={{
                 border: 'none',
                 width: '100%',
@@ -47,7 +53,7 @@ function MobileButtonDetail() {
                 cursor: 'pointer',
               }}
             >
-              유기견 상담 신청 하기
+              게시물 삭제
             </button>
           ),
           key: '1',

@@ -11,7 +11,6 @@ import SingleFeedImage from './SingleFeedImage';
 import SigleFeedContent from './SigleFeedContent';
 import Loader from '../../Loader/Loader';
 import EndMessage from '../../Loader/EndMessage';
-import SuggestInfinite from '../Suggestion/SuggestInfinite';
 
 function SingleFeed() {
   const [feed, setFeed] = useState([]);
@@ -50,7 +49,6 @@ function SingleFeed() {
   return (
     <SingleFeedContainer>
       <SingleFeedLayout>
-        <SuggestInfinite />
         <InfiniteScroll
           dataLength={feed.length}
           next={fetchData}

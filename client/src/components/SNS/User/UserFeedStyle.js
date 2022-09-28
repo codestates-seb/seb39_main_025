@@ -16,6 +16,11 @@ export const UserFeedLayout = styled(Container)`
   }
 `;
 
+export const SnsButton = styled.div`
+  display: flex;
+  justify-content: end;
+`;
+
 // 개별 소셜 페이지: 상단 버튼 바
 export const UserFeedTopBarLayout = styled.div`
   display: none;
