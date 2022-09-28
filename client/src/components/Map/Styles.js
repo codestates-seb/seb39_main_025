@@ -85,3 +85,11 @@ export const MapContainer = styled.div`
   height: 400px;
   border: 1px solid black;
 `;
+
+export const SearchResults = styled.ul`
+  border: 1px solid black;
+
+  .info {
+    border: 1px solid blue;
+  }
+`;

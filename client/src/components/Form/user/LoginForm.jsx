@@ -17,7 +17,7 @@ import {
   FormSubmitBtn,
 } from '../FormStyles';
 
-function LoginForm() {
+function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,26 +36,9 @@ function LoginForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // axios
-    //   .post(
-    //     `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com/login`,
-    //     userInfo,
-    //   )
-    //   .then((response) => {
-    //     console.log(response);
-    //     console.log(response.headers.authorization);
-    //     const accessToken = response.headers.authorization;
-    //     console.log(accessToken);
-    //     localStorage.setItem('accessToken', accessToken);
-    //     console.log(localStorage.accessToken);
-    //     const loginStatus = true;
-    //     localStorage.setItem('loginStatus', loginStatus);
-    //     axios.defaults.headers.common['Authorization'] = `${accessToken}`;
-    //   })
-    //   .catch((err) => console.log(`${err}`));
-    const res = dispatch(loginUser(userInfo));
+    await dispatch(loginUser(userInfo));
+    const res = await setIsLogin(true);
     console.log(res);
-
     return navigate('/');
   };
 

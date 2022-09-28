@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv": "^16.0.2",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -59,6 +60,5 @@
     "eslint-plugin-react": "^7.31.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1"
-  },
-  "proxy": "http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080"
+  }
 }

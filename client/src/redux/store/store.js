@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import userSlice from '../userSlice';
 
@@ -12,7 +12,7 @@ const store = configureStore({
     user: userSlice,
   },
   // eslint-disable-next-line no-import-assign
-  middleware: [logger],
+  middleware: [...getDefaultMiddleware(), logger],
 });
 
 export default store;

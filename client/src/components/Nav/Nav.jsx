@@ -3,10 +3,14 @@ import { NavLayout } from './NavTopStyle';
 import NavTop from './NavTop';
 import NavBottom from './NavBottom';
 
-function Nav() {
+function Nav({ isLogin, setIsLogin, checkLoginStatus }) {
   return (
     <NavLayout>
-      <NavTop />
+      <NavTop
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+        checkLoginStatus={checkLoginStatus}
+      />
       <NavBottom />
     </NavLayout>
   );
