@@ -2,9 +2,9 @@ import React from 'react';
 import { Carousel } from 'antd';
 import 'antd/dist/antd.min.css';
 import styled from 'styled-components';
-import mypageOne from '../../../assets/mypage.png';
-import mypageTwo from '../../../assets/mypage_2.png';
-import mypageThree from '../../../assets/mypage_3.png';
+import mypageOne from '../../assets/mypage.png';
+import mypageTwo from '../../assets/mypage_2.png';
+import mypageThree from '../../assets/mypage_3.png';
 
 function BackgrounImage() {
   const mypageBackground = [
@@ -33,11 +33,11 @@ const BackgroundLayout = styled(Carousel)`
   height: 500px;
   margin: auto;
   & div {
-    margin: auto;
     width: 100%;
     height: 100%;
+    text-align: center;
     & img {
-      width: object-fit;
+      object-fit: cover;
     }
   }
 `;
