@@ -41,5 +41,6 @@ export const NavBottomLi = styled.li`
   @media screen and (max-width: 479px) {
     width: 110px;
     padding: 30px 0px;
+    font-size: 12px;
   }
 `;

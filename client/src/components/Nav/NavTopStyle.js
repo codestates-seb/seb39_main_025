@@ -15,7 +15,7 @@ export const NavTopLayout = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
 
 export const MainLogo = styled.div`
