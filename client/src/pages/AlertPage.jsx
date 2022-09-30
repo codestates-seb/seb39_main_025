@@ -2,9 +2,9 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import * as S from '../components/Aside/Left/Styles';
 // import LeftAside from '../components/Aside/Left/LeftAside';
-import KakaoMap from '../components/Map/KakaoMap';
 import { scrollToSection } from '../utils/scrollToSection';
 import Arrow from '../assets/right-arrow.png';
+import AlertContents from '../components/Map/alert/AlertContents';
 
 function AlertPage() {
   // 스크롤 위치 이동을 위해 useRef 사용
@@ -26,27 +26,7 @@ function AlertPage() {
                 type="button"
                 onClick={() => scrollToSection(submenu1)}
               >
-                유기견 발견 신고하기
-              </S.ListItemBtn>
-            </h3>
-          </S.ListItem>
-          <S.ListItem>
-            <h3>
-              <S.ListItemBtn
-                type="button"
-                onClick={() => scrollToSection(submenu2)}
-              >
                 근처 보호소 찾기
-              </S.ListItemBtn>
-            </h3>
-          </S.ListItem>
-          <S.ListItem>
-            <h3>
-              <S.ListItemBtn
-                type="button"
-                onClick={() => scrollToSection(submenu3)}
-              >
-                메뉴 3 바로가기
               </S.ListItemBtn>
             </h3>
           </S.ListItem>
@@ -55,13 +35,7 @@ function AlertPage() {
 
       <ContentSection>
         <S.SectionSubTitle>유기견 신고</S.SectionSubTitle>
-        <KakaoMap
-          id="map"
-          method="alert"
-          submenu1={submenu1}
-          submenu2={submenu2}
-          submenu3={submenu3}
-        />
+        <AlertContents id="map" method="alert" submenu1={submenu1} />
       </ContentSection>
     </AlertPageLayout>
   );
