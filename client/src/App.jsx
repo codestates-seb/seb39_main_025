@@ -18,7 +18,6 @@ import DirectMessagePage from './pages/DirectMessagePage';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-
   const checkLoginStatus = (e) => {
     e.preventDefault();
     return setIsLogin(!isLogin);
@@ -49,7 +48,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mypage/:userId" element={<MyEditPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
-          <Route path="/sns-user" element={<UserFeedPage />} />
+          <Route path="/sns-user/:pageUserId" element={<UserFeedPage />} />
           <Route path="/sns-msg" element={<DirectMessagePage />} />
           <Route path="/sns-weekly" element={<WeeklyRankPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />

@@ -7,29 +7,22 @@ import {
 import 'antd/dist/antd.min.css';
 
 function SingleFeedImage({ item }) {
+  const image = item.images;
   return (
     <SingleFeedImageLayout>
       <ImagCard
         cover={
           <CarouselWrapper autoplay>
-            <div>
-              <img
-                src="https://crowdfunding.or.kr/uploads/blog/img_627706222db64.jpg"
-                alt="강아지"
-              />
-            </div>
-            <div>
-              <img
-                src="https://contents.lotteon.com/itemimage/_v122546/LO/19/45/61/03/64/_1/94/56/10/36/5/LO1945610364_1945610365_1.png/dims/optimize/dims/resizemc/400x400"
-                alt="강아지"
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn.mkhealth.co.kr/news/photo/202102/52163_52859_5928.jpg"
-                alt="강아지"
-              />
-            </div>
+            {image?.map((items) => {
+              return (
+                <div key={items.id}>
+                  <img
+                    alt="post"
+                    src={`http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/upload/${items.postImageUrl}`}
+                  />
+                </div>
+              );
+            })}
           </CarouselWrapper>
         }
       />

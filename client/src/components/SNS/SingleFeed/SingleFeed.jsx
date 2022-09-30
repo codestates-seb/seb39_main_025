@@ -14,57 +14,70 @@ import EndMessage from '../../Loader/EndMessage';
 
 function SingleFeed() {
   const [feed, setFeed] = useState([]);
-  const [page, setPage] = useState(1);
+
   const [hasMore, setHasMore] = useState(true);
+
+  const pageUserId = localStorage.getItem('userId');
+
+  console.log(pageUserId);
+  const token = localStorage.getItem('accessToken');
+
+  const myConfig = {
+    withCredentials: true,
+    headers: {
+      Authorization: token,
+    },
+  };
 
   // 무한 스크롤로 데이터 요청
   useEffect(() => {
     const getFeed = async () => {
       const res = await axios.get(
-        `http://localhost:3004/sns?_page=${page}&_limit=3`,
+        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/2/${pageUserId}`,
+        myConfig,
       );
-      const data = await res.data;
+      const data = await res.data.member;
+      console.log(data);
       setFeed(data);
     };
     getFeed();
   }, []);
 
-  const axiosFeed = async () => {
-    const res = await axios.get(
-      `http://localhost:3004/sns?_page=${page}&_limit=3`,
-    );
-    const data = await res.data;
-    return data;
-  };
+  // const axiosFeed = async () => {
+  //   const res = await axios.get(
+  //     `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${pageUserId}?_page=${page}&_limit=3`,
+  //   );
+  //   const data = await res.data.member;
+  //   console.log(data);
+  //   return data;
+  // };
 
-  const fetchData = async () => {
-    const feedServer = await axiosFeed();
-    setFeed([...feed, ...feedServer]);
-    if (feedServer.length === 0 || feedServer.length < 3) {
-      setHasMore(false);
-    }
-    setPage(page + 1);
-  };
+  // const fetchData = async () => {
+  //   const feedServer = await axiosFeed();
+  //   setFeed([...feed, ...feedServer]);
+  //   if (feedServer.length === 0 || feedServer.length < 3) {
+  //     setHasMore(false);
+  //   }
+  //   setPage(page + 1);
+  // };
 
   return (
     <SingleFeedContainer>
       <SingleFeedLayout>
         <InfiniteScroll
           dataLength={feed.length}
-          next={fetchData}
+          // next={fetchData}
           hasMore={hasMore}
           loader={<Loader />}
           endMessage={<EndMessage />}
         >
-          {feed.map((item) => {
-            return (
-              <SingleFeedInfinite key={item.id}>
-                <SingleFeedTopBar item={item} />
-                <SingleFeedImage item={item} />
-                <SigleFeedContent item={item} />
-              </SingleFeedInfinite>
-            );
-          })}
+          {/* {feed?.map((item) => {  return (    ) })} */}
+
+          <SingleFeedInfinite key={feed.id}>
+            <SingleFeedTopBar item={feed} />
+            <SingleFeedImage item={feed} />
+            <SigleFeedContent item={feed} />
+          </SingleFeedInfinite>
         </InfiniteScroll>
       </SingleFeedLayout>
     </SingleFeedContainer>

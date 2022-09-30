@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 import axios from 'axios';
 import {
@@ -16,17 +15,16 @@ import {
 import DaumAddress from './DaumAddress';
 
 function MyPageForm() {
-  const navigate = useNavigate();
   // const user = useSelector((state) => state.user);
   const token = window.localStorage.getItem('accessToken');
   const userId = window.localStorage.getItem('userId');
 
   const [userInfo, setuserInfo] = useState({
-    email: '',
     password: '',
     username: '',
     userId,
     dogname: '',
+    pet: '',
     address: '',
   });
   console.log(userId);
@@ -89,16 +87,6 @@ function MyPageForm() {
               </FormFile>
             </FormRow>
             <FormRow>
-              <FormLabelText>이메일</FormLabelText>
-              <FormInput
-                type="email"
-                id="email"
-                name="email"
-                value={userInfo.email}
-                onChange={onChange}
-              />
-            </FormRow>
-            <FormRow>
               <FormLabelText>비밀번호</FormLabelText>
               <FormInput type="password" id="password" name="password" />
             </FormRow>
@@ -129,15 +117,30 @@ function MyPageForm() {
               <FormLabelText> 구분 </FormLabelText>
               <label htmlFor="radio">
                 유기견
-                <input type="radio" id="radio" name="pet" />
+                <input
+                  type="radio"
+                  id="radio"
+                  name="pet"
+                  value={userInfo.pet}
+                />
               </label>
               <label htmlFor="radio">
                 유기묘
-                <input type="radio" id="radio" name="pet" />
+                <input
+                  type="radio"
+                  id="radio"
+                  name="pet"
+                  value={userInfo.pet}
+                />
               </label>
               <label htmlFor="radio">
                 그외
-                <input type="radio" id="radio" name="pet" />
+                <input
+                  type="radio"
+                  id="radio"
+                  name="pet"
+                  value={userInfo.pet}
+                />
               </label>
             </FormRow>
           </div>
@@ -167,7 +170,7 @@ function MyPageForm() {
             </FormRow>
           </div>
 
-          <FormSubmitBtn type="submit" big onClick={() => navigate('/login')}>
+          <FormSubmitBtn type="submit" big>
             회원 정보 수정 하기
           </FormSubmitBtn>
         </FormWrapper>
