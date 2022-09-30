@@ -62,16 +62,20 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
         `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts`,
         formData,
         {
-          headers: { 'Content-Type': 'multipart/form-data' },
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': localStorage.accessToken,
+          },
         },
       );
       toast.success('업로드 완료');
-      setTimeout(() => {
-        setFileName(defaultFileName);
-        setPreviews(null);
-      }, 3000);
+
+      setFileName(defaultFileName);
+      setPreviews(null);
+
       console.log(res);
-      navigate('/');
+      // navigate('/');
+      window.location.reload();
     } catch (err) {
       toast.error(err.message);
       setFileName(defaultFileName);
@@ -79,7 +83,7 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
     }
   };
 
-  const previewImages = previews.map((preview) => (
+  const previewImages = previews?.map((preview) => (
     <div>
       <img
         src={preview.imgSrc}
@@ -109,7 +113,7 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
         >
           <S.FormLeftBox>
             <S.ImagCard
-              className={previewImages.length !== 0 ? 'show' : null}
+              className={previewImages?.length !== 0 ? 'show' : null}
               cover={
                 <S.CarouselWrapper autoplay>{previewImages}</S.CarouselWrapper>
               }
