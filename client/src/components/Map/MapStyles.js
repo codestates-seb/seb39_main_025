@@ -1,22 +1,7 @@
 import styled from 'styled-components';
+import { Map, MapMarker } from 'react-kakao-maps-sdk';
+
 import { Button } from '../../GlobalStyle';
-
-export const NearCenterLayout = styled.section`
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (max-width: 479px) {
-  }
-`;
-
-export const SectionTitle = styled.h2`
-  color: #efac59;
-  margin-top: 50px;
-
-  @media screen and (max-width: 479px) {
-    margin-top: 5px;
-  }
-`;
 
 // * 검색인풋창 영역
 export const SearchInputWrapper = styled.div`
@@ -75,4 +60,25 @@ export const SearchBtn = styled(Button)`
   padding: 5px 20px;
   font-size: 13px;
   font-weight: 500;
+`;
+
+// * 지도 영역
+
+export const StyledMap = styled(Map)`
+  margin: 20px 0;
+  width: 100%;
+  height: 400px;
+  border: 1px solid black;
+`;
+
+export const StyledMarker = styled(MapMarker)``;
+
+// * 검색결과 컴포넌트 스타일링
+export const SearchResults = styled.ul`
+  border: 1px solid black;
+  width: 100%;
+  height: max-content;
+  .info {
+    border: 1px solid blue;
+  }
 `;
