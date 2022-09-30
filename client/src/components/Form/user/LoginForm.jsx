@@ -36,10 +36,15 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(loginUser(userInfo));
-    const res = await setIsLogin(true);
-    console.log(res);
-    return navigate('/');
+    const res = await dispatch(loginUser(userInfo));
+    if (!res.payload) return alert('회원정보를 확인해주세요');
+
+    setIsLogin(true);
+    const userEmail = await JSON.parse(res.payload.config.data).email;
+    localStorage.setItem('userEmail', userEmail);
+    console.log(localStorage.userEmail);
+    return console.log(userEmail);
+    // return navigate('/');
   };
 
   return (

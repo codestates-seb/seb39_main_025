@@ -19,7 +19,7 @@ function SingleFeed() {
 
   const pageUserId = localStorage.getItem('userId');
 
-  console.log(pageUserId);
+  // console.log(pageUserId);
   const token = localStorage.getItem('accessToken');
 
   const myConfig = {
@@ -37,7 +37,7 @@ function SingleFeed() {
         myConfig,
       );
       const data = await res.data.member;
-      console.log(data);
+      // console.log(data);
       setFeed(data);
     };
     getFeed();
