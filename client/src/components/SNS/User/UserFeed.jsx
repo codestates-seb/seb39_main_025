@@ -3,21 +3,19 @@ import MobileUserFeedTopBar from './MobileUserFeedTopBar';
 import UserFeedProfile from './UserFeedProfile';
 import { UserFeedLayout, SnsButton } from './UserFeedStyle';
 import UserFeedGallery from './UserFeedGallery';
-import { aboutdata } from '../../../data/data';
+
 import AButtons from '../../Aside/AButtons';
 
-function UserFeed() {
-  const items = aboutdata.data[0];
-
+function UserFeed({ userInfo }) {
   return (
     <>
       <SnsButton>
         <AButtons />
       </SnsButton>
-      <MobileUserFeedTopBar items={items} />
+      <MobileUserFeedTopBar items={userInfo} />
       <UserFeedLayout>
-        <UserFeedProfile items={items} />
-        <UserFeedGallery />
+        <UserFeedProfile items={userInfo} />
+        <UserFeedGallery items={userInfo} />
       </UserFeedLayout>
     </>
   );

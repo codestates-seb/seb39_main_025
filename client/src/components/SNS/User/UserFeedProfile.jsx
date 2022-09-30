@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   ProfileBox,
   UserContent,
@@ -15,7 +14,7 @@ function UserFeedProfile({ items }) {
     <UserFeedPorofileLayout>
       <ProfileBox>
         <ProfileCircle>
-          <img src={items.src} alt="프로필 이미지" />
+          <img src={items.profileImageUrl} alt="프로필 이미지" />
         </ProfileCircle>
         <UserFeedInfoTable>
           <table>
@@ -25,21 +24,21 @@ function UserFeedProfile({ items }) {
                 <th colSpan="1"> Post</th>
               </tr>
               <tr>
-                <td>{items.followers}</td>
-                <td>{items.post}</td>
+                <td>{items.memberId}</td>
+                <td>{items.memberId}</td>
               </tr>
             </thead>
           </table>
         </UserFeedInfoTable>
         <UserFeedBedge>
-          <img src={items.dogbedge} alt="유기견 뱃지" />
-          <img src={items.shelterbedge} alt="유기견 봉자사 뱃지" />
+          {/* <img src={} alt="유기견 뱃지" />
+          <img src={} alt="유기견 봉자사 뱃지" /> */}
         </UserFeedBedge>
       </ProfileBox>
 
       <UserContent>
         <span>{items.username}</span>
-        <p>{items.memo}</p>
+        <p>{}</p>
         <FollowingButton yellow type="button">
           Following
         </FollowingButton>

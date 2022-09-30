@@ -54,12 +54,10 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
             <FormLabelText>이메일</FormLabelText>
             <FormInput type="email" id="email" name="email" />
           </FormRow>
-
           <FormRow>
             <FormLabelText>비밀번호</FormLabelText>
             <FormInput type="password" id="password" name="password" />
           </FormRow>
-
           <FormSubmitBtn type="submit" yellow big>
             로그인하기
           </FormSubmitBtn>

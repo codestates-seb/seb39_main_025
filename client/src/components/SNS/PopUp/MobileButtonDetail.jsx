@@ -4,7 +4,7 @@ import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
 import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
-import SnsUploadForm from '../../Form/sns/SnsUploadForm';
+import SnsEditForm from '../../Form/sns/SnsEditForm';
 
 function MobileButtonDetail({ item }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,7 +92,7 @@ function MobileButtonDetail({ item }) {
           </Space>
         </button>
       </MobileDetailLayOut>
-      <SnsUploadForm
+      <SnsEditForm
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         handleOpenModal={handleOpenModal}

@@ -57,11 +57,11 @@ function SigleFeedContent({ item }) {
             <img src={ChatIcon} alt={ChatIcon} />
           </button>
         </IconButton>
-        <Likes> {item.likes} Likes</Likes>
+        <Likes> Likes</Likes>
       </ContentIcons>
       <UserContent>
         <UserId>{item.username}</UserId>
-        <UserComment className={more ? 'more' : ''}>{item.memo}</UserComment>
+        <UserComment className={more ? 'more' : ''}>{item.caption}</UserComment>
         <button type="button" onClick={moreButton}>
           more
         </button>

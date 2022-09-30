@@ -1,17 +1,18 @@
 import React from 'react';
-import { aboutdata } from '../../../data/data';
 import { UserFeedGalleryLayout, GalleryCard } from './UserFeedStyle';
 
-function UserFeedGallery() {
-  const items = aboutdata.data;
-
+function UserFeedGallery({ items }) {
   return (
     <UserFeedGalleryLayout>
       <GalleryCard title="POST">
-        {items.map((item) => {
+        {items.images?.map((item) => {
           return (
             <GalleryCard.Grid className="card-grid" key={item.id}>
-              <img alt="post" src={item.src} />
+              <img
+                alt="post"
+                src={`http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/upload/${item.postImageUrl}`}
+              />
+              <p>{item.caption}</p>
             </GalleryCard.Grid>
           );
         })}
