@@ -8,7 +8,6 @@ import AdoptContents from '../components/Map/adopt/AdoptContents';
 function AdoptPetPage() {
   const submenu1 = useRef(null);
   const submenu2 = useRef(null);
-  const submenu3 = useRef(null);
 
   return (
     <AdoptPetPageLayout>
@@ -24,7 +23,7 @@ function AdoptPetPage() {
                 type="button"
                 onClick={() => scrollToSection(submenu1)}
               >
-                입양 상담 센터
+                양육환경 자가진단
               </S.ListItemBtn>
             </h3>
           </S.ListItem>
@@ -34,17 +33,7 @@ function AdoptPetPage() {
                 type="button"
                 onClick={() => scrollToSection(submenu2)}
               >
-                메뉴 2 바로가기
-              </S.ListItemBtn>
-            </h3>
-          </S.ListItem>
-          <S.ListItem>
-            <h3>
-              <S.ListItemBtn
-                type="button"
-                onClick={() => scrollToSection(submenu3)}
-              >
-                메뉴 3 바로가기
+                유기견 보호소 정보
               </S.ListItemBtn>
             </h3>
           </S.ListItem>
@@ -52,12 +41,7 @@ function AdoptPetPage() {
       </AsideSection>
       <ContentSection>
         <S.SectionSubTitle>유기견 입양</S.SectionSubTitle>
-        <AdoptContents
-          method="adopt"
-          submenu1={submenu1}
-          submenu2={submenu2}
-          submenu3={submenu3}
-        />
+        <AdoptContents method="adopt" submenu1={submenu1} submenu2={submenu2} />
       </ContentSection>
     </AdoptPetPageLayout>
   );
