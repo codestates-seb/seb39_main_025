@@ -1,35 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-/* 
-  1. 기본적인 리덕스의 작동방식
-  - 단방향 데이터 흐름: Action 객체 → Dispatch 함수 → Reducer 함수 → Store
-    1. 상태 변경 이벤트 발생 시 변경될 상태에 대한 정보가 담긴 Action 객체가 생성된다.
-    2. 이 Action 객체는 Dispatch 함수의 인자로 전달된다.
-    3. Dispatch 함수는 Action 객체를 Reducer 함수로 전달한다.
-    4. Reducer 함수는 Action 객체의 값을 확인하고 그 값으로 전역 상태 저장소 Store의 상태를 변경한다.
-    5. 상태가 변경되고 화면을 재렌더링.
-
-    - action 객체: 어떤 액션을 취할지 정희해 놓은 객체.
-    - payload: 해당 action의 값을 reducer 함수로 전달하는 함수
-    - dispatch: Action 객체를 Reducer 함수로 전달해주는 함수
-    - reducer: dispatch 함수에게 전달받은 Action 객체의 type 값에 따라 상태를 변경시키는 함수
-      리듀서는 전달받은 액션을 가지고 새로운 상태를 만들어서 store에 전달한다.
-  
-
-  2. Redux Toolkit 설명
-  - 2.1 createAsyncThunk
-    역할: 액션 생성자 함수
-    createAsyncThunk는 비동기 작업을 처리하는 action을 만들어준다. (action creator)
-    
-    타입지정:
-    createAsyncThunk('<액션타입이름>', 비동기 작업 실행 후 실행 결과를 리턴하는 콜백함수)
-    
-    응답에 따른 예외처리:
-
-
- */
-
 const initialState = {
   username: '',
   password: '',
@@ -40,7 +11,7 @@ axios.defaults.withCredentials = true;
 
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
   const res = await axios.post(
-    'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/signup',
+    'https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/signup',
     userInfo,
   );
   return res.data;
@@ -48,7 +19,7 @@ export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
 
 export const loginUser = createAsyncThunk('loginuser', async (userInfo) => {
   const res = await axios.post(
-    'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/login',
+    'https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/login',
     userInfo,
   );
   const memberId = res.headers.memberid;
