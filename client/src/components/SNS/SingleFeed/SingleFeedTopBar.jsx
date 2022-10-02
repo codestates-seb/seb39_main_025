@@ -8,17 +8,17 @@ import {
 import MobileButtonDetail from '../PopUp/MobileButtonDetail';
 
 function SingleFeedTopBar({ item }) {
-  const userPage = localStorage.getItem('userId');
-
   const navigate = useNavigate();
+
   const UserFeed = () => {
-    navigate(`/sns-user/${userPage}`);
+    navigate(`/sns-user/${item.snsId}`);
   };
+
   return (
     <SingleFeedTopBarLayout>
       <SingleFeedUser onClick={() => UserFeed()}>
         <SigleFeedUserProfile
-          src={item.profileImageUrl}
+          src={item.postImageUrl}
           alt="user profile image"
         />
         {item.username}

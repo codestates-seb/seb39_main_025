@@ -3,14 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import {
   NavTopLayout,
   MainLogo,
-  NavIconBox,
-  NavSearchInput,
-  NavSearchClose,
-  NavIputBox,
   NavButton,
+  LogoutButton,
   NavButtonLogin,
   NavButtonRegister,
-  SearchIconImg,
 } from './NavTopStyle';
 import Logo from '../../assets/logo.png';
 
@@ -31,9 +27,13 @@ function NavTop({ isLogin, setIsLogin }) {
 
       <NavButton>
         {isLogin === true || localStorage.loginStatus === 'true' ? (
-          <button type="button" onClick={handleLogout}>
+          <LogoutButton
+            type="button"
+            onClick={handleLogout}
+            className="logout-button"
+          >
             로그아웃
-          </button>
+          </LogoutButton>
         ) : (
           <>
             <NavButtonLogin onClick={() => navigate('/login')} type="button">

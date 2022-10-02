@@ -17,8 +17,7 @@ function SingleFeed() {
 
   const [hasMore, setHasMore] = useState(true);
 
-  const pageUserId = localStorage.getItem('userId');
-
+  // const pageUserId = localStorage.getItem('userId');
   // console.log(pageUserId);
   const token = localStorage.getItem('accessToken');
 
@@ -33,11 +32,11 @@ function SingleFeed() {
   useEffect(() => {
     const getFeed = async () => {
       const res = await axios.get(
-        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/2/${pageUserId}`,
+        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts`,
         myConfig,
       );
-      const data = await res.data.member;
-      // console.log(data);
+      const data = await res.data.data;
+      console.log(data);
       setFeed(data);
     };
     getFeed();
@@ -71,13 +70,15 @@ function SingleFeed() {
           loader={<Loader />}
           endMessage={<EndMessage />}
         >
-          {/* {feed?.map((item) => {  return (    ) })} */}
-
-          <SingleFeedInfinite key={feed.id}>
-            <SingleFeedTopBar item={feed} />
-            <SingleFeedImage item={feed} />
-            <SigleFeedContent item={feed} />
-          </SingleFeedInfinite>
+          {feed?.map((item) => {
+            return (
+              <SingleFeedInfinite key={item.id}>
+                <SingleFeedTopBar item={item} />
+                <SingleFeedImage item={item} />
+                <SigleFeedContent item={item} />
+              </SingleFeedInfinite>
+            );
+          })}
         </InfiniteScroll>
       </SingleFeedLayout>
     </SingleFeedContainer>
