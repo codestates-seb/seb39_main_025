@@ -1,10 +1,23 @@
 import React from 'react';
-import CheckList from '../../Form/checklist/CheckList';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import CheckList from '../../Checklist/CheckList';
+import * as S from '../Styles';
 
-function AdoptContents() {
+function AdoptContents({ submenu1, submenu2 }) {
   return (
     <div>
-      <CheckList />
+      <CheckList ref={submenu1} />
+      <S.SectionTitle ref={submenu2}>유기견 보호소 정보</S.SectionTitle>
+      <S.SearchInputWrapper>
+        <S.InputDescBox>
+          <FaMapMarkerAlt />
+          보호소 정보
+        </S.InputDescBox>
+        <S.SearchForm>
+          <S.SearchInput type="text" placeholder="OO시" required />
+          <S.SearchBtn type="button">유기견 보호소 정보조회</S.SearchBtn>
+        </S.SearchForm>
+      </S.SearchInputWrapper>
     </div>
   );
 }
