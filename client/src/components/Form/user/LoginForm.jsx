@@ -23,6 +23,7 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
 
   const [userInfo, setuserInfo] = useState({
     email: '',
+    username: '',
     password: '',
   });
 
@@ -40,11 +41,10 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
     if (!res.payload) return alert('회원정보를 확인해주세요');
 
     setIsLogin(true);
-    const userEmail = await JSON.parse(res.payload.config.data).email;
-    localStorage.setItem('userEmail', userEmail);
-    console.log(localStorage.userEmail);
-    return console.log(userEmail);
-    // return navigate('/');
+    const username = await JSON.parse(res.payload.config.data).username;
+    localStorage.setItem('username', username);
+    console.log(localStorage.username);
+    return navigate('/');
   };
 
   return (
@@ -58,6 +58,10 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
           <FormRow>
             <FormLabelText>이메일</FormLabelText>
             <FormInput type="email" id="email" name="email" />
+          </FormRow>
+          <FormRow>
+            <FormLabelText>닉네임</FormLabelText>
+            <FormInput type="text" id="username" name="username" />
           </FormRow>
           <FormRow>
             <FormLabelText>비밀번호</FormLabelText>

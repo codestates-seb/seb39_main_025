@@ -16,10 +16,17 @@ export const ImagCard = styled(Card)`
   }
 `;
 export const CarouselWrapper = styled(Carousel)`
-  & img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
+  div {
+    width: 450px;
+    max-width: 500px;
+    @media screen and (max-width: 479px) {
+      width: 100%;
+    }
+    & img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
   }
   .slick-dots {
     z-index: 0;

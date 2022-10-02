@@ -11,11 +11,13 @@ import TempProfilePic from '../../../assets/paw-active.png';
 function SnsUploadForm({ isOpen, setIsOpen }) {
   const navigate = useNavigate();
 
-  const defaultFileName = 'Drag Photos and Videos Here';
+  const defaultFileName = '업로드할 파일을 드래그 해주세요.';
   const [files, setFiles] = useState(null);
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
   const [textMsg, setTextMsg] = useState('');
+
+  const { username, userId } = localStorage;
 
   const imgSelectHandler = async (e) => {
     const imageFiles = e.target.files;
@@ -54,7 +56,9 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
     const formData = new FormData();
     // loop 돌면서 formData에 이미지 여러장을 한장씩 append
     for (const file of files) formData.append('file', file);
+    formData.append('username', username);
     formData.append('caption', textMsg);
+    formData.append('snsId', userId);
     console.log(formData);
 
     try {
@@ -74,7 +78,6 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
       setPreviews(null);
 
       console.log(res);
-      // navigate('/');
       window.location.reload();
     } catch (err) {
       toast.error(err.message);
@@ -101,9 +104,9 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
           <S.HeaderReturnBtnBox onClick={() => setIsOpen(!isOpen)}>
             <img src={LeftArrow} alt="cancel upload and show previous page" />
           </S.HeaderReturnBtnBox>
-          <h1>Create New Post</h1>
+          <h1>새로운 게시물</h1>
           <S.HeaderShareBtn type="button" onClick={onSubmit}>
-            SHARE
+            업로드
           </S.HeaderShareBtn>
         </S.FormHeader>
         <S.FormWrapper
@@ -137,7 +140,11 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
           <S.FormRightBox>
             <S.FormRightUserInfo>
               <S.UserProfilePic img src={TempProfilePic} alt="user-profile" />
-              <S.UserName>username</S.UserName>
+              <S.UserName
+                type="text"
+                value={localStorage.username}
+                name="username"
+              />
             </S.FormRightUserInfo>
             <S.FormTextInputBox>
               <textarea

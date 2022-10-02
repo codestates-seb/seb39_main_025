@@ -23,6 +23,7 @@ export const MainLogo = styled.div`
   width: 180px;
   height: 50%;
   margin-left: 3%;
+  cursor: pointer;
 
   @media screen and (max-width: 479px) {
     margin-left: 1%;
@@ -83,10 +84,16 @@ export const NavButton = styled.div`
   width: 20%;
   display: flex;
   align-items: center;
+
   @media screen and (max-width: 479px) {
     margin-right: 1%;
     width: 30%;
   }
+`;
+
+export const LogoutButton = styled(Button)`
+  padding: 5px 15px;
+  font-size: 1rem;
 `;
 
 export const NavButtonLogin = styled(Button)`
