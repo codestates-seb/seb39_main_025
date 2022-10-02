@@ -237,9 +237,11 @@ export const UserProfilePic = styled.img`
   width: 30px;
 `;
 
-export const UserName = styled.h3`
+export const UserName = styled.input`
   /* 1.2 유저이름 */
-  font-size: 12px;
+  font-size: 15px;
+  border: none;
+  outline: none;
 `;
 
 // * 2. 입력폼 우측의 가운데 텍스트 입력창 영역설정 div 박스
