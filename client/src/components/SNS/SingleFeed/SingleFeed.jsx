@@ -32,7 +32,7 @@ function SingleFeed() {
   useEffect(() => {
     const getFeed = async () => {
       const res = await axios.get(
-        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts`,
+        `https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts`,
         myConfig,
       );
       const data = await res.data.data;
