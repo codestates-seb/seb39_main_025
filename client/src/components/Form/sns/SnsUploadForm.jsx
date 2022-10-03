@@ -63,7 +63,7 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
 
     try {
       const res = await axios.post(
-        `https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts`,
+        `https://server.staybuddy.net/api/posts`,
         formData,
         {
           headers: {

@@ -10,18 +10,12 @@ const initialState = {
 axios.defaults.withCredentials = true;
 
 export const signUpUser = createAsyncThunk('signupuser', async (userInfo) => {
-  const res = await axios.post(
-    'https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/signup',
-    userInfo,
-  );
+  const res = await axios.post('https://server.staybuddy.net/signup', userInfo);
   return res.data;
 });
 
 export const loginUser = createAsyncThunk('loginuser', async (userInfo) => {
-  const res = await axios.post(
-    'https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/login',
-    userInfo,
-  );
+  const res = await axios.post('https://server.staybuddy.net/login', userInfo);
   const memberId = res.headers.memberid;
   const accessToken = res.headers.authorization;
   const loginStatus = true;
