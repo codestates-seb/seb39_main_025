@@ -31,7 +31,10 @@ function SingleFeed() {
   // 무한 스크롤로 데이터 요청
   useEffect(() => {
     const getFeed = async () => {
-      const res = await axios.get(`https://staybuddy.net/api/posts`, myConfig);
+      const res = await axios.get(
+        `https://server.staybuddy.net/api/posts`,
+        myConfig,
+      );
       const data = await res.data.data;
       console.log(data);
       setFeed(data);
