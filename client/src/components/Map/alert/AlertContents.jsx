@@ -3,7 +3,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import KakaoMap from '../KakaoMap';
 import * as S from '../Styles';
 
-function AlertContents({ method, submenu1 }) {
+function AlertContents({ method, submenu1, submenu2, scrollToSection }) {
   const [value, setValue] = useState('');
   const [keyword, setKeyword] = useState('');
 
@@ -63,7 +63,12 @@ function AlertContents({ method, submenu1 }) {
           </S.SearchBtn>
         </S.SearchForm>
       </S.SearchInputWrapper>
-      <KakaoMap method={method} keyword={keyword} />
+      <KakaoMap
+        method={method}
+        keyword={keyword}
+        submenu2={submenu2}
+        scrollToSection={scrollToSection}
+      />
     </S.NearCenterLayout>
   );
 }

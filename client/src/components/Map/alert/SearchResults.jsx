@@ -9,16 +9,12 @@ import * as S from './SearchResultStyle';
 필요한 것들
 1. 페이지 번호 구하기(총 몇개의 페이지가 필요한 지 구하기)
 - Math.ceil(총 게시물 수/페이지당 표시할 게시물 수)
-
 2. 현재 페이지 번호를 기준으로 표시해줘야할 게시물들의 범위 파악
 (현재 페이지의 첫 게시물의 index 파악하기)
 - (페이지 번호 - 1) * 페이지당 표시할 게시물 수
-
-
-
 */
 
-function SearchResults({ places }) {
+function SearchResults({ places, submenu2, scrollToSection }) {
   // 검색 결과 렌더링과 선택 항목을 iframe으로 띄우기 위한 상태값
   const [placeList, setPlaceList] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +27,7 @@ function SearchResults({ places }) {
   const toggleResultDetails = (e) => {
     setIsOpen(!isOpen);
     setUrl(e.target.value);
+    scrollToSection(submenu2);
   };
 
   useEffect(() => {
@@ -74,14 +71,16 @@ function SearchResults({ places }) {
           setPage={setPage}
         />
       </div>
-      {isOpen && (
-        <>
-          <S.InfoCloseBtn type="button" onClick={() => setIsOpen(!isOpen)}>
-            닫기
-          </S.InfoCloseBtn>
-          <S.ResultIframe url={url} allowFullScreen />
-        </>
-      )}
+      <S.IframeBox ref={submenu2}>
+        {isOpen && (
+          <>
+            <S.InfoCloseBtn type="button" onClick={() => setIsOpen(!isOpen)}>
+              닫기
+            </S.InfoCloseBtn>
+            <S.ResultIframe url={url} allowFullScreen />
+          </>
+        )}
+      </S.IframeBox>
     </S.ResultsLayout>
   );
 }

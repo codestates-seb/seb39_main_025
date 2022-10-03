@@ -6,7 +6,7 @@ import SearchResults from './alert/SearchResults';
 
 const { kakao } = window;
 
-function KakaoMap({ method, keyword }) {
+function KakaoMap({ method, keyword, submenu2, scrollToSection }) {
   const ps = new kakao.maps.services.Places();
   const bounds = new kakao.maps.LatLngBounds();
   const [info, setInfo] = useState();
@@ -72,7 +72,11 @@ function KakaoMap({ method, keyword }) {
           </S.StyledMarker>
         ))}
       </S.StyledMap>
-      <SearchResults places={places} />
+      <SearchResults
+        places={places}
+        submenu2={submenu2}
+        scrollToSection={scrollToSection}
+      />
     </>
   );
 }

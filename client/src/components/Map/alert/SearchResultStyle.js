@@ -92,16 +92,24 @@ export const InfoCloseBtn = styled(Button)`
   margin-top: 100px;
 `;
 
+export const IframeBox = styled.div`
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const ResultIframe = styled(Iframe)`
   margin: 30px 0;
   width: 100%;
-  height: 600px;
+  height: 1000px;
+
   /* ::-webkit-scrollbar {
     display: none;
   } */
 
   @media screen and (max-width: 479px) {
     width: 350px;
-    height: 400px;
   }
 `;
