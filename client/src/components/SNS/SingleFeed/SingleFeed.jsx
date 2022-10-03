@@ -32,7 +32,7 @@ function SingleFeed() {
   useEffect(() => {
     const getFeed = async () => {
       const res = await axios.get(
-        `https://server.staybuddy.net/api/posts`,
+        `https://www.server.staybuddy.net/api/posts`,
         myConfig,
       );
       const data = await res.data.data;
