@@ -16,7 +16,7 @@ function SingleFeedImage({ item }) {
             <div key={item.id}>
               <img
                 alt="post"
-                src={`http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/upload/${item.postImageUrl}`}
+                src={`https://server.staybuddy.net/upload/${item.postImageUrl}`}
               />
             </div>
           </CarouselWrapper>
