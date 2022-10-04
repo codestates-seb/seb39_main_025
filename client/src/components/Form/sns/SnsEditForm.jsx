@@ -8,16 +8,14 @@ import UploadIcon from '../../../assets/upload-file.png';
 import LeftArrow from '../../../assets/left-arrow.png';
 import TempProfilePic from '../../../assets/paw-active.png';
 
-function SnsEditForm({ isOpen, setIsOpen, index }) {
-  console.log(index);
-
+function SnsEditForm({ isOpen, setIsOpen, data }) {
   const navigate = useNavigate();
 
   const defaultFileName = '업로드할 파일을 드래그 해주세요.';
   const [files, setFiles] = useState(null);
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
-  const [textMsg, setTextMsg] = useState('');
+  const [textMsg, setTextMsg] = useState(`${data.caption}`);
 
   const { username, userId } = localStorage;
 
@@ -65,7 +63,7 @@ function SnsEditForm({ isOpen, setIsOpen, index }) {
 
     try {
       const res = await axios.post(
-        `https://server.staybuddy.net/api/posts2/${index}`,
+        `https://server.staybuddy.net/api/posts`,
         formData,
         {
           headers: {
@@ -75,10 +73,8 @@ function SnsEditForm({ isOpen, setIsOpen, index }) {
         },
       );
       toast.success('업로드 완료');
-
       setFileName(defaultFileName);
       setPreviews(null);
-
       console.log(res);
       window.location.reload();
     } catch (err) {
@@ -142,16 +138,13 @@ function SnsEditForm({ isOpen, setIsOpen, index }) {
           <S.FormRightBox>
             <S.FormRightUserInfo>
               <S.UserProfilePic img src={TempProfilePic} alt="user-profile" />
-              <S.UserName
-                type="text"
-                value={localStorage.username}
-                name="username"
-              />
+              <S.UserName type="text" value={data.username} name="username" />
             </S.FormRightUserInfo>
             <S.FormTextInputBox>
               <textarea
                 onChange={handleTextInput}
-                placeholder="내용을 적어 주세요..."
+                placeholder={data.caption}
+                value={textMsg}
               />
             </S.FormTextInputBox>
             <S.FormRightMidBox>

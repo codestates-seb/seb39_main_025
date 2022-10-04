@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
@@ -8,6 +8,18 @@ import SnsEditForm from '../../Form/sns/SnsEditForm';
 
 function MobileButtonDetail({ item, index }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const editPost = async () => {
+      const getPost = await axios.get(
+        `https://server.staybuddy.net/api/posts2/${index}`,
+      );
+      const res = getPost.data.image;
+      setData(res);
+    };
+    editPost();
+  }, []);
 
   const handleOpenModal = () => {
     return setIsOpen(!isOpen);
@@ -17,7 +29,8 @@ function MobileButtonDetail({ item, index }) {
     axios
       .delete(`https://server.staybuddy.net/api/posts/${index}`)
       .then(alert('진짜로 게시물을 삭제 하실 건가요?'))
-      .then(window.location.reload());
+      .then((res) => console.log(res.data));
+    // .then(window.location.reload());
   };
 
   const menu = (
@@ -93,6 +106,7 @@ function MobileButtonDetail({ item, index }) {
         </button>
       </MobileDetailLayOut>
       <SnsEditForm
+        data={data}
         index={index}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
