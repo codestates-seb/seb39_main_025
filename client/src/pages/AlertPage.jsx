@@ -44,7 +44,8 @@ function AlertPage() {
 export default AlertPage;
 
 const AlertPageLayout = styled.div`
-  padding: 100px 0 0 100px;
+  padding: 90px 0px;
+  margin-bottom: 200px;
   display: flex;
   width: 100%;
   height: 100%;

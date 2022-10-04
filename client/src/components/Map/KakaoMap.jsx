@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import * as S from './MapStyles';
 import SearchResults from './alert/SearchResults';
+import { AutoComplete } from 'antd';
 
 const { kakao } = window;
 
-function KakaoMap({ method, keyword }) {
+function KakaoMap({ method, keyword, submenu2, scrollToSection }) {
   const ps = new kakao.maps.services.Places();
   const bounds = new kakao.maps.LatLngBounds();
   const [info, setInfo] = useState();
@@ -42,7 +43,6 @@ function KakaoMap({ method, keyword }) {
         map.setBounds(bounds);
       }
       setPlaces([...data]);
-      console.log(places);
     });
   }, [keyword]);
 
@@ -52,10 +52,6 @@ function KakaoMap({ method, keyword }) {
         center={{
           lat: 37.566826,
           lng: 126.9786567,
-        }}
-        style={{
-          width: '100%',
-          height: '350px',
         }}
         level={3}
         onCreate={setMap}
@@ -72,7 +68,11 @@ function KakaoMap({ method, keyword }) {
           </S.StyledMarker>
         ))}
       </S.StyledMap>
-      <SearchResults places={places} />
+      <SearchResults
+        places={places}
+        submenu2={submenu2}
+        scrollToSection={scrollToSection}
+      />
     </>
   );
 }

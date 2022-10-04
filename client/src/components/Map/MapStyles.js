@@ -65,10 +65,12 @@ export const SearchBtn = styled(Button)`
 // * 지도 영역
 
 export const StyledMap = styled(Map)`
-  margin: 20px 0;
-  width: 100%;
-  height: 400px;
-  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+  height: 450px;
+  border-radius: 10px;
+  border: 1px solid #1d3561;
 `;
 
 export const StyledMarker = styled(MapMarker)``;
