@@ -73,7 +73,7 @@ function SingleFeed() {
           {feed?.map((item) => {
             return (
               <SingleFeedInfinite key={item.id}>
-                <SingleFeedTopBar item={item} />
+                <SingleFeedTopBar index={item.id} item={item} />
                 <SingleFeedImage item={item} />
                 <SigleFeedContent item={item} />
               </SingleFeedInfinite>

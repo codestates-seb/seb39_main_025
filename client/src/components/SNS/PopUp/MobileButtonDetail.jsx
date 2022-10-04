@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
@@ -6,8 +6,20 @@ import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
 import SnsEditForm from '../../Form/sns/SnsEditForm';
 
-function MobileButtonDetail({ item }) {
+function MobileButtonDetail({ item, index }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const editPost = async () => {
+      const getPost = await axios.get(
+        `https://server.staybuddy.net/api/posts2/${index}`,
+      );
+      const res = getPost.data.image;
+      setData(res);
+    };
+    editPost();
+  });
 
   const handleOpenModal = () => {
     return setIsOpen(!isOpen);
@@ -93,6 +105,8 @@ function MobileButtonDetail({ item }) {
         </button>
       </MobileDetailLayOut>
       <SnsEditForm
+        data={data}
+        index={index}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         handleOpenModal={handleOpenModal}
