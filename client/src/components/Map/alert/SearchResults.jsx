@@ -63,12 +63,14 @@ function SearchResults({ places, submenu2, scrollToSection }) {
         </S.ResultsLayoutUl>
       </S.ResultsBox>
       <div>
-        <Pagination
-          total={placeList.length}
-          limit={limit}
-          page={page}
-          setPage={setPage}
-        />
+        {places.length !== 0 && (
+          <Pagination
+            total={placeList.length}
+            limit={limit}
+            page={page}
+            setPage={setPage}
+          />
+        )}
       </div>
       <S.IframeBox ref={submenu2}>
         {isOpen && <S.ResultIframe url={url} allowFullScreen />}

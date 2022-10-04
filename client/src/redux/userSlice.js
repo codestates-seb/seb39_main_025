@@ -62,21 +62,25 @@ const userSlice = createSlice({
     // * 회원가입 요청에 따른 예외처리
     [signUpUser.pending]: (state, action) => {
       console.log(state);
+      console.log(action);
       console.log('회원가입 pending');
     },
     [signUpUser.fulfilled]: (state, payload, action) => {
       console.log(state);
+      console.log(action);
       console.log(payload);
       console.log('회원가입 fulfilled');
     },
     [signUpUser.rejected]: (state, action) => {
       console.log(state);
+      console.log(action);
       console.log('회원가입 rejected');
     },
   },
   // * 로그인 요청의 응답에 따른 예외처리
   [loginUser.pending]: (state, action) => {
     console.log(state);
+    console.log(action);
     console.log('로그인 pending');
   },
   [loginUser.fulfilled]: (state, payload, action) => {
@@ -90,6 +94,7 @@ const userSlice = createSlice({
   },
   [loginUser.rejected]: (state, action) => {
     console.log(state);
+    console.log(action);
     console.log('로그인 rejected');
   },
 });

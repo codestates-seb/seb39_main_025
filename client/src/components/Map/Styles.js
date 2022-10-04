@@ -22,6 +22,7 @@ export const SectionTitle = styled.h2`
 export const SearchInputWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 20px;
   column-gap: 10px;
 
   @media screen and (max-width: 479px) {
@@ -33,17 +34,20 @@ export const SearchInputWrapper = styled.div`
 
 export const InputDescBox = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
-
+  width: 15%;
   span {
     padding-left: 5px;
     font-weight: 500;
   }
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
 `;
 
 export const SearchForm = styled.form`
-  width: 70%;
-
+  width: 50%;
   @media screen and (max-width: 479px) {
     display: flex;
     flex-direction: column;
@@ -55,12 +59,13 @@ export const SearchForm = styled.form`
 
 export const SearchInput = styled.input`
   margin-right: 30px;
-  width: 50%;
+  width: 60%;
   height: 30px;
   border: none;
   background-color: #d9d9d9;
   border-radius: 70px;
-
+  padding-left: 10px;
+  outline: none;
   ::placeholder {
     padding-left: 10px;
   }

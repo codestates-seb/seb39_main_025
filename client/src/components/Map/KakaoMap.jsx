@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import * as S from './MapStyles';
 import SearchResults from './alert/SearchResults';
+import { AutoComplete } from 'antd';
 
 const { kakao } = window;
 
@@ -51,10 +52,6 @@ function KakaoMap({ method, keyword, submenu2, scrollToSection }) {
         center={{
           lat: 37.566826,
           lng: 126.9786567,
-        }}
-        style={{
-          width: '100%',
-          height: '350px',
         }}
         level={3}
         onCreate={setMap}
