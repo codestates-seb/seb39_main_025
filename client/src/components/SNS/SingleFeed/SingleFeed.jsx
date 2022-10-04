@@ -36,7 +36,6 @@ function SingleFeed() {
         myConfig,
       );
       const data = await res.data.data;
-      console.log(data);
       setFeed(data);
     };
     getFeed();
@@ -73,7 +72,7 @@ function SingleFeed() {
           {feed?.map((item) => {
             return (
               <SingleFeedInfinite key={item.id}>
-                <SingleFeedTopBar item={item} />
+                <SingleFeedTopBar index={item.id} item={item} />
                 <SingleFeedImage item={item} />
                 <SigleFeedContent item={item} />
               </SingleFeedInfinite>

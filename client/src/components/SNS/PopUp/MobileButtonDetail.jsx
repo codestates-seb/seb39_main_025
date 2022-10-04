@@ -6,7 +6,7 @@ import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
 import SnsEditForm from '../../Form/sns/SnsEditForm';
 
-function MobileButtonDetail({ item }) {
+function MobileButtonDetail({ item, index }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -15,7 +15,7 @@ function MobileButtonDetail({ item }) {
 
   const DeleteHandler = () => {
     axios
-      .delete(`http://localhost:3004/sns/${item.id}`)
+      .delete(`https://server.staybuddy.net/api/posts/${index}`)
       .then(alert('진짜로 게시물을 삭제 하실 건가요?'))
       .then(window.location.reload());
   };
@@ -93,6 +93,7 @@ function MobileButtonDetail({ item }) {
         </button>
       </MobileDetailLayOut>
       <SnsEditForm
+        index={index}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         handleOpenModal={handleOpenModal}

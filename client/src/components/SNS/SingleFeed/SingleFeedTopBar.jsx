@@ -7,9 +7,8 @@ import {
 } from './SingleFeedTopBarStyle';
 import MobileButtonDetail from '../PopUp/MobileButtonDetail';
 
-function SingleFeedTopBar({ item }) {
+function SingleFeedTopBar({ item, index }) {
   const navigate = useNavigate();
-
   const UserFeed = () => {
     navigate(`/sns-user/${item.snsId}`);
   };
@@ -23,7 +22,7 @@ function SingleFeedTopBar({ item }) {
         />
         {item.username}
       </SingleFeedUser>
-      <MobileButtonDetail item={item} />
+      <MobileButtonDetail item={item} index={index} />
     </SingleFeedTopBarLayout>
   );
 }
