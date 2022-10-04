@@ -19,7 +19,7 @@ function MobileButtonDetail({ item, index }) {
       setData(res);
     };
     editPost();
-  });
+  }, []);
 
   const handleOpenModal = () => {
     return setIsOpen(!isOpen);
@@ -27,9 +27,10 @@ function MobileButtonDetail({ item, index }) {
 
   const DeleteHandler = () => {
     axios
-      .delete(`http://localhost:3004/sns/${item.id}`)
+      .delete(`https://server.staybuddy.net/api/posts/${index}`)
       .then(alert('진짜로 게시물을 삭제 하실 건가요?'))
-      .then(window.location.reload());
+      .then((res) => console.log(res.data));
+    // .then(window.location.reload());
   };
 
   const menu = (

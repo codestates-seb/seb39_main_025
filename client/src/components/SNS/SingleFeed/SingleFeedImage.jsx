@@ -7,7 +7,7 @@ import {
 import 'antd/dist/antd.min.css';
 
 function SingleFeedImage({ item }) {
-  console.log(item);
+  // console.log(item);
   return (
     <SingleFeedImageLayout>
       <ImagCard

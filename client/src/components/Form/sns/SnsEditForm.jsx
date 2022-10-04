@@ -8,14 +8,14 @@ import UploadIcon from '../../../assets/upload-file.png';
 import LeftArrow from '../../../assets/left-arrow.png';
 import TempProfilePic from '../../../assets/paw-active.png';
 
-function SnsUploadForm({ isOpen, setIsOpen, data }) {
+function SnsEditForm({ isOpen, setIsOpen, data }) {
   const navigate = useNavigate();
 
   const defaultFileName = '업로드할 파일을 드래그 해주세요.';
   const [files, setFiles] = useState(null);
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
-  const [textMsg, setTextMsg] = useState('');
+  const [textMsg, setTextMsg] = useState(`${data.caption}`);
 
   const { username, userId } = localStorage;
 
@@ -143,8 +143,8 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
             <S.FormTextInputBox>
               <textarea
                 onChange={handleTextInput}
-                placeholder="내용을 적어 주세요..."
-                value={data.caption}
+                placeholder={data.caption}
+                value={textMsg}
               />
             </S.FormTextInputBox>
             <S.FormRightMidBox>
@@ -160,4 +160,4 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
   );
 }
 
-export default SnsUploadForm;
+export default SnsEditForm;
