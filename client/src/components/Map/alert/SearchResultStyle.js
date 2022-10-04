@@ -4,7 +4,6 @@ import { Button } from '../../../GlobalStyle';
 
 export const ResultsLayout = styled.section`
   width: 100%;
-  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +88,7 @@ export const PlaceInfoBtn = styled.button`
 
 export const InfoCloseBtn = styled(Button)`
   width: 200px;
-  margin-top: 100px;
+  margin: 50px 0;
 `;
 
 export const IframeBox = styled.div`

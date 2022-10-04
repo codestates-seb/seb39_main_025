@@ -32,7 +32,6 @@ function SearchResults({ places, submenu2, scrollToSection }) {
 
   useEffect(() => {
     setPlaceList(places);
-    console.log(places);
   }, [places]);
 
   return (
@@ -72,14 +71,10 @@ function SearchResults({ places, submenu2, scrollToSection }) {
         />
       </div>
       <S.IframeBox ref={submenu2}>
-        {isOpen && (
-          <>
-            <S.InfoCloseBtn type="button" onClick={() => setIsOpen(!isOpen)}>
-              닫기
-            </S.InfoCloseBtn>
-            <S.ResultIframe url={url} allowFullScreen />
-          </>
-        )}
+        {isOpen && <S.ResultIframe url={url} allowFullScreen />}
+        <S.InfoCloseBtn type="button" onClick={() => setIsOpen(false)}>
+          닫기
+        </S.InfoCloseBtn>
       </S.IframeBox>
     </S.ResultsLayout>
   );

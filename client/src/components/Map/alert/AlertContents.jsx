@@ -7,14 +7,6 @@ function AlertContents({ method, submenu1, submenu2, scrollToSection }) {
   const [value, setValue] = useState('');
   const [keyword, setKeyword] = useState('');
 
-  // 카카오 api 전역 사용
-
-  // * 유기견 위치 신고 시 이벤트핸들러(지도검색과 별개, db에 위치신고정보 데이터 제출요청용)
-  const submitAlertLocation = (e) => {
-    e.preventDefault();
-    console.log(value);
-  };
-
   // * 검색 입력값 onChange 이벤트핸들러
   const onChange = (e) => {
     setValue(e.target.value);
@@ -27,7 +19,6 @@ function AlertContents({ method, submenu1, submenu2, scrollToSection }) {
     let temp = value;
     if (method === 'alert') {
       temp += ' 동물';
-      console.log(temp);
       setKeyword(temp);
     }
     if (method === 'adopt') {

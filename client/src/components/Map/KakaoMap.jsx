@@ -42,7 +42,6 @@ function KakaoMap({ method, keyword, submenu2, scrollToSection }) {
         map.setBounds(bounds);
       }
       setPlaces([...data]);
-      console.log(places);
     });
   }, [keyword]);
 
