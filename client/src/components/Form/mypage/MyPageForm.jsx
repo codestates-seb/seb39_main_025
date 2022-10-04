@@ -50,7 +50,7 @@ function MyPageForm() {
   useEffect(() => {
     const getUserInfo = async () => {
       const res = await axios.get(
-        `https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${userId}`,
+        `https://server.staybuddy.net/api/users/${userId}`,
         { headers: { userId, Authorization: token } },
       );
       setuserInfo(res.data);
@@ -62,7 +62,7 @@ function MyPageForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = await axios.patch(
-      `https://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${userId}`,
+      `https://server.staybuddy.net/api/users/${userId}`,
       userInfo,
       { headers: { Authorization: token } },
     );

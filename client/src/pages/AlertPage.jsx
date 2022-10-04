@@ -35,7 +35,13 @@ function AlertPage() {
 
       <ContentSection>
         <S.SectionSubTitle>유기견 신고</S.SectionSubTitle>
-        <AlertContents id="map" method="alert" submenu1={submenu1} />
+        <AlertContents
+          id="map"
+          method="alert"
+          submenu1={submenu1}
+          submenu2={submenu2}
+          scrollToSection={scrollToSection}
+        />
       </ContentSection>
     </AlertPageLayout>
   );

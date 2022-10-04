@@ -19,7 +19,7 @@ function UserFeedPage() {
   useEffect(() => {
     const getFeed = async () => {
       const res = await axios.get(
-        `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/posts/${params.pageUserId}`,
+        `https://server.staybuddy.net/api/posts/${params.pageUserId}`,
         myConfig,
       );
       const data = await res.data.member;
