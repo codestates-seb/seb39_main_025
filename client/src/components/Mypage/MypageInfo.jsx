@@ -7,18 +7,6 @@ import Profile from '../../assets/profile.png';
 function MypageInfo() {
   const [user, setUser] = useState('');
   const navigate = useNavigate();
-  // const userInfo = localStorage.getItem('userId');
-
-  // useEffect(() => {
-  //   const mypageInfo = async () => {
-  //     const res = await axios.get(
-  //       `http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com:8080/api/users/${userInfo}`,
-  //     );
-  //     console.log(res.data);
-  //     setUser(res.data);
-  //   };
-  //   mypageInfo();
-  // });
 
   return (
     <S.MyInfoLayout>

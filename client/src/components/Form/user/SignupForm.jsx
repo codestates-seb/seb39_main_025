@@ -41,12 +41,6 @@ function Form() {
     e.preventDefault();
     const res = dispatch(signUpUser(userInfo));
     console.log(res);
-    // const res = await axios.post(
-    //   'http://ec2-43-200-54-216.ap-northeast-2.compute.amazonaws.com/api/users/signup',
-    //   userInfo,
-    // );
-    // console.log(res);
-    // console.log(res.data);
     return navigate('/');
   };
 
