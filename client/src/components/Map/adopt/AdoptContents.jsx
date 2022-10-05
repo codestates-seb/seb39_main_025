@@ -6,7 +6,9 @@ import * as S from '../Styles';
 function AdoptContents({ submenu1, submenu2 }) {
   return (
     <div>
-      <CheckList ref={submenu1} />
+      <div ref={submenu1}>
+        <CheckList />
+      </div>
       <S.SectionTitle ref={submenu2}>유기견 보호소 정보</S.SectionTitle>
       <S.SearchInputWrapper>
         <S.InputDescBox>
