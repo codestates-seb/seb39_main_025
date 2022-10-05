@@ -17,8 +17,9 @@ export const ImagCard = styled(Card)`
 `;
 export const CarouselWrapper = styled(Carousel)`
   div {
-    width: 450px;
+    width: 100%;
     max-width: 500px;
+
     @media screen and (max-width: 479px) {
       width: 100%;
     }

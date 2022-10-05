@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -15,7 +15,11 @@ function SnsEditForm({ isOpen, setIsOpen, data }) {
   const [files, setFiles] = useState(null);
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
-  const [textMsg, setTextMsg] = useState(`${data.caption}`);
+  const [textMsg, setTextMsg] = useState('');
+
+  useEffect(() => {
+    setTextMsg(data.caption);
+  }, [data]);
 
   const { username, userId } = localStorage;
 
@@ -62,7 +66,7 @@ function SnsEditForm({ isOpen, setIsOpen, data }) {
     console.log(formData);
 
     try {
-      const res = await axios.post(
+      const res = await axios.patch(
         `https://server.staybuddy.net/api/posts`,
         formData,
         {
@@ -143,7 +147,7 @@ function SnsEditForm({ isOpen, setIsOpen, data }) {
             <S.FormTextInputBox>
               <textarea
                 onChange={handleTextInput}
-                placeholder={data.caption}
+                placeholder={textMsg}
                 value={textMsg}
               />
             </S.FormTextInputBox>
