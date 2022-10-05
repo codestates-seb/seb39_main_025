@@ -16,10 +16,10 @@ function CheckList() {
   const [curr, setCurr] = useState(questions[0].question);
 
   const family = [1, 2, 3, 4];
-  // const house = [7, 8];
   const puppy = [5, 6, 9, 10];
 
   useEffect(() => {
+    // eslint-disable-next-line func-names
     const resultRenderer = function () {
       if (index === questions.length + 1) setIsResult(true);
     };
@@ -55,7 +55,14 @@ function CheckList() {
         ) : (
           <div>
             {isResult ? (
-              <CheckResult score={score} />
+              <CheckResult
+                score={score}
+                setScore={setScore}
+                setStart={setStart}
+                setIndex={setIndex}
+                setCurr={setCurr}
+                setIsResult={setIsResult}
+              />
             ) : (
               <S.QuestionBox onClick={(e) => e.preventDefault()}>
                 <S.QuestionIdx>
