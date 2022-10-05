@@ -37,6 +37,7 @@ export const InputDescBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 15%;
+
   span {
     padding-left: 5px;
     font-weight: 500;
@@ -80,4 +81,19 @@ export const SearchBtn = styled(Button)`
   padding: 5px 20px;
   font-size: 13px;
   font-weight: 500;
+`;
+
+export const AdoptMapSearchDesc = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  margin: 30px 0;
+  column-gap: 5px;
+`;
+
+export const AdoptSearchBtnRow = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;

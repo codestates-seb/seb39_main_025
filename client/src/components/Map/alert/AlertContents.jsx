@@ -22,9 +22,7 @@ function AlertContents({ method, submenu1, submenu2, scrollToSection }) {
       setKeyword(temp);
     }
     if (method === 'adopt') {
-      temp += ' 유기견 입양';
-      console.log(temp);
-      setKeyword(temp);
+      setKeyword('유기견 보호소');
     }
     return setValue('');
     // 재사용하는 컴포넌트임으로 함수가 조건에 따라 다르게 동작해야 함.

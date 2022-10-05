@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import * as S from './MapStyles';
-import SearchResults from './alert/SearchResults';
+import SearchResults from './SearchResults';
 import { AutoComplete } from 'antd';
 
 const { kakao } = window;

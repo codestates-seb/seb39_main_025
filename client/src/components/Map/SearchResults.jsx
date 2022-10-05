@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaStethoscope, FaDog } from 'react-icons/fa';
 import { CgPill } from 'react-icons/cg';
 import { BiHome } from 'react-icons/bi';
-import Pagination from '../../Pagination/Pagination';
+import Pagination from '../Pagination/Pagination';
 import * as S from './SearchResultStyle';
 
 /* 페이지네이션 알고리즘 구현하기
