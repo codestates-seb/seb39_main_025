@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
@@ -11,14 +10,22 @@ function MobileButtonDetail({ index }) {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState('');
   const ref = useRef();
+  const token = localStorage.getItem('accessToken');
+
+  const myConfig = {
+    withCredentials: true,
+    headers: {
+      Authorization: token,
+    },
+  };
   const onClick = (e) => {
     e.preventDefault();
     const editPost = async () => {
       const getPost = await axios.get(
         `https://server.staybuddy.net/api/posts2/${index}`,
+        myConfig,
       );
       const res = getPost.data.image;
-      console.log(res);
       setData(res);
     };
     editPost();
@@ -29,11 +36,12 @@ function MobileButtonDetail({ index }) {
   };
 
   const DeleteHandler = () => {
-    axios
-      .delete(`https://server.staybuddy.net/api/posts/${index}`)
-      .then(alert('진짜로 게시물을 삭제 하실 건가요?'))
-      .then((res) => console.log(res.data));
-    // .then(window.location.reload());
+    if (window.confirm('정말로 삭제 하시겠습니까?')) {
+      axios
+        .delete(`https://server.staybuddy.net/api/posts/${index}`)
+        .then((res) => console.log(res.data));
+      // .then(window.location.reload());
+    }
   };
 
   const menu = (
@@ -89,7 +97,7 @@ function MobileButtonDetail({ index }) {
                 cursor: 'pointer',
               }}
             >
-              디엠보내기
+              신고하기
             </button>
           ),
           key: '3',

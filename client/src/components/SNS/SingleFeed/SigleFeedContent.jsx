@@ -19,25 +19,40 @@ function SigleFeedContent({ item, index }) {
   const [more, setMore] = useState(false);
   const [rpShow, setrpShow] = useState(false);
   const [like, setLike] = useState(true);
+
   const moreButton = () => {
     setMore(!more);
   };
-  const handleLikeClick = () => {
-    setLike(!like);
-    let result = item.likes;
-    if (like === false) {
-      if (item.likes > 0) {
-        result = item.likes - 1;
-      }
-      result = item.likes;
-    } else {
-      result = item.likes + 1;
-    }
-    const body = {
-      likes: result,
-    };
-    axios.patch(`http://localhost:3004/sns/${item.id}`, body);
+  const token = localStorage.getItem('accessToken');
+  const myConfig = {
+    withCredentials: true,
+    headers: {
+      Authorization: token,
+    },
   };
+
+  const handleLikeClick = () => {
+    // setLike(!like);
+    // console.log(item);
+    // let result = item.likes;
+    // if (like === false) {
+    //   if (item.likes > 0) {
+    //     result = item.likes - 1;
+    //   }
+    //   result = item.likes;
+    // } else {
+    //   result = item.likes + 1;
+    // }
+    // const body = {
+    //   likes: result,
+    // };
+    axios
+      .post(`https://server.staybuddy.net/${item.id}/likes`, myConfig)
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
   const ShowReplyHandler = () => {
     setrpShow(!rpShow);
   };

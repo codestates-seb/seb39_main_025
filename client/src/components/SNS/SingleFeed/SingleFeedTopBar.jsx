@@ -6,6 +6,7 @@ import {
   SingleFeedUser,
 } from './SingleFeedTopBarStyle';
 import MobileButtonDetail from '../PopUp/MobileButtonDetail';
+import TempProfilePic from '../../../assets/paw-active.png';
 
 function SingleFeedTopBar({ item, index }) {
   const navigate = useNavigate();
@@ -17,10 +18,7 @@ function SingleFeedTopBar({ item, index }) {
   return (
     <SingleFeedTopBarLayout>
       <SingleFeedUser onClick={() => UserFeed()}>
-        <SigleFeedUserProfile
-          src={item.postImageUrl}
-          alt="user profile image"
-        />
+        <SigleFeedUserProfile src={TempProfilePic} alt="user profile image" />
         {item.username}
       </SingleFeedUser>
       <MobileButtonDetail index={index} item={item} />

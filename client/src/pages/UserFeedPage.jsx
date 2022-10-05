@@ -24,7 +24,6 @@ function UserFeedPage() {
       );
       const data = await res.data.member;
       setUserInfo(data);
-      console.log(data);
     };
     getFeed();
   }, []);

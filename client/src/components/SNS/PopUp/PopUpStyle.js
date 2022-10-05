@@ -4,7 +4,6 @@ import { Dropdown } from 'antd';
 // 좋아요 팝업 알림 창
 export const AlarmLayOut = styled.div`
   position: relative;
-
   & button {
     background-color: transparent;
     border: none;
@@ -18,13 +17,16 @@ export const AlarmLayOut = styled.div`
     & span {
       font-size: 11px;
       margin-left: 5px;
+      img {
+        width: 20px;
+      }
     }
     position: absolute;
     width: 100px;
     box-sizing: border-box;
     padding: 5px;
     left: -30px;
-    bottom: -40px;
+    bottom: -30px;
     background: #efac59;
     color: white;
     border-radius: 5px;

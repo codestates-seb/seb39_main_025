@@ -4,12 +4,18 @@ import {
   SingleFeedReqplyLayout,
   SingleFeedReplyInput,
   SingleFeedReplyTimeAndButton,
-  SingleFeedReplyCreated,
 } from './SingleReedReplyStyle';
 
 function SingleFeedReply({ index }) {
   const [comment, setComment] = useState('');
+  const token = localStorage.getItem('accessToken');
 
+  const myConfig = {
+    withCredentials: true,
+    headers: {
+      Authorization: token,
+    },
+  };
   // eslint-disable-next-line consistent-return
   const repleUplodeHandler = (e) => {
     e.preventDefault();
@@ -21,7 +27,7 @@ function SingleFeedReply({ index }) {
       imageId: index,
     };
     axios
-      .post('https://server.staybuddy.net/api/comments', body)
+      .post('https://server.staybuddy.net/api/comments', body, myConfig)
       .then((res) => console.log(res))
       .then(alert('댓글 작성이 성공 하였습니다'))
       .then(setComment(''));
@@ -36,7 +42,6 @@ function SingleFeedReply({ index }) {
         onChange={(e) => setComment(e.target.value)}
       />
       <SingleFeedReplyTimeAndButton>
-        <SingleFeedReplyCreated>게시글 시간</SingleFeedReplyCreated>
         <button type="submit" onClick={(e) => repleUplodeHandler(e)}>
           댓글 등록
         </button>

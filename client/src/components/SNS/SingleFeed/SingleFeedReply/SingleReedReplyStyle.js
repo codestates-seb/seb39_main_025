@@ -18,20 +18,16 @@ export const SingleFeedReplyInput = styled.input`
 
 export const SingleFeedReplyTimeAndButton = styled.span`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   & button {
     border: none;
     background-color: transparent;
-    font-size: 11px;
+    font-size: 14px;
     color: #efac59;
     cursor: pointer;
   }
 `;
 
-export const SingleFeedReplyCreated = styled.div`
-  margin-top: 10px;
-  font-size: 9px;
-`;
 export const SingleFeedReplyLayout = styled.div`
   widows: 100%;
   background-color: #fff;
@@ -39,6 +35,7 @@ export const SingleFeedReplyLayout = styled.div`
   padding: 10px;
   color: #000;
 `;
+
 export const ReplyBox = styled.div`
   font-size: 13px;
   & span {
@@ -68,7 +65,6 @@ export const RepleContentDiv = styled.div`
     top: 0;
     bottom: 0;
     display: flex;
-
     .more {
       background-color: transparent;
       border: none;
@@ -87,7 +83,6 @@ export const RepleContentDiv = styled.div`
       padding: 10px 0px;
       cursor: auto;
       display: flex;
-      flex-direction: column;
       align-content: center;
       justify-content: space-between;
       align-items: center;

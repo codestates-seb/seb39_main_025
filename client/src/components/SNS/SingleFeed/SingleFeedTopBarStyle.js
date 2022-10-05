@@ -28,6 +28,7 @@ export const SigleFeedUserProfile = styled.img`
   border-radius: 100%;
   width: 40px;
   height: 40px;
-  background-color: #aaa;
+  background-color: #fff;
+  border: solid 2px #efac59;
   margin-right: 10px;
 `;

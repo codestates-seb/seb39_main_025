@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { UserFeedGalleryLayout, GalleryCard } from './UserFeedStyle';
 
 function UserFeedGallery({ items }) {
@@ -8,10 +9,12 @@ function UserFeedGallery({ items }) {
         {items.images?.map((item) => {
           return (
             <GalleryCard.Grid className="card-grid" key={item.id}>
-              <img
-                alt="post"
-                src={`https://server.staybuddy.net/upload/${item.postImageUrl}`}
-              />
+              <NavLink to="/sns">
+                <img
+                  alt="post"
+                  src={`https://server.staybuddy.net/upload/${item.postImageUrl}`}
+                />
+              </NavLink>
               <p>{item.caption}</p>
             </GalleryCard.Grid>
           );
