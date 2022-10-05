@@ -23,7 +23,7 @@ function AdoptPetPage() {
                 type="button"
                 onClick={() => scrollToSection(submenu1)}
               >
-                양육환경 자가진단
+                입양 전 체크리스트
               </S.ListItemBtn>
             </h3>
           </S.ListItem>

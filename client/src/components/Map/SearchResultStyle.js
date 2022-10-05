@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Iframe from 'react-iframe';
-import { Button } from '../../../GlobalStyle';
+import { Button } from '../../GlobalStyle';
 
 export const ResultsLayout = styled.section`
   width: 100%;
@@ -31,6 +31,7 @@ export const ResultsLayoutUl = styled.ul`
 
 export const SearchResultLi = styled.li`
   border-radius: 12px;
+  width: 200px;
   margin: 10px;
   overflow: hidden;
   padding: 10px;
@@ -43,6 +44,7 @@ export const SearchResultLi = styled.li`
   }
 
   @media screen and (max-width: 479px) {
+    width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-between;
