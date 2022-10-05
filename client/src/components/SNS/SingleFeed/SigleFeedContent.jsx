@@ -15,7 +15,7 @@ import ChatIcon from '../../../assets/comment.png';
 import RepleList from './SingleFeedReply/RepleList';
 import SingleFeedReply from './SingleFeedReply/SingleFeedReply';
 
-function SigleFeedContent({ item }) {
+function SigleFeedContent({ item, index }) {
   const [more, setMore] = useState(false);
   const [rpShow, setrpShow] = useState(false);
   const [like, setLike] = useState(true);
@@ -66,9 +66,8 @@ function SigleFeedContent({ item }) {
           more
         </button>
       </UserContent>
-      <SingleFeedReply />
-
-      {rpShow ? <RepleList /> : ''}
+      <SingleFeedReply index={index} />
+      {rpShow ? <RepleList index={index} /> : ''}
     </SigleFeedContentLayout>
   );
 }

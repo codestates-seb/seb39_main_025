@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
-// import { useParams } from 'react-router-dom';
 import { SingleFeedReplyLayout, ReplyBox } from './SingleReedReplyStyle';
 import RepleContent from './RepleContent';
 
-function RepleList() {
-  // const param = useParams();
-
+function RepleList({ index }) {
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
     const getComment = async () => {
-      const res = await axios.get(`http://localhost:3004/comments`);
-      const data = await res.data;
+      const res = await axios.get(
+        `https://server.staybuddy.net/api/${index}/comments`,
+      );
+      const data = await res.data.data;
+      console.log(data);
       setCommentList(data);
     };
     getComment();
@@ -22,9 +21,9 @@ function RepleList() {
   return (
     <SingleFeedReplyLayout>
       <ReplyBox>
-        {commentList.map((el, idx) => {
+        {commentList.map((el) => {
           // eslint-disable-next-line react/no-array-index-key
-          return <RepleContent key={idx} comment={el} />;
+          return <RepleContent comment={el} />;
         })}
       </ReplyBox>
     </SingleFeedReplyLayout>
