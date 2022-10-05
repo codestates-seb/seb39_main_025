@@ -40,4 +40,12 @@ const BackgroundLayout = styled(Carousel)`
       object-fit: cover;
     }
   }
+  @media screen and (max-width: 479px) {
+    & div {
+      margin: auto;
+      img {
+        object-fit: fill;
+      }
+    }
+  }
 `;

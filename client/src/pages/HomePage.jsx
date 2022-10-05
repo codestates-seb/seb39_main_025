@@ -10,7 +10,7 @@ function HomePage() {
       <Stories />
       <FeedBox>
         <SingleFeed />
-        <SuggestInfinite />
+        {/* <SuggestInfinite /> */}
       </FeedBox>
     </>
   );

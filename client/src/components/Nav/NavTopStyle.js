@@ -16,6 +16,7 @@ export const NavTopLayout = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 10px;
 `;
 
 export const MainLogo = styled.div`
@@ -81,30 +82,32 @@ export const NavSearchClose = styled(Button)`
 
 export const NavButton = styled.div`
   margin-right: 1%;
-  width: 20%;
+
   display: flex;
   align-items: center;
 
   @media screen and (max-width: 479px) {
     margin-right: 1%;
-    width: 30%;
   }
 `;
 
 export const LogoutButton = styled(Button)`
   padding: 5px 15px;
   font-size: 1rem;
+  @media screen and (max-width: 479px) {
+    font-size: 13px;
+  }
 `;
 
 export const NavButtonLogin = styled(Button)`
   width: 100px;
   height: 100%;
-  padding: 0;
-  margin-right: 5px;
   padding: 5px 0;
   @media screen and (max-width: 479px) {
+    width: 80px;
     font-size: 10px;
-    height: 25px;
+    height: 30px;
+    padding: 0px 5px;
   }
 `;
 export const NavButtonRegister = styled(Button)`
@@ -113,7 +116,9 @@ export const NavButtonRegister = styled(Button)`
   padding: 5px 0;
 
   @media screen and (max-width: 479px) {
+    width: 80px;
     font-size: 10px;
-    height: 25px;
+    height: 30px;
+    padding: 0px 5px;
   }
 `;

@@ -10,12 +10,13 @@ import TempProfilePic from '../../../assets/paw-active.png';
 
 function SnsEditForm({ isOpen, setIsOpen, data }) {
   const navigate = useNavigate();
-
   const defaultFileName = '업로드할 파일을 드래그 해주세요.';
   const [files, setFiles] = useState(null);
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
   const [textMsg, setTextMsg] = useState('');
+
+  console.log(data);
 
   useEffect(() => {
     setTextMsg(data.caption);

@@ -31,10 +31,10 @@ function Alarm() {
       {popup && (
         <AlarmPopupLayout className="ballon">
           <span>
-            <img src={LikesIcon} alt={LikesIcon} /> 1
+            <img src={LikesIcon} alt={LikesIcon} style={{ height: '10%' }} /> 1
           </span>
           <span>
-            <img src={ChatIcon} alt={ChatIcon} /> 2
+            <img src={ChatIcon} alt={ChatIcon} style={{ height: '10%' }} /> 2
           </span>
         </AlarmPopupLayout>
       )}

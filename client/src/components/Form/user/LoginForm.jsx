@@ -43,7 +43,6 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
     setIsLogin(true);
     const username = await JSON.parse(res.payload.config.data).username;
     localStorage.setItem('username', username);
-    console.log(localStorage.username);
     return navigate('/');
   };
 

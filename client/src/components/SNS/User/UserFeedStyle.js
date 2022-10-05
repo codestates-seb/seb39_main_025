@@ -30,7 +30,6 @@ export const UserFeedTopBarLayout = styled.div`
   @media screen and (max-width: 479px) {
     display: block;
     width: 100%;
-
     height: 45px;
     display: flex;
     justify-content: space-between;

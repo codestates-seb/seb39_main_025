@@ -14,7 +14,6 @@ import SnsUploadPage from './pages/SnsUploadPage';
 import UserFeedPage from './pages/UserFeedPage';
 import WeeklyRankPage from './pages/WeeklyRankPage';
 import MyEditPage from './pages/MyEditPage';
-import DirectMessagePage from './pages/DirectMessagePage';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -49,7 +48,6 @@ function App() {
           <Route path="/mypage/:userId" element={<MyEditPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
           <Route path="/sns-user/:pageUserId" element={<UserFeedPage />} />
-          <Route path="/sns-msg" element={<DirectMessagePage />} />
           <Route path="/sns-weekly" element={<WeeklyRankPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />
           <Route path="/alert" element={<AlertPage />} />

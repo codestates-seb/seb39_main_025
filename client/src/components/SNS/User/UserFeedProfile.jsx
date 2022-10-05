@@ -6,21 +6,21 @@ import {
   ProfileCircle,
   UserFeedBedge,
   UserFeedInfoTable,
-  FollowingButton,
 } from './UserFeedStyle';
+import TempProfilePic from '../../../assets/paw-active.png';
 
 function UserFeedProfile({ items }) {
   return (
     <UserFeedPorofileLayout>
       <ProfileBox>
         <ProfileCircle>
-          <img src={items.profileImageUrl} alt="프로필 이미지" />
+          <img src={TempProfilePic} alt="프로필 이미지" />
         </ProfileCircle>
         <UserFeedInfoTable>
           <table>
             <thead>
               <tr>
-                <th colSpan="1"> Followers</th>
+                <th colSpan="1"> likes</th>
                 <th colSpan="1"> Post</th>
               </tr>
               <tr>
@@ -39,9 +39,6 @@ function UserFeedProfile({ items }) {
       <UserContent>
         <span>{items.username}</span>
         <p>{}</p>
-        <FollowingButton yellow type="button">
-          Following
-        </FollowingButton>
       </UserContent>
     </UserFeedPorofileLayout>
   );
