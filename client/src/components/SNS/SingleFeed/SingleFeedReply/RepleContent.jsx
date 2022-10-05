@@ -4,12 +4,10 @@ import axios from 'axios';
 import Avatar from 'react-avatar';
 import moment from 'moment';
 import 'moment/locale/ko';
-import { RepleContentDiv, RepleUploadDiv } from './SingleReedReplyStyle';
+import { RepleContentDiv } from './SingleReedReplyStyle';
 
 function RepleContent({ comment }) {
   const [modalFlag, setModalFlag] = useState(false);
-  const [editFlag, setEditFLag] = useState(false);
-  const [eidtReple, setEditReple] = useState(comment.comment);
 
   // const user = useSelector((state) => state.token);
   const ref = useRef();
@@ -41,26 +39,13 @@ function RepleContent({ comment }) {
     }
   };
 
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-    const body = {
-      comment: comment.comment,
-      id: comment.id,
-    };
-    axios.put('http://localhost:3004/comments', body);
-    alert('수정 되었습니다');
-    setEditFLag(false);
-  };
-
   const DeleteHandler = (e) => {
     e.preventDefault();
     if (window.confirm('정말로 삭제 하시겠습니까?')) {
-      const body = {
-        comment: comment.comment,
-        id: comment.id,
-      };
-      axios.delete('http://localhost:3004/comments', body);
-      window.location.reload();
+      axios
+        .delete(`https://server.staybuddy.net/api/comments/${comment.id}`)
+        .then((res) => console.log(res.data));
+      // .then(window.location.reload());
     }
   };
 
@@ -69,7 +54,7 @@ function RepleContent({ comment }) {
       <div className="author">
         <div className="userInfo">
           <Avatar size="30" round style={{ border: '1px solid #c6c6c6' }} />
-          <p> {comment.id}</p>
+          <p> {comment.member.username}</p>
         </div>
         {/* {props.reple.uid === user.token && (유저 확인하고 조건부 팝업 버튼) } */}
         <div className="modal-Control">
@@ -84,15 +69,6 @@ function RepleContent({ comment }) {
             <div className="modal" ref={ref}>
               <button
                 type="button"
-                onClick={() => {
-                  setEditFLag(true);
-                  setEditReple(true);
-                }}
-              >
-                수정
-              </button>
-              <button
-                type="button"
                 className="delete"
                 onClick={(e) => DeleteHandler(e)}
               >
@@ -102,41 +78,8 @@ function RepleContent({ comment }) {
           )}
         </div>
         <p className="time">{SetTime(comment.id, comment.id)}</p>
-        {editFlag ? (
-          <RepleUploadDiv>
-            <form>
-              <input
-                className="reple-edit-input"
-                type="text"
-                value={eidtReple}
-                onChange={(e) => {
-                  setEditReple(e.currentTarget.value);
-                }}
-              />
-              <button
-                type="button"
-                onClick={(e) => {
-                  SubmitHandler(e);
-                }}
-              >
-                등록
-              </button>
-            </form>
-            <div className="cancel">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setEditFLag(false);
-                }}
-              >
-                취소
-              </button>
-            </div>
-          </RepleUploadDiv>
-        ) : (
-          <p className="comment">{comment.comment}</p>
-        )}
+
+        <p className="comment">{comment.content}</p>
       </div>
     </RepleContentDiv>
   );

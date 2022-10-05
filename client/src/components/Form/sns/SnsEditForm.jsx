@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -8,7 +8,7 @@ import UploadIcon from '../../../assets/upload-file.png';
 import LeftArrow from '../../../assets/left-arrow.png';
 import TempProfilePic from '../../../assets/paw-active.png';
 
-function SnsUploadForm({ isOpen, setIsOpen, data }) {
+function SnsEditForm({ isOpen, setIsOpen, data }) {
   const navigate = useNavigate();
 
   const defaultFileName = '업로드할 파일을 드래그 해주세요.';
@@ -16,6 +16,10 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
   const [previews, setPreviews] = useState([]);
   const [fileName, setFileName] = useState(defaultFileName);
   const [textMsg, setTextMsg] = useState('');
+
+  useEffect(() => {
+    setTextMsg(data.caption);
+  }, [data]);
 
   const { username, userId } = localStorage;
 
@@ -62,7 +66,7 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
     console.log(formData);
 
     try {
-      const res = await axios.post(
+      const res = await axios.patch(
         `https://server.staybuddy.net/api/posts`,
         formData,
         {
@@ -143,8 +147,8 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
             <S.FormTextInputBox>
               <textarea
                 onChange={handleTextInput}
-                placeholder="내용을 적어 주세요..."
-                value={data.caption}
+                placeholder={textMsg}
+                value={textMsg}
               />
             </S.FormTextInputBox>
             <S.FormRightMidBox>
@@ -160,4 +164,4 @@ function SnsUploadForm({ isOpen, setIsOpen, data }) {
   );
 }
 
-export default SnsUploadForm;
+export default SnsEditForm;
