@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import * as S from './MypageInfoStyle';
 import Profile from '../../assets/profile.png';
 
 function MypageInfo() {
   const [user, setUser] = useState('');
   const navigate = useNavigate();
+  const token = window.localStorage.getItem('accessToken');
+  const userId = window.localStorage.getItem('userId');
+
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const res = await axios.get(
+        `https://server.staybuddy.net/api/users/${userId}`,
+        { headers: { userId, Authorization: token } },
+      );
+      setUser(res.data);
+      console.log(res.data);
+    };
+    getUserInfo();
+  }, []);
 
   return (
     <S.MyInfoLayout>
@@ -16,7 +30,7 @@ function MypageInfo() {
         <S.MyInfoFlex>
           <img src={Profile} alt="" />
           <div>
-            <p>이름: </p>
+            <p>이름:{user.username} </p>
             <p>봉사자: </p>
             <p>마이버디: </p>
           </div>
