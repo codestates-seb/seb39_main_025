@@ -13,13 +13,11 @@ export const CheckListLayout = styled.div`
 export const CheckListContainer = styled.div`
   width: 80%;
   height: 450px;
-  border: 1px solid #1d3561;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #dcf5f4;
 
   @media screen and (max-width: 479px) {
     width: 100%;

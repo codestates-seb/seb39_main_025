@@ -33,6 +33,8 @@ function SingleFeed() {
         myConfig,
       );
       const data = await res.data.data;
+
+      console.log(data);
       setFeed(data);
       setLoading(false);
     };

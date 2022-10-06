@@ -8,15 +8,19 @@ export const CoverLayout = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  @media screen and (max-width: 479px) {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const CoverTitleBox = styled.div`
   display: flex;
   justify-content: flex-end;
-
-  @media screen and (max-width: 479px) {
-    width: 180px;
-  }
 `;
 
 export const CoverTitleText = styled.h3`
@@ -24,6 +28,10 @@ export const CoverTitleText = styled.h3`
   padding: 0;
   font-family: 'Jua', sans-serif;
   font-size: 30px;
+
+  @media screen and (max-width: 479px) {
+    font-size: 25px;
+  }
 `;
 
 /* 이미지영역 */
