@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
-import SnsEditForm from '../../Form/sns/SnsEditForm';
+// import SnsEditForm from '../../Form/sns/SnsEditForm';
 
 function MobileButtonDetail({ index }) {
   const navigate = useNavigate();
@@ -34,9 +34,9 @@ function MobileButtonDetail({ index }) {
     editPost();
   };
 
-  const handleOpenModal = () => {
-    return setIsOpen(!isOpen);
-  };
+  // const handleOpenModal = () => {
+  //   return setIsOpen(!isOpen);
+  // };
 
   function DeleteHandler() {
     if (!token) {
@@ -54,24 +54,24 @@ function MobileButtonDetail({ index }) {
   const menu = (
     <Menu
       items={[
-        {
-          label: (
-            <button
-              type="button"
-              onClick={handleOpenModal}
-              style={{
-                border: 'none',
-                width: '100%',
-                backgroundColor: 'transparent',
-                textAlign: 'left',
-                cursor: 'pointer',
-              }}
-            >
-              게시물 수정
-            </button>
-          ),
-          key: '0',
-        },
+        // {
+        //   label: (
+        //     <button
+        //       type="button"
+        //       onClick={handleOpenModal}
+        //       style={{
+        //         border: 'none',
+        //         width: '100%',
+        //         backgroundColor: 'transparent',
+        //         textAlign: 'left',
+        //         cursor: 'pointer',
+        //       }}
+        //     >
+        //       게시물 수정
+        //     </button>
+        //   ),
+        //   key: '0',
+        // },
         {
           label: (
             <button
@@ -127,13 +127,13 @@ function MobileButtonDetail({ index }) {
           </Space>
         </button>
       </MobileDetailLayOut>
-      <SnsEditForm
+      {/* <SnsEditForm
         data={data}
         index={index}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         handleOpenModal={handleOpenModal}
-      />
+      /> */}
     </div>
   );
 }

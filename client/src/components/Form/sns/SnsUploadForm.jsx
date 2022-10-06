@@ -81,8 +81,6 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
 
       setFileName(defaultFileName);
       setPreviews(null);
-
-      console.log(res);
       window.location.reload();
     } catch (err) {
       toast.error(err.message);

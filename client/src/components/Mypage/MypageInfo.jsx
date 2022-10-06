@@ -17,7 +17,6 @@ function MypageInfo() {
         { headers: { userId, Authorization: token } },
       );
       setUser(res.data);
-      console.log(res.data);
     };
     getUserInfo();
   }, []);
