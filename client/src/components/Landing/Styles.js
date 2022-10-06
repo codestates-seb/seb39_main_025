@@ -88,8 +88,9 @@ export const LandingContentLayout = styled.div`
     
       }
     }
-    @media screen and (max-width: 390px) {
+    @media screen and (max-width: 375px) {
       width: 200px;
+      height: 300px;
       img {
         width: 100%;
       }
