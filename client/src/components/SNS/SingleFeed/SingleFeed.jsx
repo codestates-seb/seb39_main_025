@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import {
   SingleFeedLayout,
   SingleFeedContainer,
@@ -9,10 +8,11 @@ import {
 import SingleFeedTopBar from './SingleFeedTopBar';
 import SingleFeedImage from './SingleFeedImage';
 import SigleFeedContent from './SigleFeedContent';
+import Loading from '../../Loading/Loading';
 
 function SingleFeed() {
   const [feed, setFeed] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   // const pageUserId = localStorage.getItem('userId');
   // console.log(pageUserId);
   const token = localStorage.getItem('accessToken');
@@ -26,6 +26,7 @@ function SingleFeed() {
 
   // 무한 스크롤로 데이터 요청
   useEffect(() => {
+    setLoading(true);
     const getFeed = async () => {
       const res = await axios.get(
         `https://server.staybuddy.net/api/posts`,
@@ -35,24 +36,28 @@ function SingleFeed() {
 
       console.log(data);
       setFeed(data);
+      setLoading(false);
     };
     getFeed();
   }, []);
 
   return (
-    <SingleFeedContainer>
-      <SingleFeedLayout>
-        {feed?.map((item) => {
-          return (
-            <SingleFeedInfinite key={item.id}>
-              <SingleFeedTopBar index={item.id} item={item} />
-              <SingleFeedImage item={item} />
-              <SigleFeedContent item={item} index={item.id} />
-            </SingleFeedInfinite>
-          );
-        })}
-      </SingleFeedLayout>
-    </SingleFeedContainer>
+    <>
+      {loading ? <Loading /> : null}
+      <SingleFeedContainer>
+        <SingleFeedLayout>
+          {feed?.map((item) => {
+            return (
+              <SingleFeedInfinite key={item.id}>
+                <SingleFeedTopBar index={item.id} item={item} />
+                <SingleFeedImage item={item} />
+                <SigleFeedContent item={item} index={item.id} />
+              </SingleFeedInfinite>
+            );
+          })}
+        </SingleFeedLayout>
+      </SingleFeedContainer>
+    </>
   );
 }
 
