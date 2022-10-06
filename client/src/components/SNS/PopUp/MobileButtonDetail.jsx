@@ -2,11 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Space } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { MobileDetailLayOut } from './PopUpStyle';
 import MoreIcon from '../../../assets/more.png';
 import SnsEditForm from '../../Form/sns/SnsEditForm';
 
 function MobileButtonDetail({ index }) {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState('');
   const ref = useRef();
@@ -18,6 +20,7 @@ function MobileButtonDetail({ index }) {
       Authorization: token,
     },
   };
+
   const onClick = (e) => {
     e.preventDefault();
     const editPost = async () => {
@@ -35,14 +38,18 @@ function MobileButtonDetail({ index }) {
     return setIsOpen(!isOpen);
   };
 
-  const DeleteHandler = () => {
+  function DeleteHandler() {
+    if (!token) {
+      alert('로그인 후 이용해주세요');
+      return navigate('/login');
+    }
     if (window.confirm('정말로 삭제 하시겠습니까?')) {
       axios
         .delete(`https://server.staybuddy.net/api/posts/${index}`)
-        .then((res) => console.log(res.data));
-      // .then(window.location.reload());
+        .then((res) => console.log(res.data))
+        .then(window.location.reload());
     }
-  };
+  }
 
   const menu = (
     <Menu

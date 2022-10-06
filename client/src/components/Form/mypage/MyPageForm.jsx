@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
   FormUserInfo,
@@ -15,7 +15,7 @@ import {
 import DaumAddress from './DaumAddress';
 
 function MyPageForm() {
-  // const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
   const token = window.localStorage.getItem('accessToken');
   const userId = window.localStorage.getItem('userId');
 
@@ -61,12 +61,16 @@ function MyPageForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (!localStorage.accessToken) {
+      alert('로그인 후 이용해주세요');
+      return navigate('/login');
+    }
     const res = await axios.patch(
       `https://server.staybuddy.net/api/users/${userId}`,
       userInfo,
       { headers: { Authorization: token } },
     );
-    console.log(res.data);
+    return console.log(res.data);
   };
 
   return (

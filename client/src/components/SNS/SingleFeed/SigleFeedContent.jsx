@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   SigleFeedContentLayout,
@@ -19,6 +19,8 @@ function SigleFeedContent({ item, index }) {
   const [more, setMore] = useState(false);
   const [rpShow, setrpShow] = useState(false);
   const [like, setLike] = useState(true);
+  const [liked, setLiked] = useState('');
+  const formData = new FormData();
 
   const moreButton = () => {
     setMore(!more);
@@ -32,25 +34,25 @@ function SigleFeedContent({ item, index }) {
   };
 
   const handleLikeClick = () => {
-    // setLike(!like);
-    // console.log(item);
-    // let result = item.likes;
-    // if (like === false) {
-    //   if (item.likes > 0) {
-    //     result = item.likes - 1;
-    //   }
-    //   result = item.likes;
-    // } else {
-    //   result = item.likes + 1;
-    // }
-    // const body = {
-    //   likes: result,
-    // };
+    setLike(!like);
+    console.log(item);
+    let result = item.liked;
+    if (like === false) {
+      if (item.liked > 0) {
+        result = item.liked - 1;
+      }
+      result = item.liked;
+    } else {
+      result = item.liked + 1;
+    }
+    formData.append('liked', result);
     axios
-      .post(`https://server.staybuddy.net/${item.id}/likes`, myConfig)
-      .then((res) => {
-        console.log(res.data);
-      });
+      .patch(
+        `https://server.staybuddy.net/api/posts/${item.id}`,
+        formData,
+        myConfig,
+      )
+      .then(window.location.reload());
   };
 
   const ShowReplyHandler = () => {
@@ -72,7 +74,7 @@ function SigleFeedContent({ item, index }) {
             <img src={ChatIcon} alt={ChatIcon} />
           </button>
         </IconButton>
-        <Likes> Likes</Likes>
+        <Likes>{item.liked} Likes</Likes>
       </ContentIcons>
       <UserContent>
         <UserId>{item.username}</UserId>

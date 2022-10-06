@@ -21,7 +21,7 @@ export const SingleFeedInfinite = styled.div`
   border-top: 1px solid #ddd;
   width: 500px;
   min-width: 500px;
-  width: fit-content;
+  /* width: fit-content; */
   overflow: auto;
   @media screen and (max-width: 479px) {
     max-width: 400px;
