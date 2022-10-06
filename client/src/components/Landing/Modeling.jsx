@@ -8,7 +8,7 @@ function Modeling() {
   return (
     <S.ModelingLayout>
       <S.ModelCanvas>
-        <OrbitControls enableZoom />
+        <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[-2, 5, 2]} intensity={1} />
         <Float speed={1.4} rotationIntensity={1.5} floatIntensity={2.3}>
