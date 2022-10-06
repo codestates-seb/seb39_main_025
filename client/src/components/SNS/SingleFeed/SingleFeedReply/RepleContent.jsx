@@ -39,13 +39,22 @@ function RepleContent({ comment }) {
     }
   };
 
+  const token = localStorage.getItem('accessToken');
+  const myConfig = {
+    withCredentials: true,
+    headers: {
+      Authorization: token,
+    },
+  };
   const DeleteHandler = (e) => {
     e.preventDefault();
     if (window.confirm('정말로 삭제 하시겠습니까?')) {
       axios
-        .delete(`https://server.staybuddy.net/api/comments/${comment.id}`)
-        .then((res) => console.log(res.data));
-      // .then(window.location.reload());
+        .delete(
+          `https://server.staybuddy.net/api/comments/${comment.id}`,
+          myConfig,
+        )
+        .then(window.location.reload());
     }
   };
 

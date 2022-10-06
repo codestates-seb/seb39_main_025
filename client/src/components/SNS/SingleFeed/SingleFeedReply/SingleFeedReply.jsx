@@ -34,10 +34,9 @@ function SingleFeedReply({ index }) {
     };
     axios
       .post('https://server.staybuddy.net/api/comments', body, myConfig)
-      .then((res) => console.log(res))
       .then(alert('댓글 작성이 성공 하였습니다'))
-      .then(setComment(''));
-    // .then(window.location.reload());
+      .then(setComment(''))
+      .then(window.location.reload());
   };
 
   return (

@@ -12,7 +12,6 @@ function RepleList({ index }) {
         `https://server.staybuddy.net/api/${index}/comments`,
       );
       const data = await res.data.data;
-      console.log(data);
       setCommentList(data);
     };
     getComment();

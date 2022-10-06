@@ -27,4 +27,8 @@ export const SingleFeedInfinite = styled.div`
     max-width: 400px;
     min-width: 400px;
   }
+  @media screen and (max-width: 375px) {
+    max-width: 370px;
+    min-width: 370px;
+  }
 `;

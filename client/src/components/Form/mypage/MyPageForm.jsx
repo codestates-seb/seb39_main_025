@@ -123,25 +123,20 @@ function MyPageForm() {
                 유기견
                 <input
                   type="radio"
-                  id="radio"
+                  id="stray"
                   name="pet"
                   value={userInfo.pet}
                 />
               </label>
               <label htmlFor="radio">
                 유기묘
-                <input
-                  type="radio"
-                  id="radio"
-                  name="pet"
-                  value={userInfo.pet}
-                />
+                <input type="radio" id="cat" name="pet" value={userInfo.pet} />
               </label>
               <label htmlFor="radio">
                 그외
                 <input
                   type="radio"
-                  id="radio"
+                  id="other"
                   name="pet"
                   value={userInfo.pet}
                 />
