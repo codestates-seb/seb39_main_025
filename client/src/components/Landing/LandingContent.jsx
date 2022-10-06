@@ -3,10 +3,10 @@ import React from 'react';
 // import { MdTimer10 } from 'react-icons/md';
 import { AiTwotoneAlert } from 'react-icons/ai';
 import { GiDogBowl } from 'react-icons/gi';
+import { Button } from '../../GlobalStyle';
 import Modeling from './Modeling';
 import Scroll from './Scroll';
 import * as S from './Styles';
-import { Button } from '../../GlobalStyle';
 import Phone from '../../assets/mobile.png';
 import Sns from '../../assets/mobileSns.png';
 import Paw from '../../assets/paw-active.png';
@@ -17,24 +17,28 @@ function LandingContent() {
   return (
     <S.LandingContentLayout>
       <S.ContentLayout>
-        <S.LandingText>
-          STAY,
-          <TypeIt
-            options={{
-              speed: 200,
-              cursorChar: '',
-              loop: 'true',
-            }}
-          >
-            BUDDY
-          </TypeIt>
-        </S.LandingText>
-        <h3 style={{ color: '#fff', fontSize: '1.5rem' }}> STAY, TOGETHER</h3>
-        <Scroll />
-        <Button yellow style={{ marginTop: '35px' }}>
-          {' '}
-          회원가입 하기
-        </Button>
+        <S.LandingTitleDesc>
+          <S.LandingText>
+            STAY, <br />
+            <TypeIt
+              options={{
+                speed: 200,
+                cursorChar: '',
+                loop: 'true',
+              }}
+            >
+              BUDDY
+            </TypeIt>
+          </S.LandingText>
+        </S.LandingTitleDesc>
+        <S.LandingTitleBottom>
+          <S.ScrollWrapper>
+            <h3> STAY, TOGETHER</h3>
+            <Scroll />
+            <S.SigninBtn yellow> 회원가입 하기</S.SigninBtn>
+          </S.ScrollWrapper>
+        </S.LandingTitleBottom>
+
         <Modeling />
       </S.ContentLayout>
 

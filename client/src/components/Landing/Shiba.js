@@ -13,7 +13,7 @@ import { useGLTF } from '@react-three/drei';
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/shiba.gltf');
   return (
-    <group {...props} dispose={null} scale={3}>
+    <group {...props} dispose={null} scale={6}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group rotation={[-Math.PI / 2, 0, 0]}>

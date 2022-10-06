@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from '../../GlobalStyle';
 import './scroll.css';
 
 export const LandingContentLayout = styled.div`
@@ -79,16 +80,53 @@ export const ContentLayout = styled.div`
   background-color: #efac59;
   width: 100%;
   position: relative;
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
 `;
+
+export const LandingTitleDesc = styled.div`
+  z-index: 1;
+  width: 300px;
+`;
+
 export const LandingText = styled.div`
   color: #1d3561;
   font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 10rem;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 479px) {
+  }
+`;
+
+export const LandingTitleBottom = styled.div`
+  z-index: 1;
+
+  h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  }
+`;
+
+export const ScrollWrapper = styled.div`
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+`;
+
+export const SigninBtn = styled(Button)`
+  margin-bottom: 1rem;
+  border: 0.01px solid #fff;
+  color: #1d3561;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
   font-weight: 500;
-  margin-top: 2rem;
 `;

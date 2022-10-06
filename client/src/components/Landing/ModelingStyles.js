@@ -8,15 +8,11 @@ import { Canvas } from '@react-three/fiber';
 
 // * 캔버스영역 크기를 여기 부모에서 줘야 먹어서 이쪽에 값 주었습니다
 export const ModelingLayout = styled.div`
-  width: 30%;
-  height: 40%;
+  width: 100%;
+  height: 90%;
   position: absolute;
   top: 0;
   /* border: 1px solid #fff; */
 `;
 
-export const ModelCanvas = styled(Canvas)`
-  /* background-color: skyblue; */
-  /* border: 1px solid #1d3561; */
-  border-radius: 10px;
-`;
+export const ModelCanvas = styled(Canvas)``;
