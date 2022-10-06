@@ -20,6 +20,7 @@ function MobileButtonDetail({ index }) {
       Authorization: token,
     },
   };
+
   const onClick = (e) => {
     e.preventDefault();
     const editPost = async () => {
@@ -45,8 +46,8 @@ function MobileButtonDetail({ index }) {
     if (window.confirm('정말로 삭제 하시겠습니까?')) {
       axios
         .delete(`https://server.staybuddy.net/api/posts/${index}`)
-        .then((res) => console.log(res.data));
-      // .then(window.location.reload());
+        .then((res) => console.log(res.data))
+        .then(window.location.reload());
     }
   }
 

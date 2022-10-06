@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "eslint": "^8.23.1",
+    "gsap": "^3.11.3",
     "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -35,6 +36,7 @@
     "redux-logger": "^3.0.6",
     "styled-components": "^5.3.5",
     "three": "^0.145.0",
+    "typeit-react": "^2.6.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

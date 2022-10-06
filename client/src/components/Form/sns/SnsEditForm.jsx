@@ -68,7 +68,7 @@ function SnsEditForm({ isOpen, setIsOpen, data }) {
 
     try {
       const res = await axios.patch(
-        `https://server.staybuddy.net/api/posts`,
+        `https://server.staybuddy.net/api/posts/${data.id}`,
         formData,
         {
           headers: {
