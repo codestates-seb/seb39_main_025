@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-restricted-syntax */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -51,6 +52,10 @@ function SnsUploadForm({ isOpen, setIsOpen }) {
 
   // * 게시글 업로드버튼 onSubmit 핸들러
   const onSubmit = async (e) => {
+    if (!localStorage.accessToken) {
+      alert('로그인 후 이용해주세요');
+      return navigate('/login');
+    }
     e.preventDefault();
     // 요청 본문에서 파일 형식을 form-data로 하므로 append only. -> .append(key, value)
     const formData = new FormData();

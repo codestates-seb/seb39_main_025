@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import {
   SingleFeedReqplyLayout,
   SingleFeedReplyInput,
@@ -7,6 +8,7 @@ import {
 } from './SingleReedReplyStyle';
 
 function SingleFeedReply({ index }) {
+  const navigate = useNavigate();
   const [comment, setComment] = useState('');
   const token = localStorage.getItem('accessToken');
 
@@ -19,6 +21,10 @@ function SingleFeedReply({ index }) {
   // eslint-disable-next-line consistent-return
   const repleUplodeHandler = (e) => {
     e.preventDefault();
+    if (!token) {
+      alert('로그인 후 이용해주세요');
+      return navigate('/login');
+    }
     if (!comment) {
       return alert('댓글 내용을 채워 주세요');
     }
