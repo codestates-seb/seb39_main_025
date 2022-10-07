@@ -1,0 +1,173 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "reply": [
+    {
+      "id": 1,
+      "comment": " "
+    }
+  ],
+  "comments": [
+    {
+      "comment": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "comment": "테스트 전송",
+      "id": 2
+    },
+    {
+      "comment": "테스트 전송",
+      "id": 3
+    },
+    {
+      "comment": "왜 안되지?",
+      "id": 4
+    },
+    {
+      "comment": "",
+      "id": 5
+    },
+    {
+      "comment": "ㅁㄴㅇㄹㅁㄴㅇㄹ",
+      "id": 6
+    },
+    {
+      "comment": "헬로우",
+      "id": 7
+    },
+    {
+      "comment": "ㅁㄴㅇㄹㅁㄴㅇㄹ",
+      "id": 8
+    },
+    {
+      "comment": "ㅁㄴㄹㅁㄴㅇㄹ",
+      "id": 9
+    },
+    {
+      "comment": "안뇽",
+      "id": 10
+    },
+    {
+      "comment": "asdf",
+      "id": 11
+    }
+  ],
+  "sns": [
+    {
+      "id": 1,
+      "src": "https://images.unsplash.com/photo-1592924728350-f7d4fd5d1655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "username": "쿵이",
+      "followers": 100,
+      "post": 50,
+      "dogbedge": "assets/pet-bedge.png",
+      "shelterbedge": "assets/shelter-bedge.png",
+      "memo": "저는 산책과 치킨을 사랑하는 유기견 멍스타 쿵이 입니당 :) 팔로우 해 주세멍 ❤️",
+      "likes": 12
+    },
+    {
+      "id": 2,
+      "src": "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "username": "춘식이",
+      "memo": "광고! 저희 집사와 커플 잠옷 어때요?? 어때요??",
+      "likes": 4
+    },
+    {
+      "id": 3,
+      "src": "https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "username": "현호",
+      "memo": "오늘도 힘내요!! 하이파이브!!",
+      "likes": 0
+    },
+    {
+      "id": 4,
+      "src": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "username": "용빈",
+      "memo": "의사양반...월요병은 무엇으로 고치나요?",
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "src": "https://images.unsplash.com/photo-1600077106724-946750eeaf3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "username": "지환",
+      "memo": "오늘 첫 강아지 유치원 등교날!! 내가 접수한다!",
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "src": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHB1cHB5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "username": "슬기",
+      "memo": "나의 애착 인형을 소개한다아아",
+      "likes": 1
+    },
+    {
+      "id": 7,
+      "src": "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "username": "줄리아",
+      "memo": "떡볶이가 최고야!!",
+      "likes": 0
+    },
+    {
+      "id": 8,
+      "src": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "username": "제니",
+      "memo": "집사 양반 잘좀 하자 ?",
+      "likes": 0
+    },
+    {
+      "id": 9,
+      "src": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60",
+      "username": "한소희",
+      "memo": "저의 남친 멍 송강을 소개합니다",
+      "likes": 0
+    },
+    {
+      "id": 10,
+      "src": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "username": "체다",
+      "memo": "멍와인에 안주는 체다치즈지",
+      "likes": 0
+    },
+    {
+      "id": 11,
+      "src": "https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "username": "블루",
+      "memo": "정말 오늘 날씨 가을 그 잡채...",
+      "likes": 0
+    },
+    {
+      "id": 12,
+      "src": "https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "username": "식빵",
+      "memo": "오늘도 여전히 식빵 굽는 나에 취한다...",
+      "likes": 0
+    },
+    {
+      "id": 13,
+      "src": "https://images.unsplash.com/photo-1593134257782-e89567b7718a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "username": "손석구",
+      "memo": "날 추앙해라 ~~ ",
+      "likes": 0
+    },
+    {
+      "id": 14,
+      "src": "https://images.unsplash.com/photo-1593134257782-e89567b7718a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "username": "손석구",
+      "memo": "날 추앙해라 ~~ ",
+      "likes": 0
+    },
+    {
+      "id": 15,
+      "src": "https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHVwcHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "username": "식빵",
+      "memo": "오늘도 여전히 식빵 굽는 나에 취한다...",
+      "likes": 0
+    }
+  ]
+}

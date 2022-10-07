@@ -3,9 +3,6 @@
 
 ## BE
 ### Java ###
-# yml
-*.yml
-.yml
 .idea
 
 # Compiled class file
@@ -75,6 +72,8 @@ build/Release
 
 
 ## FE
+# build
+build/
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -187,4 +186,5 @@ psd
 thumb
 sketch
 
+.DS_Store
 # End of https://www.toptal.com/developers/gitignore/api/node,react,java
