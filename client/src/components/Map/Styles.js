@@ -12,6 +12,7 @@ export const NearCenterLayout = styled.section`
 export const SectionTitle = styled.h2`
   color: #efac59;
   margin-top: 50px;
+  margin-left: 20px;
 
   @media screen and (max-width: 479px) {
     margin-top: 5px;
