@@ -47,7 +47,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/mypage-edit" element={<MyEditPage />} />
           <Route path="/sns" element={<SingleFeedPage />} />
-          <Route path="/sns-user" element={<UserFeedPage />} />
+          <Route path="/sns-user/:pageUserId" element={<UserFeedPage />} />
           <Route path="/sns-weekly" element={<WeeklyRankPage />} />
           <Route path="/sns-upload" element={<SnsUploadPage />} />
           <Route path="/alert" element={<AlertPage />} />
