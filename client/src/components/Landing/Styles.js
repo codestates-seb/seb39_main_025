@@ -168,7 +168,6 @@ export const LandingContentLayout = styled.div`
         }
       }
     }
-  }
 `;
 
 /* 스토리즈 아래 나머지 랜딩페이지 영역 확인용 레이아웃 임시 스타일링입니다. */

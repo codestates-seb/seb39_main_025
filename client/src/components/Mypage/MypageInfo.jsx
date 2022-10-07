@@ -35,7 +35,7 @@ function MypageInfo() {
           </div>
         </S.MyInfoFlex>
       </S.MyInfoBox>
-      <S.MobileButton onClick={() => navigate('/mypage/:userId')}>
+      <S.MobileButton onClick={() => navigate('/mypage-edit')}>
         회원정보 수정
       </S.MobileButton>
     </S.MyInfoLayout>

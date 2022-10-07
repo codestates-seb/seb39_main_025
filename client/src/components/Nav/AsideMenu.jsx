@@ -6,7 +6,7 @@ function AsideMenu() {
   const userId = window.localStorage.getItem('userId');
   const asideMenuList = [
     { id: 0, name: '나의 정보', element: '/mypage' },
-    { id: 1, name: '회원 정보 수정', element: `/mypage/${userId}` },
+    { id: 1, name: '회원 정보 수정', element: `/mypage-edit` },
   ];
   return (
     <S.AsideSection>

@@ -27,10 +27,6 @@ function MyPageForm() {
     pet: '',
     address: '',
   });
-  console.log(userId);
-  console.log(userId);
-  console.log(token);
-  console.log(userInfo.address);
 
   const [popup, setPopup] = useState(false);
 
@@ -54,7 +50,6 @@ function MyPageForm() {
         { headers: { userId, Authorization: token } },
       );
       setuserInfo(res.data);
-      console.log(res.data);
     };
     getUserInfo();
   }, []);
@@ -70,7 +65,7 @@ function MyPageForm() {
       userInfo,
       { headers: { Authorization: token } },
     );
-    return console.log(res.data);
+    return alert(`${res.data.message}`);
   };
 
   return (
