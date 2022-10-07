@@ -156,6 +156,7 @@ export const GalleryCard = styled(Card)`
   overflow: scroll;
   text-align: center;
   border: none;
+  margin-bottom: 10rem;
   & .ant-card-head {
     border: none;
   }

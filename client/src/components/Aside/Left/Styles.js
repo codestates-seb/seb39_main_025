@@ -8,7 +8,6 @@ export const SectionTitleBox = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-
   img {
     width: 10px;
     height: 10px;
@@ -46,4 +45,5 @@ export const ListItemBtn = styled.button`
 
 export const SectionSubTitle = styled.h2`
   color: #efac59;
+  margin-left: 20px;
 `;
