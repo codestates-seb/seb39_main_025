@@ -95,3 +95,120 @@
 #### 4.2 유기견 보호소 정보 조회
 
 ![보호소조회.gif](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2e91cf51-d495-454b-b523-8325bcbc2764/%E1%84%87%E1%85%A9%E1%84%92%E1%85%A9%E1%84%89%E1%85%A9%E1%84%8C%E1%85%A9%E1%84%92%E1%85%AC.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T072443Z&X-Amz-Expires=86400&X-Amz-Signature=1971f6c1361e783e28551f851b4b2bd649c06685ccfe3f9dcc8f2316b874c7b3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2587%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AC.gif%22&x-id=GetObject)
+
+## III. Members
+
+---
+
+## [🙋🏻‍♂️ FE - 김현호(팀장)](https://www.notion.so/275ad8a7ba9540a2bfea2d1597c8b563)
+
+---
+
+![프사.jpeg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f21ad8c3-c200-4049-bb12-3db4a9768447/%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T073221Z&X-Amz-Expires=86400&X-Amz-Signature=459335dd951e5a7803522527594a2fe475d948a3631068f30d5e747c02568914&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2589%25E1%2585%25A1.jpeg%22&x-id=GetObject)
+
+- **Role:** Front-end
+- **Stack** :`AWS`, `React`, `Axios`, `Styled-components` , `Redux-toolkit` , `React-kakao-maps-sdk` , `react-three/fiber` , `react-three/drei`
+- **Works**
+  1. 회원관리
+     - 회원가입 기능 구현 (Redux-toolkit / createAsyncThunk)
+     - 로그인 기능 구현 (Redux-toolkit / createAsyncThunk)
+     - 인가: 로그인 성공 시 응답 헤더에서 받아와 로컬스토리지에 담아둔 jwt 액세스토큰 값을 요청 메세지 헤더에 담아 인가 요청 구현
+     - 로그인 상태 조건부 렌더링: 로그인된 경우, 아닌 경우에 따라 상단 nav의 버튼이 다르게 보이도록 구현
+  2. SNS
+     - POST: multiparts/form-data 형식의 여러 이미지와 텍스트가 함께 들어간 게시글 등록 구현
+     - Stories: SNS 탭 상단 스토리 탭 구현
+  3. 유기견 신고
+     - Kakao map API를 사용하여 지도 키워드 검색기능 구현
+     - 검색결과: 키워드를 토대로 지도에 생성된 마커와 대응되는 검색결과 컴포넌트와 클릭 시 상세정보 iframe 창이 나타나도록 구현
+  4. 유기견 입양
+     - 체크리스트 자가진단: 네, 아니오 입력에 따라 점수를 부여하여 다른 진단 결과가 나오도록 체크 시작, 결과, 질문 항목 구현
+     - 보호소 조회: Kakao map API를 사용하여 전국 보호소의 목록을 지도에 마커로 나타내며 상세정보를 iframe 창을 띄워 열람하도록 구현
+  5. 랜딩페이지
+     - 외부 3d 모델링 파일을(강아지) 불러와 three.js를 사용하여 화면에 컴포넌트로 구현
+
+## 💁🏻‍♀️ FE - 송슬기
+
+---
+
+![슬기님프사.jpeg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/98f81f1d-70dc-4ab8-abe0-4221fb05440e/%E1%84%89%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%E1%84%82%E1%85%B5%E1%86%B7%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T073201Z&X-Amz-Expires=86400&X-Amz-Signature=33da7e939d622e321b19f95baedfefe3745b555cb7dff87d643aef0b135c2aac&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2589%25E1%2585%25B3%25E1%2586%25AF%25E1%2584%2580%25E1%2585%25B5%25E1%2584%2582%25E1%2585%25B5%25E1%2586%25B7%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2589%25E1%2585%25A1.jpeg%22&x-id=GetObject)
+
+- **Role:** Front-end
+- **Stack** :`AWS`, `React`, `Axios`, `Styled-components` , `Redux-toolkit`
+- **Works**
+  ### 1. Home 랜딩 페이지
+  - 랜딩페이지: 웹 서비스를 전반적으로 소개하는 페이지로 애니메이션을 사용
+  ### 2. sns
+  - 게시물 등록: 로그인한 유저만 게시물 등록 버튼을 클릭하여 sns 이미지와 텍스트를 등록
+  - 게시물 조회: 업로드된 전체 게시물을 sns와 home 페이지에서 보여짐
+  - 게시물 삭제: 게시물 더보기 버튼 클릭시 삭제
+  - 좋아요 버튼: 좋아요 버튼 클릭시 좋아요 수 증가
+  - 댓글 등록: 댓글 아이콘 클릭시 댓글 등록
+  - 댓글 삭제: 댓글 더보기 버튼 클릭시 삭제
+  ### 3. 유저페이지
+  - 게시물의 상단 유저 네임 클릭시 해당 유저의 개인 페이지로 이동
+  - 유저 아이디와 해당 유저가 올린 게시글 리스트 조회 가능
+  ### 4. 마이페이지
+  - 회원정보: 로그인한 회원의 회원 정보 조회
+  - 회원정보 수정: 회원 정보 수정 가능
+
+## 🙋🏻‍♂️ BE - 김지환
+
+---
+
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0e573fd8-ed55-44ca-896d-27ac1fdcacee/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T073136Z&X-Amz-Expires=86400&X-Amz-Signature=8b6990bd99365d15378dfa1227c0666e15728a4e973a1eab4f4c77e03d96952e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+
+- **Role:** Back-end
+- **Stack** :`AWS`,`Spring`,`SpringBoot`,`Spring Security`,`JPA`,`MySQL`
+- **Works**
+
+  1. **회원관리**
+
+     - 회원가입 : 유효성 검사를 통한 유저 회원가입 구현
+     - 로그인 : 회원가입한 정보로 유저 로그인 구현
+     - 인증, 인가 : 로그인 성공 시 jwt 토큰을 헤더에 담아 보내고 expose를 통해 클라이언트에서 로컬스토리지에 저장할 수 있게 구현, 해당 토큰을 통해 권한을 확인 후 요청 처리
+     - 회원정보 수정 : 닉네임, 패스워드등 유저 정보 수정 구현
+     - 회원 탈퇴 : 회원 탈퇴 구현
+
+  2. **SNS**
+
+     - 게시물 조회 : 업로드한 전체 게시물을 조회 가능하게 구현
+     - 게시물 삭제 : 업로드한 게시물을 삭제 할 수 있게 구현
+     - 댓글 조회 : 해당 게시물에 등록한 댓글을 조회 가능하게 구현
+     - 좋아요 : 해당 게시물에 좋아요 버튼을 클릭시 좋아요 수 증가하게 구현
+
+  3. **AWS**
+
+  - EC2 : 배포할 가상 서버 인스턴스 생성 및 접속가능한 보안그룹 설정
+  - RDS : 배포할 데이터베이스 인스턴스 생성 및 접속가능한 보안그룹 설정
+  - ELB, ACM : 구입한 도메인에 https를 적용하기 위한 ELB 생성및 설정과 ACM을 통한 인증서 발급
+
+## 🙋🏻‍♂️ BE - 김용빈
+
+---
+
+![용빈님프사.jpeg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f10dc161-2a55-48ff-a7fa-389c1cfa176d/%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%B5%E1%86%AB%E1%84%82%E1%85%B5%E1%86%B7%E1%84%91%E1%85%B3%E1%84%89%E1%85%A1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221009T073248Z&X-Amz-Expires=86400&X-Amz-Signature=7c398586a94f9de17e8f421e7cce34cc749cfb0dfaa20b71ad5e5e0dc7fd6f0a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%258B%25E1%2585%25AD%25E1%2586%25BC%25E1%2584%2587%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2582%25E1%2585%25B5%25E1%2586%25B7%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2589%25E1%2585%25A1.jpeg%22&x-id=GetObject)
+
+- **Role:** Back-end
+- **Stack** : `AWS`,`Spring`,`SpringBoot`,`Spring Security`,`JPA`,`Travis`,`Maria DB`
+- **Works**
+
+  1.  **회원관리(MY Page)**
+
+      - 회원정보 수정: 나의 회원정보만 수정할 수 있도록 인증 처리 구현 (타 회원 정보 수정 불가)
+      - 회원 가입: 회원 가입 시 비밀번호에 알파벳 대소문자 및 특수 문자 포함하여 보안 높이게 구현
+      - 회원 가입: DB에 비밀번호 데이터를 암호화 되서 저장될 수 있도록 비밀번호 암호화 처리 구현
+
+  2.  **SNS (API 구현)**
+      - 게시글 등록: multiparts/form-data 형식의 여러 이미지와 텍스트가 함께 들어갈 수 있는 API 구현
+      - 게시글 등록 테스트 : 게시글과 이미지가 나의 로컬과 DB에 저장되는지 테스트
+      - 게시글 수정: 내가 쓴 게시글만이 수정되도록 하는 게시글 수정 API 구현
+      - 댓글 등록: 인증된 회원만이 회원 아이디가 아닌 닉네임으로 게시글에 댓글을 등록할 수 있는 API 구현
+      - 댓글 삭제: 게시글 각각에 내가 쓴 댓글만 삭제할 수 있는 API 구현
+      - 댓글 등록 및 삭제 테스트 : 해당 게시글에 맞게 댓글이 입력 및 삭제 테스트
+      - 좋아요: 게시글에 좋아요 클릭 시 DB에 해당 회원이 저장되는 API 구현
+      - 예외처리: 잘못된 요청 값이 전달 될떄 에 맞는 다양한 에러에 해당하는 커스텀한 예외처리 API 구현
+      - 응답 DTO: 요청값에 맞는 데이터와 메세지가 프론트엔드에 전달되는 Response Dto 구현
+  3.  **AWS (서버구축)**
+      - EC2: 서버 생성 및 보안 그룹 테스트
+      - RDS 인스턴스 생성: 사용하려는 데이터베이스에 맞는 RDS 생성
+      - RDS - EC2연동: RDS에 EC2 연동
