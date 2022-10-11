@@ -7,7 +7,7 @@ export const FormUserInfo = styled.div`
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   width: 90%;
   margin: auto;
-  min-width: 400px;
+  min-width: 375px;
   box-sizing: border-box;
   padding: 20px 30px;
   display: flex;
@@ -18,6 +18,9 @@ export const FormUserInfo = styled.div`
     width: 100%;
     height: 100%;
     padding: 20px 20px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 100%;
   }
 `;
 
