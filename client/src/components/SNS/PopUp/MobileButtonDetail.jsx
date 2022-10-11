@@ -9,7 +9,7 @@ import MoreIcon from '../../../assets/more.png';
 
 function MobileButtonDetail({ index }) {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState('');
   const ref = useRef();
   const token = localStorage.getItem('accessToken');
@@ -38,7 +38,8 @@ function MobileButtonDetail({ index }) {
   //   return setIsOpen(!isOpen);
   // };
 
-  function DeleteHandler() {
+  function DeleteHandler(e) {
+    e.preventDefault();
     if (!token) {
       alert('로그인 후 이용해주세요');
       return navigate('/login');
@@ -76,7 +77,7 @@ function MobileButtonDetail({ index }) {
           label: (
             <button
               type="button"
-              onClick={() => DeleteHandler()}
+              onClick={(e) => DeleteHandler(e)}
               style={{
                 border: 'none',
                 width: '100%',

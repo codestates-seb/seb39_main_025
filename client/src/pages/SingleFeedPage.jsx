@@ -18,7 +18,7 @@ export default SingleFeedPage;
 
 const SingleFeedPageLayout = styled.div`
   justify-content: center;
-
+  margin-bottom: 15rem;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     justify-content: start;
