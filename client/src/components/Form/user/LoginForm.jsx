@@ -46,6 +46,22 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
     return navigate('/');
   };
 
+  const guestSubmit = async (e) => {
+    e.preventDefault();
+    const guestInfo = {
+      email: 'testdog@email.com',
+      username: '게스트댕댕이',
+      password: 'asdfghA1@',
+    };
+    const res = await dispatch(loginUser(guestInfo));
+    if (!res.payload) return alert('회원정보를 확인해주세요');
+
+    setIsLogin(true);
+    const username = await JSON.parse(res.payload.config.data).username;
+    localStorage.setItem('username', username);
+    return navigate('/');
+  };
+
   return (
     <FormLayout>
       <FormContainer>
@@ -69,6 +85,11 @@ function LoginForm({ isLogin, setIsLogin, checkLoginStatus }) {
           <FormSubmitBtn type="submit" yellow big>
             로그인하기
           </FormSubmitBtn>
+          <div>
+            <button type="button" onClick={guestSubmit}>
+              게스트 계정으로 체험하기
+            </button>
+          </div>
         </FormWrapper>
       </FormContainer>
     </FormLayout>

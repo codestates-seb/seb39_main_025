@@ -67,6 +67,11 @@ function Form() {
           <FormSubmitBtn type="submit" yellow big>
             회원 가입 하기
           </FormSubmitBtn>
+          <div>
+            <button type="button" onClick={() => navigate('/login')}>
+              게스트 계정으로 체험하기
+            </button>
+          </div>
         </FormWrapper>
       </FormContainer>
     </FormLayout>
