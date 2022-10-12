@@ -10,9 +10,13 @@ import TempProfilePic from '../../../assets/paw-active.png';
 
 function SingleFeedTopBar({ item, index }) {
   const navigate = useNavigate();
-
+  const token = localStorage.getItem('accessToken');
   const UserFeed = () => {
-    navigate(`/sns-user/${item.snsId}`);
+    if (token) {
+      navigate(`/sns-user/${item.snsId}`);
+    } else {
+      alert('로그인이 필요합니다');
+    }
   };
 
   return (
