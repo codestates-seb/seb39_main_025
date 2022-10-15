@@ -11,6 +11,7 @@ import com.mainproject.mainBuddy.dto.member.MemberProfileDto;
 import com.mainproject.mainBuddy.dto.member.MemberProfileDto2;
 import com.mainproject.mainBuddy.mapper.MemberMapper;
 import com.mainproject.mainBuddy.service.image.ImageService;
+import com.mainproject.mainBuddy.service.image.LikesService;
 import com.mainproject.mainBuddy.service.member.MemberGetService;
 import com.mainproject.mainBuddy.service.member.MemberService;
 import io.swagger.annotations.ApiOperation;
@@ -44,7 +45,7 @@ public class ImageController {
     // 이미지를 업로드 하기 위해서는 로그인이 되어있는 유저정보가 필요
     // Controller는 사용자의 데이터를 받고 서비스를 호출하기만 하면 된다.
 
-
+    @ApiOperation(value = "본문 내용 및 이미지 업로드", notes = "쓰고싶은 본문 글과 함께 이미지를 업로드 할 수 있음 ")
     @PostMapping("api/posts")
     public String imageUpload(ImageUploadDto imageUploadDto, @AuthenticationPrincipal PrincipalDetails principalDetails){
         //서비스 호출
@@ -58,7 +59,7 @@ public class ImageController {
     /**
      *   멤버아이디로 사진 업로드 GET 요청
      */
-
+    @ApiOperation(value = "회원프로필 조회", notes = "게시글 올린 작성자의 회원정보를 받아온다")
     @GetMapping("/api/posts/{pageUserId}")
     public MemberProfileDto profile(@PathVariable Long pageUserId,
                                     @AuthenticationPrincipal PrincipalDetails principalDetails) {
@@ -84,6 +85,8 @@ public class ImageController {
      *  전체유저의 게시물 보이기
      */
 
+
+    @ApiOperation(value = "회원 전체의 게시물 보이기", notes = "가입한 회원들의 게시글과 이미지들을 볼 수 있게하는 기능")
     @GetMapping("/api/posts")
     public ResponseEntity getMembers(@Positive @RequestParam(required = false, defaultValue = "1") Integer page,
                                      @Positive @RequestParam(required = false, defaultValue = "100") Integer size) {
@@ -99,6 +102,7 @@ public class ImageController {
      *
      *  게시물 삭제
      */
+    @ApiOperation(value = "게시물 삭제", notes = "게시물 삭제(본인이 등록한 게시물만이 삭제가능)")
     @DeleteMapping("/api/posts/{postId}") //게시물 삭제
     public ResponseEntity deletePost(
             @PathVariable("postId") @Positive long postId) {
@@ -111,7 +115,7 @@ public class ImageController {
     /**
      *   사진 좋아요 API
      */
-
+    @ApiOperation(value = "게시물 좋아요 ", notes = "좋아요를 누르면 DB에 좋아요 기능 사용한 회원이 어떤 게시물에 좋아요 눌렀는지 저장")
     @PostMapping("/{imageId}/likes")
     public ResponseEntity likes(@PathVariable("imageId") Long imageId, @AuthenticationPrincipal PrincipalDetails principalDetails){
         likesService.likes(imageId,principalDetails.getMember().getMemberId());
