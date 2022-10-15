@@ -1,0 +1,40 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/project?serverTimezone=Asia/Seoul
+#    username: root
+#    password: 1
+#
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.caucdel8yb5x.ap-northeast-2.rds.amazonaws.com:3306/sys?serverTimezone=Asia/Seoul
+    username: admin
+    password: 12345678
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+    show_sql: true
+
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging.level:
+  org.hibernate.SQL: debug
+
+
+file:
+  path: /home/ubuntu/upload/
+#  path: /Users/jihwan/desktop/
+
+
