@@ -1,14 +1,14 @@
-package com.mainproject.mainBuddy.controller;
+package com.mainproject.mainBuddy.controller.member;
 
 import com.mainproject.mainBuddy.config.auth.PrincipalDetails;
-import com.mainproject.mainBuddy.domain.Member;
+import com.mainproject.mainBuddy.domain.member.Member;
 import com.mainproject.mainBuddy.dto.auth.MemberRegisterDto;
 import com.mainproject.mainBuddy.dto.auth.MemberUpdateDto;
 import com.mainproject.mainBuddy.dto.member.CMRespDto;
 import com.mainproject.mainBuddy.exception.CustomValidationApiException;
 import com.mainproject.mainBuddy.mapper.MemberMapper;
-import com.mainproject.mainBuddy.service.MemberService;
-import io.swagger.annotations.ApiOperation;
+import com.mainproject.mainBuddy.service.member.MemberService;
+
 import java.util.HashMap;
 import java.util.Map;
 import javax.validation.Valid;

@@ -1,5 +1,6 @@
-package com.mainproject.mainBuddy.domain;
+package com.mainproject.mainBuddy.domain.member;
 
+import com.mainproject.mainBuddy.domain.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

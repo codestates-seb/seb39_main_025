@@ -1,6 +1,6 @@
 package com.mainproject.mainBuddy.mapper;
 
-import com.mainproject.mainBuddy.domain.Member;
+import com.mainproject.mainBuddy.domain.member.Member;
 import com.mainproject.mainBuddy.dto.auth.MemberRegisterDto;
 import com.mainproject.mainBuddy.dto.auth.MemberResponseDto;
 import org.mapstruct.Mapper;

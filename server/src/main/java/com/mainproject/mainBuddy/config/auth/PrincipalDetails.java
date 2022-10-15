@@ -1,6 +1,6 @@
 package com.mainproject.mainBuddy.config.auth;
 
-import com.mainproject.mainBuddy.domain.Member;
+import com.mainproject.mainBuddy.domain.member.Member;
 import com.mainproject.mainBuddy.dto.auth.MemberRegisterDto;
 import java.awt.Image;
 import java.util.ArrayList;

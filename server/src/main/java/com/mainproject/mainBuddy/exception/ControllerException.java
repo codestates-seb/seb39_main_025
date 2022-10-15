@@ -1,5 +1,6 @@
 package com.mainproject.mainBuddy.exception;
 
+import com.mainproject.mainBuddy.dto.member.CMRespDto;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
