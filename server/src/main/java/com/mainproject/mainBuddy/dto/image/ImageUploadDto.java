@@ -3,6 +3,7 @@ package com.mainproject.mainBuddy.dto.image;
 
 import com.mainproject.mainBuddy.domain.image.Image;
 import com.mainproject.mainBuddy.domain.member.Member;
+import com.mainproject.mainBuddy.dto.comment.CommentResponseDto;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
