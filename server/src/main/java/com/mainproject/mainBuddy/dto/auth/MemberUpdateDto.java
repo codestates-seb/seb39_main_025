@@ -1,6 +1,6 @@
 package com.mainproject.mainBuddy.dto.auth;
 
-import com.mainproject.mainBuddy.domain.Member;
+import com.mainproject.mainBuddy.domain.member.Member;
 import javax.validation.constraints.NotBlank;
 import lombok.Data;
 

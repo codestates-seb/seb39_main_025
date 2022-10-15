@@ -1,4 +1,4 @@
-package com.mainproject.mainBuddy.domain;
+package com.mainproject.mainBuddy.domain.member;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.awt.Image;

@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mainproject.mainBuddy.config.auth.PrincipalDetails;
-import com.mainproject.mainBuddy.domain.Member;
+import com.mainproject.mainBuddy.domain.member.Member;
 import java.io.IOException;
 import java.util.Date;
 import javax.servlet.FilterChain;

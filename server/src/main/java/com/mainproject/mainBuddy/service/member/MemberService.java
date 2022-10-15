@@ -1,7 +1,7 @@
-package com.mainproject.mainBuddy.service;
+package com.mainproject.mainBuddy.service.member;
 
-import com.mainproject.mainBuddy.domain.Member;
-import com.mainproject.mainBuddy.domain.MemberRepository;
+import com.mainproject.mainBuddy.domain.member.Member;
+import com.mainproject.mainBuddy.domain.member.MemberRepository;
 import com.mainproject.mainBuddy.exception.BusinessLogicException;
 import com.mainproject.mainBuddy.exception.CustomValidationApiException;
 import com.mainproject.mainBuddy.exception.ExceptionCode;
