@@ -1,6 +1,8 @@
 package com.mainproject.mainBuddy.domain.likes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.mainproject.mainBuddy.domain.image.Image;
+import com.mainproject.mainBuddy.domain.member.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
