@@ -24,7 +24,10 @@ function NavTop({ isLogin, setIsLogin }) {
       <MainLogo onClick={() => navigate('/')}>
         <img src={Logo} alt={Logo} />
       </MainLogo>
-
+      <div>
+        AWS의 RDS Free tier 사용량이 소진되어 부득이 서버, 데이터베이스를
+        종료합니다. 찾아주셔서 감사드립니다. 더 좋은 포폴로 뵙겠습니다.
+      </div>
       <NavButton>
         {isLogin === true || localStorage.loginStatus === 'true' ? (
           <LogoutButton
